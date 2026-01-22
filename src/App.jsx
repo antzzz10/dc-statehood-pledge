@@ -1,8 +1,7 @@
 import './App.css'
 
 function App() {
-  // TODO: Replace with actual Google Form link once created
-  const QUESTIONNAIRE_LINK = "https://forms.gle/YOUR_FORM_ID_HERE";
+  const QUESTIONNAIRE_LINK = "https://docs.google.com/forms/d/e/1FAIpQLScQ0P9SS8VRLoZsQCtDBbl70znVX0kGMQu92R42WPAK5AFyRg/viewform";
   const RESULTS_DATE = "March 15, 2026";
   const DEADLINE = "March 1, 2026";
 
