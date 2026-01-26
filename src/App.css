@@ -105,9 +105,6 @@ body {
 
 .hero-title .highlight {
   color: #FFD700;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 8px;
 }
 
 .hero-subtitle {

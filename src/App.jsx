@@ -137,28 +137,28 @@ function App() {
             <div className="footer-section">
               <h3>DC Candidate Tracker</h3>
               <p>
-                Part of the <a href="https://www.representdc.org">Represent DC</a> project
+                Non-partisan voter information project
               </p>
+            </div>
+            <div className="footer-section">
+              <h3>Contact</h3>
+              <ul>
+                <li><a href="mailto:info@representdc.org">Contact RepresentDC</a></li>
+                <li><a href="mailto:statehood@dcdemocraticparty.org">Contact DC Dems Statehood Committee</a></li>
+              </ul>
             </div>
             <div className="footer-section">
               <h3>For Candidates</h3>
               <ul>
                 <li><Link to="/respond">Complete Questionnaire</Link></li>
-                <li><a href="mailto:statehood@dcdemocraticparty.org">Contact Us</a></li>
               </ul>
             </div>
             <div className="footer-section">
-              <h3>Other Tools</h3>
+              <h3>Represent DC Tools</h3>
               <ul>
                 <li><a href="https://www.representdc.org">Main Site</a></li>
                 <li><a href="https://billtracker.representdc.org">Bill Tracker</a></li>
-              </ul>
-            </div>
-            <div className="footer-section">
-              <h3>Resources</h3>
-              <ul>
                 <li><a href="https://dcstatehoodpledge.org" target="_blank" rel="noopener noreferrer">DC Statehood Pledge</a></li>
-                <li><a href="https://www.representdc.org">About RepresentDC</a></li>
               </ul>
             </div>
           </div>

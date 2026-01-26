@@ -173,18 +173,24 @@ function Respond() {
               </p>
             </div>
             <div className="footer-section">
-              <h3>For Voters</h3>
+              <h3>Contact</h3>
               <ul>
-                <li><Link to="/">View Results</Link></li>
-                <li><a href="https://www.representdc.org">Main Site</a></li>
-                <li><a href="https://billtracker.representdc.org">Bill Tracker</a></li>
+                <li><a href="mailto:info@representdc.org">Contact RepresentDC</a></li>
+                <li><a href="mailto:statehood@dcdemocraticparty.org">Contact DC Dems Statehood Committee</a></li>
               </ul>
             </div>
             <div className="footer-section">
-              <h3>Resources</h3>
+              <h3>For Voters</h3>
               <ul>
+                <li><Link to="/">View Results</Link></li>
+              </ul>
+            </div>
+            <div className="footer-section">
+              <h3>Represent DC Tools</h3>
+              <ul>
+                <li><a href="https://www.representdc.org">Main Site</a></li>
+                <li><a href="https://billtracker.representdc.org">Bill Tracker</a></li>
                 <li><a href="https://dcstatehoodpledge.org" target="_blank" rel="noopener noreferrer">DC Statehood Pledge</a></li>
-                <li><a href="https://www.representdc.org">About This Project</a></li>
               </ul>
             </div>
           </div>
