@@ -1,11 +1,23 @@
+import { Link } from 'react-router-dom'
 import './App.css'
 
 function App() {
-  const QUESTIONNAIRE_LINK = "https://docs.google.com/forms/d/e/1FAIpQLScQ0P9SS8VRLoZsQCtDBbl70znVX0kGMQu92R42WPAK5AFyRg/viewform";
   const PRIMARY_DATE = "June 16, 2026";
 
   return (
     <div className="app">
+      {/* Candidate Banner */}
+      <div className="candidate-banner">
+        <div className="container">
+          <span className="banner-text">
+            🎯 Are you a candidate?
+          </span>
+          <Link to="/respond" className="banner-link">
+            Complete the questionnaire →
+          </Link>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
@@ -14,35 +26,26 @@ function App() {
             DC Candidate <span className="highlight">Tracker</span>
           </h1>
           <p className="hero-subtitle">
-            Track DC candidate positions on statehood and home rule
+            Track where candidates stand on statehood and home rule
           </p>
           <p className="hero-description">
-            We're asking all candidates in the June 2026 primary where they stand on DC Statehood
-            and Home Rule. See who responds and compare their positions.
+            See which candidates in the June 2026 primary have responded to our questionnaire
+            and compare their positions on DC Statehood and defending home rule.
           </p>
-          <a
-            href={QUESTIONNAIRE_LINK}
-            className="cta-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Share Your Position →
-          </a>
-          <p className="deadline">Primary Election: {PRIMARY_DATE}</p>
         </div>
       </section>
 
       {/* Why This Matters */}
       <section className="about">
         <div className="container">
-          <h2>Why Track Candidate Positions?</h2>
+          <h2>Why This Matters</h2>
           <p className="lead">
             In the past year, Congress blocked $1.1 billion of DC's budget, passed bills to
             eliminate traffic cameras, overturned criminal justice reforms, and introduced
             74+ bills undermining DC autonomy.
           </p>
           <p>
-            <strong>DC voters deserve to know where candidates stand on defending home rule and fighting for statehood.</strong>
+            <strong>Before you vote in the {PRIMARY_DATE} primary, see where candidates stand on defending home rule and fighting for statehood.</strong>
           </p>
         </div>
       </section>
@@ -106,53 +109,23 @@ function App() {
         </div>
       </section>
 
-      {/* Questionnaire Info */}
+      {/* About Section */}
       <section className="questionnaire-info">
         <div className="container">
-          <h2>About the Questionnaire</h2>
-
-          <div className="info-grid">
-            <div className="info-card">
-              <h3>📝 What We Ask</h3>
-              <ul>
-                <li>Do you support DC Statehood?</li>
-                <li>Have you signed the DC Statehood Pledge?</li>
-                <li>What actions have you taken to advance statehood?</li>
-                <li>How will you respond to congressional overreach?</li>
-              </ul>
-            </div>
-
-            <div className="info-card">
-              <h3>👥 Who Should Respond</h3>
-              <ul>
-                <li>Mayoral candidates</li>
-                <li>Council candidates (At-Large, Ward, Chairman)</li>
-                <li>Attorney General candidates</li>
-                <li>Shadow Senator/Representative candidates</li>
-              </ul>
-            </div>
-
-            <div className="info-card">
-              <h3>⏱️ Quick Details</h3>
-              <ul>
-                <li><strong>Time to complete:</strong> 10-15 minutes</li>
-                <li><strong>Published:</strong> Rolling basis (as responses come in)</li>
-                <li><strong>Primary Election:</strong> {PRIMARY_DATE}</li>
-              </ul>
-            </div>
-          </div>
-
+          <h2>About This Tracker</h2>
           <div className="cta-box">
-            <h3>Candidates: Share Your Position</h3>
-            <p>Help DC voters make informed decisions before the {PRIMARY_DATE} primary by completing the questionnaire.</p>
-            <a
-              href={QUESTIONNAIRE_LINK}
-              className="cta-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Complete Questionnaire →
-            </a>
+            <p style={{ marginBottom: '1rem' }}>
+              This questionnaire was organized by the DC Democratic Party Statehood Committee
+              and sent to all declared candidates regardless of party affiliation.
+            </p>
+            <p style={{ marginBottom: '1rem' }}>
+              Results are published independently on RepresentDC.org to provide non-partisan
+              voter information. We believe DC voters deserve to know where every candidate—Democrat,
+              Republican, and Statehood Green—stands on statehood, home rule, and congressional interference.
+            </p>
+            <p style={{ fontSize: '0.9rem', color: '#666' }}>
+              Questions or feedback? Contact: <a href="mailto:info@representdc.org" style={{ color: '#DC143C' }}>info@representdc.org</a>
+            </p>
           </div>
         </div>
       </section>
@@ -168,6 +141,13 @@ function App() {
               </p>
             </div>
             <div className="footer-section">
+              <h3>For Candidates</h3>
+              <ul>
+                <li><Link to="/respond">Complete Questionnaire</Link></li>
+                <li><a href="mailto:statehood@dcdemocraticparty.org">Contact Us</a></li>
+              </ul>
+            </div>
+            <div className="footer-section">
               <h3>Other Tools</h3>
               <ul>
                 <li><a href="https://www.representdc.org">Main Site</a></li>
@@ -178,7 +158,7 @@ function App() {
               <h3>Resources</h3>
               <ul>
                 <li><a href="https://dcstatehoodpledge.org" target="_blank" rel="noopener noreferrer">DC Statehood Pledge</a></li>
-                <li><a href="https://www.representdc.org">About This Project</a></li>
+                <li><a href="https://www.representdc.org">About RepresentDC</a></li>
               </ul>
             </div>
           </div>
