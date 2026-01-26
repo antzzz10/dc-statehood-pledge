@@ -2,8 +2,7 @@ import './App.css'
 
 function App() {
   const QUESTIONNAIRE_LINK = "https://docs.google.com/forms/d/e/1FAIpQLScQ0P9SS8VRLoZsQCtDBbl70znVX0kGMQu92R42WPAK5AFyRg/viewform";
-  const RESULTS_DATE = "March 15, 2026";
-  const DEADLINE = "March 1, 2026";
+  const PRIMARY_DATE = "June 16, 2026";
 
   return (
     <div className="app">
@@ -29,7 +28,7 @@ function App() {
           >
             Share Your Position →
           </a>
-          <p className="deadline">Candidate Deadline: {DEADLINE}</p>
+          <p className="deadline">Primary Election: {PRIMARY_DATE}</p>
         </div>
       </section>
 
@@ -51,9 +50,9 @@ function App() {
       {/* Results Preview */}
       <section className="results-preview">
         <div className="container">
-          <h2>Results Coming {RESULTS_DATE}</h2>
+          <h2>Results — Updated as Responses Come In</h2>
           <p className="section-intro">
-            Candidate responses will be published in a simple table format. Here's what it will look like:
+            Candidate responses are published on a rolling basis. Here's what the results will look like:
           </p>
 
           <div className="table-container">
@@ -101,8 +100,8 @@ function App() {
           </div>
 
           <p className="table-note">
-            <strong>Note:</strong> This is sample data. Actual candidate responses will be published by {RESULTS_DATE}.
-            The table will include all 24 declared candidates and be sortable by office.
+            <strong>Note:</strong> This is sample data. Actual candidate responses will be published as they come in.
+            The table will include all declared candidates and be sortable by office.
           </p>
         </div>
       </section>
@@ -136,17 +135,16 @@ function App() {
             <div className="info-card">
               <h3>⏱️ Quick Details</h3>
               <ul>
-                <li><strong>Time:</strong> 10-15 minutes</li>
-                <li><strong>Deadline:</strong> {DEADLINE}</li>
-                <li><strong>Published:</strong> {RESULTS_DATE}</li>
-                <li><strong>Election:</strong> June 16, 2026</li>
+                <li><strong>Time to complete:</strong> 10-15 minutes</li>
+                <li><strong>Published:</strong> Rolling basis (as responses come in)</li>
+                <li><strong>Primary Election:</strong> {PRIMARY_DATE}</li>
               </ul>
             </div>
           </div>
 
           <div className="cta-box">
             <h3>Candidates: Share Your Position</h3>
-            <p>Help DC voters make informed decisions by completing the questionnaire.</p>
+            <p>Help DC voters make informed decisions before the {PRIMARY_DATE} primary by completing the questionnaire.</p>
             <a
               href={QUESTIONNAIRE_LINK}
               className="cta-secondary"
