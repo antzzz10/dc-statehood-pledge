@@ -166,13 +166,6 @@ function Respond() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <h3>DC Candidate Tracker</h3>
-              <p>
-                Organized by the DC Democratic Party Statehood Committee.<br />
-                Results published independently on <Link to="/" style={{ color: '#FFD700' }}>RepresentDC.org</Link> for non-partisan voter information.
-              </p>
-            </div>
-            <div className="footer-section">
               <h3>Contact</h3>
               <ul>
                 <li><a href="mailto:info@representdc.org">Contact RepresentDC</a></li>
@@ -190,7 +183,6 @@ function Respond() {
               <ul>
                 <li><a href="https://www.representdc.org">Main Site</a></li>
                 <li><a href="https://billtracker.representdc.org">Bill Tracker</a></li>
-                <li><a href="https://dcstatehoodpledge.org" target="_blank" rel="noopener noreferrer">DC Statehood Pledge</a></li>
               </ul>
             </div>
           </div>

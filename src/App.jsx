@@ -135,12 +135,6 @@ function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <h3>DC Candidate Tracker</h3>
-              <p>
-                Non-partisan voter information project
-              </p>
-            </div>
-            <div className="footer-section">
               <h3>Contact</h3>
               <ul>
                 <li><a href="mailto:info@representdc.org">Contact RepresentDC</a></li>
@@ -158,7 +152,6 @@ function App() {
               <ul>
                 <li><a href="https://www.representdc.org">Main Site</a></li>
                 <li><a href="https://billtracker.representdc.org">Bill Tracker</a></li>
-                <li><a href="https://dcstatehoodpledge.org" target="_blank" rel="noopener noreferrer">DC Statehood Pledge</a></li>
               </ul>
             </div>
           </div>
