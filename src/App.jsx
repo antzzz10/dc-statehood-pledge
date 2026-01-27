@@ -6,6 +6,18 @@ import candidatesData from './data/candidates.json'
 function App() {
   const PRIMARY_DATE = "June 16, 2026";
   const [selectedOffice, setSelectedOffice] = useState("all");
+  const [selectedCandidate, setSelectedCandidate] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (candidate) => {
+    setSelectedCandidate(candidate);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCandidate(null);
+  };
 
   // Get unique offices for filter
   const offices = useMemo(() => {
@@ -113,13 +125,13 @@ function App() {
                   {selectedOffice === "all" && <th>Office</th>}
                   <th>Responded?</th>
                   <th>Supports Statehood?</th>
-                  <th>Signed Pledge?</th>
+                  <th>Full Response</th>
                 </tr>
               </thead>
               <tbody>
                 {Object.entries(groupedCandidates).map(([office, candidates]) => (
                   candidates.map((candidate, index) => (
-                    <tr key={`${candidate.name}-${candidate.office}`} className="sample-row no-response">
+                    <tr key={`${candidate.name}-${candidate.office}`} className={`sample-row ${candidate.responded ? 'responded' : 'no-response'}`}>
                       <td><strong>{candidate.name}</strong></td>
                       <td>
                         <span className={`party-badge ${candidate.party.toLowerCase().replace(' ', '-')}`}>
@@ -127,9 +139,24 @@ function App() {
                         </span>
                       </td>
                       {selectedOffice === "all" && <td>{candidate.office}</td>}
-                      <td><span className="status-badge no-response">✗ No Response</span></td>
-                      <td>—</td>
-                      <td>—</td>
+                      <td>
+                        <span className={`status-badge ${candidate.responded ? 'responded' : 'no-response'}`}>
+                          {candidate.responded ? '✓ Yes' : '✗ No Response'}
+                        </span>
+                      </td>
+                      <td>{candidate.supportsStatehood || '—'}</td>
+                      <td>
+                        {candidate.responded ? (
+                          <button
+                            className="view-response-btn"
+                            onClick={() => openModal(candidate)}
+                          >
+                            View Response
+                          </button>
+                        ) : (
+                          <span className="not-available">—</span>
+                        )}
+                      </td>
                     </tr>
                   ))
                 ))}
@@ -142,6 +169,41 @@ function App() {
           </p>
         </div>
       </section>
+
+      {/* Response Modal */}
+      {isModalOpen && selectedCandidate && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>&times;</button>
+            <h2 className="modal-title">{selectedCandidate.name}</h2>
+            <p className="modal-subtitle">
+              {selectedCandidate.office} • {selectedCandidate.party}
+            </p>
+
+            <div className="modal-body">
+              <div className="question-block">
+                <h3 className="question">Do you support DC Statehood?</h3>
+                <p className="answer">{selectedCandidate.responses?.statehoodSupport || 'No response provided'}</p>
+              </div>
+
+              <div className="question-block">
+                <h3 className="question">Have you signed the DC Statehood Pledge?</h3>
+                <p className="answer">{selectedCandidate.responses?.statehoodPledgeSigned || 'No response provided'}</p>
+              </div>
+
+              <div className="question-block">
+                <h3 className="question">What actions have you taken to advance statehood?</h3>
+                <p className="answer">{selectedCandidate.responses?.actionsTaken || 'No response provided'}</p>
+              </div>
+
+              <div className="question-block">
+                <h3 className="question">How will you respond to congressional overreach if elected?</h3>
+                <p className="answer">{selectedCandidate.responses?.congressionalOverreach || 'No response provided'}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* About Section */}
       <section className="questionnaire-info">

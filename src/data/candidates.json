@@ -1,444 +1,402 @@
 {
   "candidates": [
     {
+      "name": "Sample User",
+      "party": "Democratic",
+      "office": "Mayor",
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes, I strongly support DC statehood as a matter of democratic principle.",
+        "statehoodPledgeSigned": "Yes, I signed the pledge in 2024.",
+        "actionsTaken": "I've testified at congressional hearings, organized community town halls, and made statehood a central pillar of my campaign platform.",
+        "congressionalOverreach": "I will publicly oppose all federal interference, coordinate with our congressional delegation, and mobilize constituents to contact their representatives."
+      }
+    },
+    {
       "name": "Gordon Chaffin",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Trent Holbrook",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Robert L. Matthews",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Brooke Pinto",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Sandi Stevens",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Robert White",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Kelly Mikel Williams",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Kinney Zalesne",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Nelson Rimensnyder",
       "party": "Republican",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Denise Rosado",
       "party": "Republican",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Kymone Freeman",
       "party": "Statehood Green",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Yaida Ford",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Janeese Lewis George",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Gary Goodweather",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Kathy Henderson",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Ernest Johnson",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Regan Jones",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Stanley V Lawson Sr",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Terri \"Ginger\" Little",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Kenyan R. McDuffie",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Anthony Muhammad",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Myrtle Patricia Alexander",
       "party": "Republican",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Christopher E. Rossi",
       "party": "Republican",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Muhsin Boe Umar",
       "party": "Statehood Green",
       "office": "Mayor",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Brian L. Schwalb",
       "party": "Democratic",
       "office": "Attorney General",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "J.P. Szymkowicz",
       "party": "Democratic",
       "office": "Attorney General",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Manuel Rivera",
       "party": "Republican",
       "office": "Attorney General",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Phil Mendelson",
       "party": "Democratic",
       "office": "Council Chairman",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Kevin B. Chavous",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Dwight Davis",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Dyana Forester",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Fred Hill",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Joe Jackson",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Leniqua'dominique Jenkins",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Candace Tiana Nelson",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Oye Owolewa",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Lisa Raymond",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Patricia Stamper",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Darrell Green",
       "party": "Republican",
       "office": "At-Large Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Rashida Brown",
       "party": "Democratic",
       "office": "Ward 1 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Terry Lynch",
       "party": "Democratic",
       "office": "Ward 1 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Aparna Raj",
       "party": "Democratic",
       "office": "Ward 1 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Jackie Reyes Yanes",
       "party": "Democratic",
       "office": "Ward 1 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Miguel Trindade Deramo",
       "party": "Democratic",
       "office": "Ward 1 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Jett James Jasper",
       "party": "Republican",
       "office": "Ward 1 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Bernita Carmichael",
       "party": "Democratic",
       "office": "Ward 5 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Zachary Parker",
       "party": "Democratic",
       "office": "Ward 5 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Jeffrey Kihien-Palza",
       "party": "Republican",
       "office": "Ward 5 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Charles Allen",
       "party": "Democratic",
       "office": "Ward 6 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Michael Murphy",
       "party": "Democratic",
       "office": "Ward 6 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Gloria Ann Nauden",
       "party": "Democratic",
       "office": "Ward 6 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Jorge Rice",
       "party": "Republican",
       "office": "Ward 6 Council Member",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Markus Batchelor",
       "party": "Democratic",
       "office": "United States Senator",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Robert Simmons",
       "party": "Republican",
       "office": "United States Senator",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     },
     {
       "name": "Milton Hardy",
       "party": "Republican",
       "office": "United States Representative",
       "responded": false,
-      "supportsStatehood": null,
-      "signedPledge": null
+      "supportsStatehood": null
     }
   ]
 }
