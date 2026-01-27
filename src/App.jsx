@@ -64,14 +64,13 @@ function App() {
         <div className="container">
           <div className="hero-badge">DC Elections 2026</div>
           <h1 className="hero-title">
-            DC Candidate <span className="highlight">Tracker</span>
+            DC Candidate <span className="highlight">Statehood Tracker</span>
           </h1>
           <p className="hero-subtitle">
-            Track where candidates stand on statehood and home rule
+            With Congress threatening Home Rule, DC needs leaders who will fight back.
           </p>
           <p className="hero-description">
-            See which candidates in the June 2026 primary have responded to our questionnaire
-            and compare their positions on DC Statehood and defending home rule.
+            Compare June 2026 primary candidates' positions on statehood, their commitment to defending Home Rule, and their plans to resist Congressional interference.
           </p>
         </div>
       </section>
