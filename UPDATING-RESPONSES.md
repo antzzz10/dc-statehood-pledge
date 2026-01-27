@@ -33,15 +33,16 @@ const CONFIG = {
   statusColumn: 'Status', // Your approval column name
 
   columns: {
-    name: 'Name',           // Update if your form asks differently
-    office: 'Office',       // Update if your form asks differently
-    party: 'Party',         // Update if your form asks differently
-    question1: 'Do you support DC Statehood?',  // Copy exact question text
-    question2: 'What are the top three actions...',  // Copy exact question text
+    name: 'Name of candidate',      // Your form's exact column name
+    office: 'Position running for?',  // Your form's exact column name
+    question1: '1. Do you support DC Statehood?',  // Copy exact question text
+    question2: '2. What are the top three actions...',  // Copy exact question text
     // ... etc
   }
 };
 ```
+
+**Note:** The script is already configured with your exact column names, so you shouldn't need to change anything!
 
 4. Click **Save**
 5. **Refresh your Google Sheet** - you should see a new menu: **"Candidate Tracker"**
@@ -154,6 +155,15 @@ If the form response has a slightly different name than your candidate list:
 2. Find `getBaseCandidateList()` function (around line 170)
 3. Update the candidate's name to match the form response
 4. Save and re-generate JSON
+
+### How Party Information Works
+
+Party affiliation is **not** collected in the form - it comes from the base candidate list in the script.
+
+The script matches responses by **name + office**, then adds the party from the hardcoded candidate list. This ensures:
+- Candidates don't need to specify party in the form
+- Party info stays consistent across the site
+- You control the party labels (Democratic, Republican, Statehood Green)
 
 ### Want to Remove a Response?
 

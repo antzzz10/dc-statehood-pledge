@@ -22,24 +22,25 @@
  * 6. Deploy your site
  */
 
-// Configuration - UPDATE THESE to match your sheet column names
+// Configuration - These match your Google Form exactly
 const CONFIG = {
   // Which column has the approval status?
   statusColumn: 'Status', // Column with "Approved" or "Rejected"
 
-  // Form response column names (update to match YOUR Google Form)
+  // Form response column names - EXACT matches from your Google Form
   columns: {
     timestamp: 'Timestamp',
-    name: 'Name',
-    office: 'Office',
-    party: 'Party',
-    question1: 'Do you support DC Statehood?',
-    question2: 'What are the top three actions you are most proud of having already taken for Statehood over the last two years?',
-    question3: 'What specific actions do you intend to take to promote DC Statehood and protect Home Rule, as a DC elected official?',
-    question4: 'If elected, how will you respond when Congress attempts to overturn DC laws or block DC\'s budget? Please name at least one specific action you would take.',
-    question5: 'Name the top 2-3 partners you intend to work with in promoting Statehood, and what your relationship is with those partners today.',
-    question6: 'How do you intend to involve DC voters and residents in the fight for Statehood?',
-    question7: 'Is there anything else you would like to share with DC voters about your stance on DC Statehood?'
+    email: 'Email Address',
+    name: 'Name of candidate',
+    office: 'Position running for?',
+    proxyInfo: 'If you are filling this out on behalf of a candidate, please note your name, role, and contact information below. \n\nWe will contact you to verify these questionnaire responses.',
+    question1: '1. Do you support DC Statehood?',
+    question2: '2. What are the top three actions you are most proud of having already taken for Statehood over the last two years? \n\n(Note: these can be professional or personal actions.) ',
+    question3: '3. What specific actions do you intend to take to promote DC Statehood and protect Home Rule, as a DC elected official?',
+    question4: '4. If elected, how will you respond when Congress attempts to overturn DC laws or block DC\'s budget? Please name at least one specific action you would take.',
+    question5: '5. Name the top 2-3 partners you intend to work with in promoting Statehood, and what your relationship is with those partners today.',
+    question6: '6. How do you intend to involve DC voters and residents in the fight for Statehood?',
+    question7: '7. Is there anything else you would like to share with DC voters about your stance on DC Statehood?'
   }
 };
 
@@ -120,7 +121,7 @@ function parseResponse(row, colIndices) {
   return {
     name: row[colIndices.name]?.toString().trim(),
     office: row[colIndices.office]?.toString().trim(),
-    party: row[colIndices.party]?.toString().trim(),
+    // Party is not in the form - we get it from the base candidate list when merging
     statehoodSupport: parseStatehoodAnswer(row[colIndices.question1]),
     responses: {
       statehoodSupport: row[colIndices.question1]?.toString().trim() || '',
