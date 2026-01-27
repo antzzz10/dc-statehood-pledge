@@ -182,23 +182,38 @@ function App() {
 
             <div className="modal-body">
               <div className="question-block">
-                <h3 className="question">Do you support DC Statehood?</h3>
+                <h3 className="question">1. Do you support DC Statehood?</h3>
                 <p className="answer">{selectedCandidate.responses?.statehoodSupport || 'No response provided'}</p>
               </div>
 
               <div className="question-block">
-                <h3 className="question">Have you signed the DC Statehood Pledge?</h3>
-                <p className="answer">{selectedCandidate.responses?.statehoodPledgeSigned || 'No response provided'}</p>
+                <h3 className="question">2. What are the top three actions you are most proud of having already taken for Statehood over the last two years?</h3>
+                <p className="answer">{selectedCandidate.responses?.topThreeActions || 'No response provided'}</p>
               </div>
 
               <div className="question-block">
-                <h3 className="question">What actions have you taken to advance statehood?</h3>
-                <p className="answer">{selectedCandidate.responses?.actionsTaken || 'No response provided'}</p>
+                <h3 className="question">3. What specific actions do you intend to take to promote DC Statehood and protect Home Rule, as a DC elected official?</h3>
+                <p className="answer">{selectedCandidate.responses?.intendedActions || 'No response provided'}</p>
               </div>
 
               <div className="question-block">
-                <h3 className="question">How will you respond to congressional overreach if elected?</h3>
-                <p className="answer">{selectedCandidate.responses?.congressionalOverreach || 'No response provided'}</p>
+                <h3 className="question">4. If elected, how will you respond when Congress attempts to overturn DC laws or block DC's budget? Please name at least one specific action you would take.</h3>
+                <p className="answer">{selectedCandidate.responses?.congressResponse || 'No response provided'}</p>
+              </div>
+
+              <div className="question-block">
+                <h3 className="question">5. Name the top 2-3 partners you intend to work with in promoting Statehood, and what your relationship is with those partners today.</h3>
+                <p className="answer">{selectedCandidate.responses?.partners || 'No response provided'}</p>
+              </div>
+
+              <div className="question-block">
+                <h3 className="question">6. How do you intend to involve DC voters and residents in the fight for Statehood?</h3>
+                <p className="answer">{selectedCandidate.responses?.voterInvolvement || 'No response provided'}</p>
+              </div>
+
+              <div className="question-block">
+                <h3 className="question">7. Is there anything else you would like to share with DC voters about your stance on DC Statehood?</h3>
+                <p className="answer">{selectedCandidate.responses?.additionalComments || 'No response provided'}</p>
               </div>
             </div>
           </div>
