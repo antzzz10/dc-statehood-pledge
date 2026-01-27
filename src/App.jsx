@@ -1,8 +1,37 @@
 import { Link } from 'react-router-dom'
+import { useState, useMemo } from 'react'
 import './App.css'
+import candidatesData from './data/candidates.json'
 
 function App() {
   const PRIMARY_DATE = "June 16, 2026";
+  const [selectedOffice, setSelectedOffice] = useState("all");
+
+  // Get unique offices for filter
+  const offices = useMemo(() => {
+    const uniqueOffices = [...new Set(candidatesData.candidates.map(c => c.office))];
+    return uniqueOffices.sort();
+  }, []);
+
+  // Filter and group candidates
+  const filteredCandidates = useMemo(() => {
+    if (selectedOffice === "all") {
+      return candidatesData.candidates;
+    }
+    return candidatesData.candidates.filter(c => c.office === selectedOffice);
+  }, [selectedOffice]);
+
+  // Group candidates by office
+  const groupedCandidates = useMemo(() => {
+    const groups = {};
+    filteredCandidates.forEach(candidate => {
+      if (!groups[candidate.office]) {
+        groups[candidate.office] = [];
+      }
+      groups[candidate.office].push(candidate);
+    });
+    return groups;
+  }, [filteredCandidates]);
 
   return (
     <div className="app">
@@ -53,58 +82,63 @@ function App() {
       {/* Results Preview */}
       <section className="results-preview">
         <div className="container">
-          <h2>Results — Updated as Responses Come In</h2>
+          <h2>Candidate Responses — Updated as They Come In</h2>
           <p className="section-intro">
-            Candidate responses are published on a rolling basis. Here's what the results will look like:
+            Showing {filteredCandidates.length} of {candidatesData.candidates.length} candidates. Filter by office to narrow down the list.
           </p>
+
+          {/* Office Filter */}
+          <div className="filter-container">
+            <label htmlFor="office-filter" className="filter-label">Filter by Office:</label>
+            <select
+              id="office-filter"
+              className="office-filter"
+              value={selectedOffice}
+              onChange={(e) => setSelectedOffice(e.target.value)}
+            >
+              <option value="all">All Offices ({candidatesData.candidates.length})</option>
+              {offices.map(office => {
+                const count = candidatesData.candidates.filter(c => c.office === office).length;
+                return <option key={office} value={office}>{office} ({count})</option>;
+              })}
+            </select>
+          </div>
 
           <div className="table-container">
             <table className="results-table">
               <thead>
                 <tr>
                   <th>Candidate Name</th>
-                  <th>Office</th>
+                  <th>Party</th>
+                  {selectedOffice === "all" && <th>Office</th>}
                   <th>Responded?</th>
                   <th>Supports Statehood?</th>
                   <th>Signed Pledge?</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="sample-row responded">
-                  <td><strong>Sample Candidate A</strong></td>
-                  <td>Mayor</td>
-                  <td><span className="status-badge responded">✓ Yes</span></td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                </tr>
-                <tr className="sample-row responded">
-                  <td><strong>Sample Candidate B</strong></td>
-                  <td>At-Large Council</td>
-                  <td><span className="status-badge responded">✓ Yes</span></td>
-                  <td>Conditional</td>
-                  <td>Plans to</td>
-                </tr>
-                <tr className="sample-row pending">
-                  <td><strong>Sample Candidate C</strong></td>
-                  <td>Mayor</td>
-                  <td><span className="status-badge pending">⏳ Pending</span></td>
-                  <td>—</td>
-                  <td>—</td>
-                </tr>
-                <tr className="sample-row no-response">
-                  <td><strong>Sample Candidate D</strong></td>
-                  <td>Ward 6 Council</td>
-                  <td><span className="status-badge no-response">✗ No Response</span></td>
-                  <td>Unknown</td>
-                  <td>Unknown</td>
-                </tr>
+                {Object.entries(groupedCandidates).map(([office, candidates]) => (
+                  candidates.map((candidate, index) => (
+                    <tr key={`${candidate.name}-${candidate.office}`} className="sample-row no-response">
+                      <td><strong>{candidate.name}</strong></td>
+                      <td>
+                        <span className={`party-badge ${candidate.party.toLowerCase().replace(' ', '-')}`}>
+                          {candidate.party.charAt(0)}
+                        </span>
+                      </td>
+                      {selectedOffice === "all" && <td>{candidate.office}</td>}
+                      <td><span className="status-badge no-response">✗ No Response</span></td>
+                      <td>—</td>
+                      <td>—</td>
+                    </tr>
+                  ))
+                ))}
               </tbody>
             </table>
           </div>
 
           <p className="table-note">
-            <strong>Note:</strong> This is sample data. Actual candidate responses will be published as they come in.
-            The table will include all declared candidates and be sortable by office.
+            <strong>Note:</strong> Responses will be published on a rolling basis as candidates complete the questionnaire. Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}.
           </p>
         </div>
       </section>

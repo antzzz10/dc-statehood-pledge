@@ -217,11 +217,42 @@ body {
 .section-intro {
   font-size: 1.05rem;
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   color: #666;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Filter Container */
+.filter-container {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.filter-label {
+  display: inline-block;
+  margin-right: 0.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.office-filter {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #DC143C;
+  border-radius: 6px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  min-width: 300px;
+}
+
+.office-filter:focus {
+  outline: none;
+  border-color: #A00000;
+  box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
 }
 
 .table-container {
@@ -293,6 +324,31 @@ body {
 .status-badge.no-response {
   background: #fee2e2;
   color: #991b1b;
+}
+
+/* Party Badges */
+.party-badge {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.party-badge.democratic {
+  background: #0015BC;
+}
+
+.party-badge.republican {
+  background: #E81B23;
+}
+
+.party-badge.statehood-green {
+  background: #228B22;
 }
 
 .table-note {
@@ -491,6 +547,20 @@ body {
   .results-table th,
   .results-table td {
     padding: 0.7rem 0.5rem;
+  }
+
+  .filter-container {
+    padding: 0 1rem;
+  }
+
+  .filter-label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .office-filter {
+    min-width: 100%;
+    width: 100%;
   }
 }
 
