@@ -50,6 +50,11 @@ body {
   opacity: 0.8;
 }
 
+.candidate-banner.party-banner {
+  background: #e0f2fe;
+  border-bottom: 1px solid #bae6fd;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -225,6 +230,18 @@ body {
 }
 
 /* Filter Container */
+.filter-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter-row .filter-container {
+  margin: 0;
+}
+
 .filter-container {
   max-width: 500px;
   margin: 0 auto 2rem;
@@ -382,6 +399,65 @@ body {
 
 .party-badge.independent {
   background: #6B5B95;
+}
+
+/* Slate Badges (for party candidates) */
+.slate-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.slate-badge.free-dc {
+  background: #2563eb;
+}
+
+.slate-badge.dems-united {
+  background: #7c3aed;
+}
+
+.slate-badge.independent {
+  background: #6B5B95;
+}
+
+/* Slate Legend Section */
+.slate-legend {
+  padding: 1.5rem 0;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.slate-legend h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+.slate-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.slate-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slate-name {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.slate-count {
+  color: #6b7280;
+  font-size: 0.9rem;
 }
 
 /* View Response Button */
@@ -710,6 +786,12 @@ body {
   .results-table th,
   .results-table td {
     padding: 0.7rem 0.5rem;
+  }
+
+  .filter-row {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
   }
 
   .filter-container {

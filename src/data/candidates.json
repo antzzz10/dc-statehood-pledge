@@ -416,6 +416,7 @@
       "party": "Democratic",
       "office": "United States Senator",
       "responded": false,
+      "undeliverable": true,
       "supportsStatehood": null
     },
     {

@@ -80,7 +80,7 @@ const BASE_CANDIDATES = [
   { name: "Marquell Merlin Washington", party: "Democratic", office: "Ward 6 Council Member" },
   { name: "Markus Batchelor", party: "Democratic", office: "United States Senator" },
   { name: "Robert Simmons", party: "Republican", office: "United States Senator" },
-  { name: "Brandon L. Winfield-Dean", party: "Democratic", office: "United States Senator" },
+  { name: "Brandon L. Winfield-Dean", party: "Democratic", office: "United States Senator", undeliverable: true },
   { name: "Milton Hardy", party: "Republican", office: "United States Representative" },
   { name: "Brian Ready", party: "Democratic", office: "United States Representative" },
   // Special Election - At-Large Council Member (same date as primary)
