@@ -129,35 +129,44 @@ function App() {
               </thead>
               <tbody>
                 {Object.entries(groupedCandidates).map(([office, candidates]) => (
-                  candidates.map((candidate, index) => (
-                    <tr key={`${candidate.name}-${candidate.office}`} className={`sample-row ${candidate.responded ? 'responded' : 'no-response'}`}>
-                      <td><strong>{candidate.name}</strong></td>
-                      <td>
-                        <span className={`party-badge ${candidate.party.toLowerCase().replace(' ', '-')}`}>
-                          {candidate.party.charAt(0)}
-                        </span>
-                      </td>
-                      {selectedOffice === "all" && <td>{candidate.office}</td>}
-                      <td>
-                        <span className={`status-badge ${candidate.responded ? 'responded' : 'no-response'}`}>
-                          {candidate.responded ? '✓ Yes' : '✗ No Response'}
-                        </span>
-                      </td>
-                      <td>{candidate.supportsStatehood || '—'}</td>
-                      <td>
-                        {candidate.responded ? (
-                          <button
-                            className="view-response-btn"
-                            onClick={() => openModal(candidate)}
-                          >
-                            View Response
-                          </button>
-                        ) : (
-                          <span className="not-available">—</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))
+                  candidates.map((candidate, index) => {
+                    const getStatus = () => {
+                      if (candidate.responded) return { class: 'responded', label: '✓ Yes' };
+                      if (candidate.declined) return { class: 'declined', label: '✗ Declined' };
+                      if (candidate.undeliverable) return { class: 'undeliverable', label: '⚠ No Valid Contact' };
+                      return { class: 'no-response', label: '— Pending' };
+                    };
+                    const status = getStatus();
+                    return (
+                      <tr key={`${candidate.name}-${candidate.office}`} className={`sample-row ${status.class}`}>
+                        <td><strong>{candidate.name}</strong></td>
+                        <td>
+                          <span className={`party-badge ${candidate.party.toLowerCase().replace(' ', '-')}`}>
+                            {candidate.party.charAt(0)}
+                          </span>
+                        </td>
+                        {selectedOffice === "all" && <td>{candidate.office}</td>}
+                        <td>
+                          <span className={`status-badge ${status.class}`}>
+                            {status.label}
+                          </span>
+                        </td>
+                        <td>{candidate.supportsStatehood || '—'}</td>
+                        <td>
+                          {candidate.responded ? (
+                            <button
+                              className="view-response-btn"
+                              onClick={() => openModal(candidate)}
+                            >
+                              View Response
+                            </button>
+                          ) : (
+                            <span className="not-available">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })
                 ))}
               </tbody>
             </table>

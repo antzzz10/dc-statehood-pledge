@@ -1,22 +1,6 @@
 {
   "candidates": [
     {
-      "name": "Sample User",
-      "party": "Democratic",
-      "office": "Mayor",
-      "responded": true,
-      "supportsStatehood": "Yes",
-      "responses": {
-        "statehoodSupport": "Yes",
-        "topThreeActions": "1) Testified at House Oversight Committee hearing on DC autonomy. 2) Organized 15 community town halls across all 8 wards to discuss statehood. 3) Met with congressional offices to advocate for H.R. 51.",
-        "intendedActions": "I will make statehood a Day 1 priority, dedicate staff resources to federal lobbying, coordinate with our congressional delegation, and elevate DC's cause in national media through op-eds and interviews.",
-        "congressResponse": "I will immediately hold a press conference condemning the interference, mobilize DC residents to contact Congress, and work with Council to explore all legal remedies including litigation.",
-        "partners": "1) DC Vote (long-time supporter and volunteer). 2) Our congressional delegate (regular coordination). 3) National civil rights organizations like the ACLU.",
-        "voterInvolvement": "I'll host quarterly town halls, create a statehood task force with resident representatives, organize lobby days where residents can meet with Congress, and launch a digital campaign to amplify DC voices.",
-        "additionalComments": "DC statehood is not just about voting representation—it's about dignity, self-determination, and ending the colonial relationship between Congress and DC residents. This will be a defining issue of my administration."
-      }
-    },
-    {
       "name": "Gordon Chaffin",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
@@ -84,11 +68,20 @@
       "party": "Republican",
       "office": "Delegate to the House of Representatives",
       "responded": false,
+      "declined": true,
       "supportsStatehood": null
     },
     {
       "name": "Kymone Freeman",
       "party": "Statehood Green",
+      "office": "Delegate to the House of Representatives",
+      "responded": false,
+      "undeliverable": true,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Greg Maye",
+      "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
       "supportsStatehood": null
@@ -126,6 +119,7 @@
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
+      "undeliverable": true,
       "supportsStatehood": null
     },
     {
@@ -213,6 +207,13 @@
       "supportsStatehood": null
     },
     {
+      "name": "Jack Evans",
+      "party": "Democratic",
+      "office": "Council Chairman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Kevin B. Chavous",
       "party": "Democratic",
       "office": "At-Large Council Member",
@@ -287,6 +288,7 @@
       "party": "Republican",
       "office": "At-Large Council Member",
       "responded": false,
+      "undeliverable": true,
       "supportsStatehood": null
     },
     {
@@ -332,6 +334,13 @@
       "supportsStatehood": null
     },
     {
+      "name": "Matthew Frumin",
+      "party": "Democratic",
+      "office": "Ward 3 Council Member",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Bernita Carmichael",
       "party": "Democratic",
       "office": "Ward 5 Council Member",
@@ -364,6 +373,7 @@
       "party": "Democratic",
       "office": "Ward 6 Council Member",
       "responded": false,
+      "undeliverable": true,
       "supportsStatehood": null
     },
     {
@@ -376,6 +386,13 @@
     {
       "name": "Jorge Rice",
       "party": "Republican",
+      "office": "Ward 6 Council Member",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Marquell Merlin Washington",
+      "party": "Democratic",
       "office": "Ward 6 Council Member",
       "responded": false,
       "supportsStatehood": null
@@ -395,9 +412,93 @@
       "supportsStatehood": null
     },
     {
+      "name": "Brandon L. Winfield-Dean",
+      "party": "Democratic",
+      "office": "United States Senator",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Milton Hardy",
       "party": "Republican",
       "office": "United States Representative",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Brian Ready",
+      "party": "Democratic",
+      "office": "United States Representative",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Edward Daniels",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Khalil Lee",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Juan McCullum",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Jacque Patterson",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Ryan Prince",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Elizabeth \"Liz\" Reddick",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Addison Sarter",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Elissa Silverman",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Doug Sloan",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Nina Taylor",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
       "responded": false,
       "supportsStatehood": null
     }

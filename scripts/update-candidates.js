@@ -31,13 +31,14 @@ const BASE_CANDIDATES = [
   { name: "Kelly Mikel Williams", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Kinney Zalesne", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Nelson Rimensnyder", party: "Republican", office: "Delegate to the House of Representatives" },
-  { name: "Denise Rosado", party: "Republican", office: "Delegate to the House of Representatives" },
-  { name: "Kymone Freeman", party: "Statehood Green", office: "Delegate to the House of Representatives" },
+  { name: "Denise Rosado", party: "Republican", office: "Delegate to the House of Representatives", declined: true },
+  { name: "Kymone Freeman", party: "Statehood Green", office: "Delegate to the House of Representatives", undeliverable: true },
+  { name: "Greg Maye", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Yaida Ford", party: "Democratic", office: "Mayor" },
   { name: "Janeese Lewis George", party: "Democratic", office: "Mayor" },
   { name: "Gary Goodweather", party: "Democratic", office: "Mayor" },
   { name: "Kathy Henderson", party: "Democratic", office: "Mayor" },
-  { name: "Ernest Johnson", party: "Democratic", office: "Mayor" },
+  { name: "Ernest Johnson", party: "Democratic", office: "Mayor", undeliverable: true },
   { name: "Regan Jones", party: "Democratic", office: "Mayor" },
   { name: "Stanley V Lawson Sr", party: "Democratic", office: "Mayor" },
   { name: "Terri \"Ginger\" Little", party: "Democratic", office: "Mayor" },
@@ -50,6 +51,7 @@ const BASE_CANDIDATES = [
   { name: "J.P. Szymkowicz", party: "Democratic", office: "Attorney General" },
   { name: "Manuel Rivera", party: "Republican", office: "Attorney General" },
   { name: "Phil Mendelson", party: "Democratic", office: "Council Chairman" },
+  { name: "Jack Evans", party: "Democratic", office: "Council Chairman" },
   { name: "Kevin B. Chavous", party: "Democratic", office: "At-Large Council Member" },
   { name: "Dwight Davis", party: "Democratic", office: "At-Large Council Member" },
   { name: "Dyana Forester", party: "Democratic", office: "At-Large Council Member" },
@@ -60,42 +62,106 @@ const BASE_CANDIDATES = [
   { name: "Oye Owolewa", party: "Democratic", office: "At-Large Council Member" },
   { name: "Lisa Raymond", party: "Democratic", office: "At-Large Council Member" },
   { name: "Patricia Stamper", party: "Democratic", office: "At-Large Council Member" },
-  { name: "Darrell Green", party: "Republican", office: "At-Large Council Member" },
+  { name: "Darrell Green", party: "Republican", office: "At-Large Council Member", undeliverable: true },
   { name: "Rashida Brown", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Terry Lynch", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Aparna Raj", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Jackie Reyes Yanes", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Miguel Trindade Deramo", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Jett James Jasper", party: "Republican", office: "Ward 1 Council Member" },
+  { name: "Matthew Frumin", party: "Democratic", office: "Ward 3 Council Member" },
   { name: "Bernita Carmichael", party: "Democratic", office: "Ward 5 Council Member" },
   { name: "Zachary Parker", party: "Democratic", office: "Ward 5 Council Member" },
   { name: "Jeffrey Kihien-Palza", party: "Republican", office: "Ward 5 Council Member" },
   { name: "Charles Allen", party: "Democratic", office: "Ward 6 Council Member" },
-  { name: "Michael Murphy", party: "Democratic", office: "Ward 6 Council Member" },
+  { name: "Michael Murphy", party: "Democratic", office: "Ward 6 Council Member", undeliverable: true },
   { name: "Gloria Ann Nauden", party: "Democratic", office: "Ward 6 Council Member" },
   { name: "Jorge Rice", party: "Republican", office: "Ward 6 Council Member" },
+  { name: "Marquell Merlin Washington", party: "Democratic", office: "Ward 6 Council Member" },
   { name: "Markus Batchelor", party: "Democratic", office: "United States Senator" },
   { name: "Robert Simmons", party: "Republican", office: "United States Senator" },
-  { name: "Milton Hardy", party: "Republican", office: "United States Representative" }
+  { name: "Brandon L. Winfield-Dean", party: "Democratic", office: "United States Senator" },
+  { name: "Milton Hardy", party: "Republican", office: "United States Representative" },
+  { name: "Brian Ready", party: "Democratic", office: "United States Representative" },
+  // Special Election - At-Large Council Member (same date as primary)
+  { name: "Edward Daniels", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Khalil Lee", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Juan McCullum", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Jacque Patterson", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Ryan Prince", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Elizabeth \"Liz\" Reddick", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Addison Sarter", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Elissa Silverman", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Doug Sloan", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Nina Taylor", party: "Independent", office: "At-Large Council Member (Special Election)" }
 ];
 
 function parseCSV(csvText) {
-  const lines = csvText.split('\n');
-  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+  // Properly parse CSV with quoted fields that may contain newlines and commas
+  const records = [];
+  let currentRecord = [];
+  let currentField = '';
+  let inQuotes = false;
 
+  for (let i = 0; i < csvText.length; i++) {
+    const char = csvText[i];
+    const nextChar = csvText[i + 1];
+
+    if (inQuotes) {
+      if (char === '"' && nextChar === '"') {
+        // Escaped quote
+        currentField += '"';
+        i++;
+      } else if (char === '"') {
+        // End of quoted field
+        inQuotes = false;
+      } else {
+        currentField += char;
+      }
+    } else {
+      if (char === '"') {
+        // Start of quoted field
+        inQuotes = true;
+      } else if (char === ',') {
+        // End of field
+        currentRecord.push(currentField.trim());
+        currentField = '';
+      } else if (char === '\n' || (char === '\r' && nextChar === '\n')) {
+        // End of record
+        currentRecord.push(currentField.trim());
+        if (currentRecord.some(f => f)) {
+          records.push(currentRecord);
+        }
+        currentRecord = [];
+        currentField = '';
+        if (char === '\r') i++;
+      } else if (char !== '\r') {
+        currentField += char;
+      }
+    }
+  }
+
+  // Don't forget the last field/record
+  if (currentField || currentRecord.length > 0) {
+    currentRecord.push(currentField.trim());
+    if (currentRecord.some(f => f)) {
+      records.push(currentRecord);
+    }
+  }
+
+  if (records.length === 0) return [];
+
+  // First record is headers
+  const headers = records[0];
   const rows = [];
-  for (let i = 1; i < lines.length; i++) {
-    if (!lines[i].trim()) continue;
 
-    // Simple CSV parsing (handles quoted fields)
+  for (let i = 1; i < records.length; i++) {
     const row = {};
-    const values = lines[i].match(/(".*?"|[^,]+)(?=\s*,|\s*$)/g) || [];
-
-    values.forEach((value, index) => {
-      const cleaned = value.trim().replace(/^"|"$/g, '');
-      row[headers[index]] = cleaned;
+    records[i].forEach((value, index) => {
+      if (headers[index]) {
+        row[headers[index]] = value;
+      }
     });
-
     rows.push(row);
   }
 
@@ -129,8 +195,8 @@ function updateCandidates(csvPath) {
 
   console.log(`   Found ${rows.length} total responses`);
 
-  // Filter for approved responses
-  const approved = rows.filter(row => row['Status'] === 'Approved');
+  // Filter for approved responses (trim to handle trailing characters from CSV export)
+  const approved = rows.filter(row => row['Status']?.trim() === 'Approved');
   console.log(`   ${approved.length} approved responses`);
 
   if (approved.length === 0) {
@@ -169,18 +235,33 @@ function updateCandidates(csvPath) {
         party: candidate.party,
         office: candidate.office,
         responded: true,
+        declined: false,
         supportsStatehood: response.statehoodSupport,
         responses: response.responses
       };
     }
 
-    return {
+    const result = {
       name: candidate.name,
       party: candidate.party,
       office: candidate.office,
       responded: false,
       supportsStatehood: null
     };
+
+    // Preserve declined status from base candidates
+    if (candidate.declined) {
+      result.declined = true;
+      console.log(`   ✗ ${candidate.name} (${candidate.office}) - declined`);
+    }
+
+    // Preserve undeliverable status from base candidates
+    if (candidate.undeliverable) {
+      result.undeliverable = true;
+      console.log(`   ⚠ ${candidate.name} (${candidate.office}) - no valid contact`);
+    }
+
+    return result;
   });
 
   // Write to file

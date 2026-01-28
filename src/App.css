@@ -326,6 +326,35 @@ body {
   color: #991b1b;
 }
 
+.status-badge.declined {
+  background: #9ca3af;
+  color: #1f2937;
+}
+
+.status-badge.undeliverable {
+  background: #fbbf24;
+  color: #78350f;
+}
+
+/* Declined row - grayed out */
+.sample-row.declined {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.sample-row.declined td {
+  opacity: 0.7;
+}
+
+.sample-row.declined strong {
+  color: #6b7280;
+}
+
+/* Undeliverable row - subtle amber tint */
+.sample-row.undeliverable {
+  background: #fffbeb;
+}
+
 /* Party Badges */
 .party-badge {
   display: inline-block;
@@ -349,6 +378,10 @@ body {
 
 .party-badge.statehood-green {
   background: #228B22;
+}
+
+.party-badge.independent {
+  background: #6B5B95;
 }
 
 /* View Response Button */
