@@ -53,8 +53,18 @@
       "name": "Kinney Zalesne",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "",
+        "intendedActions": "On Day One of every term, I will introduce a Statehood bill in the US House -- as Delegate Norton did. Then I will execute a carefully crafted strategy to win over key Democrats and persuadable Republicans, and I will undergird this strategy with a national marketing campaign to educate Americans everywhere about the injustice and outrage of DC's disenfranchisement. Truly, people don't know, or don't know why they should care.",
+        "congressResponse": "I will shout our resistance from the rooftops -- but more importantly, I will have recruited allies and partners in advance across Congress to help fight with us and for us.",
+        "partners": "DC Vote, DC Statehood PAC, Free DC. I am friendly with Board members of the first two, and I have attended many Free DC trainings and events.",
+        "voterInvolvement": "We need our own education campaign -- too many residents even in DC don't really think about statehood. I'll tie that campaign to America's overall emergence from the Trump nightmare -- once he is gone, America must and WILL rededicate ourselves to the principles of democracy, and I will argue that DC Statehood should be the #1 gesture and symbol of that recommitment.",
+        "additionalComments": "Let's be clear: if the Republicans thought THEY would get 2 new Senators from making DC a state, we'd have been a state for years. We have to call out this hypocrisy -- and at the same time, find avenues beyond shame (because they have so little); i.e., a grand bargain that gives us statehood and Republicans something they want. As Delegate I will work very hard to find that bargain."
+      }
     },
     {
       "name": "Nelson Rimensnyder",
@@ -68,16 +78,16 @@
       "party": "Republican",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "declined": true,
-      "supportsStatehood": null
+      "supportsStatehood": null,
+      "declined": true
     },
     {
       "name": "Kymone Freeman",
       "party": "Statehood Green",
       "office": "Delegate to the House of Representatives",
       "responded": false,
-      "undeliverable": true,
-      "supportsStatehood": null
+      "supportsStatehood": null,
+      "undeliverable": true
     },
     {
       "name": "Greg Maye",
@@ -119,8 +129,8 @@
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
-      "undeliverable": true,
-      "supportsStatehood": null
+      "supportsStatehood": null,
+      "undeliverable": true
     },
     {
       "name": "Regan Jones",
@@ -288,8 +298,8 @@
       "party": "Republican",
       "office": "At-Large Council Member",
       "responded": false,
-      "undeliverable": true,
-      "supportsStatehood": null
+      "supportsStatehood": null,
+      "undeliverable": true
     },
     {
       "name": "Rashida Brown",
@@ -373,8 +383,8 @@
       "party": "Democratic",
       "office": "Ward 6 Council Member",
       "responded": false,
-      "undeliverable": true,
-      "supportsStatehood": null
+      "supportsStatehood": null,
+      "undeliverable": true
     },
     {
       "name": "Gloria Ann Nauden",
@@ -416,8 +426,8 @@
       "party": "Democratic",
       "office": "United States Senator",
       "responded": false,
-      "undeliverable": true,
-      "supportsStatehood": null
+      "supportsStatehood": null,
+      "undeliverable": true
     },
     {
       "name": "Milton Hardy",

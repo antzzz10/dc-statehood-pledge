@@ -182,6 +182,30 @@ function parseStatehoodAnswer(answer) {
   return answer.trim();
 }
 
+// Normalize office names from form responses to match BASE_CANDIDATES
+const OFFICE_ALIASES = {
+  'dc delegate': 'Delegate to the House of Representatives',
+  'delegate': 'Delegate to the House of Representatives',
+  'delegate to the house': 'Delegate to the House of Representatives',
+  'shadow senator': 'United States Senator',
+  'shadow u.s. senator': 'United States Senator',
+  'shadow representative': 'United States Representative',
+  'shadow u.s. representative': 'United States Representative',
+  'us senator': 'United States Senator',
+  'us representative': 'United States Representative',
+  'council chairman': 'Council Chairman',
+  'chairman': 'Council Chairman',
+  'attorney general': 'Attorney General',
+  'ag': 'Attorney General',
+};
+
+function normalizeOffice(office) {
+  if (!office) return '';
+  const trimmed = office.trim();
+  const lower = trimmed.toLowerCase();
+  return OFFICE_ALIASES[lower] || trimmed;
+}
+
 function updateCandidates(csvPath) {
   console.log('📊 Reading CSV file...');
 
@@ -207,7 +231,7 @@ function updateCandidates(csvPath) {
   // Parse responses
   const responses = approved.map(row => ({
     name: row['Name of candidate']?.trim(),
-    office: row['Position running for?']?.trim(),
+    office: normalizeOffice(row['Position running for?']),
     statehoodSupport: parseStatehoodAnswer(row['1. Do you support DC Statehood?']),
     responses: {
       statehoodSupport: row['1. Do you support DC Statehood?']?.trim() || '',
@@ -263,6 +287,20 @@ function updateCandidates(csvPath) {
 
     return result;
   });
+
+  // Check for unmatched responses
+  const matched = responses.filter(r =>
+    updated.some(c => c.responded && c.name.toLowerCase() === r.name?.toLowerCase())
+  );
+  const unmatched = responses.filter(r =>
+    !updated.some(c => c.responded && c.name.toLowerCase() === r.name?.toLowerCase())
+  );
+  if (unmatched.length > 0) {
+    console.log('\n⚠️  Unmatched responses (name/office didn\'t match any candidate):');
+    unmatched.forEach(r => {
+      console.log(`   "${r.name}" — "${r.office}"`);
+    });
+  }
 
   // Write to file
   const outputPath = path.join(__dirname, '../src/data/candidates.json');
