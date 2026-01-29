@@ -228,19 +228,25 @@ function updateCandidates(csvPath) {
     process.exit(0);
   }
 
+  // Helper: find a row value by header prefix (avoids issues with newlines in headers)
+  const getField = (row, prefix) => {
+    const key = Object.keys(row).find(k => k.startsWith(prefix));
+    return key ? row[key]?.trim() || '' : '';
+  };
+
   // Parse responses
   const responses = approved.map(row => ({
     name: row['Name of candidate']?.trim(),
     office: normalizeOffice(row['Position running for?']),
-    statehoodSupport: parseStatehoodAnswer(row['1. Do you support DC Statehood?']),
+    statehoodSupport: parseStatehoodAnswer(getField(row, '1. Do you support DC Statehood')),
     responses: {
-      statehoodSupport: row['1. Do you support DC Statehood?']?.trim() || '',
-      topThreeActions: row['2. What are the top three actions you are most proud of having already taken for Statehood over the last two years? \n\n(Note: these can be professional or personal actions.) ']?.trim() || '',
-      intendedActions: row['3. What specific actions do you intend to take to promote DC Statehood and protect Home Rule, as a DC elected official?']?.trim() || '',
-      congressResponse: row['4. If elected, how will you respond when Congress attempts to overturn DC laws or block DC\'s budget? Please name at least one specific action you would take.']?.trim() || '',
-      partners: row['5. Name the top 2-3 partners you intend to work with in promoting Statehood, and what your relationship is with those partners today.']?.trim() || '',
-      voterInvolvement: row['6. How do you intend to involve DC voters and residents in the fight for Statehood?']?.trim() || '',
-      additionalComments: row['7. Is there anything else you would like to share with DC voters about your stance on DC Statehood?']?.trim() || ''
+      statehoodSupport: getField(row, '1. Do you support DC Statehood'),
+      topThreeActions: getField(row, '2. What are the top three actions'),
+      intendedActions: getField(row, '3. What specific actions'),
+      congressResponse: getField(row, '4. If elected, how will you respond'),
+      partners: getField(row, '5. Name the top 2-3 partners'),
+      voterInvolvement: getField(row, '6. How do you intend to involve'),
+      additionalComments: getField(row, '7. Is there anything else')
     }
   }));
 
