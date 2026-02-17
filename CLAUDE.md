@@ -55,7 +55,8 @@ Two methods exist — the CSV script is preferred:
 npm run update-candidates ~/Downloads/responses.csv
 # 3. Review, commit, deploy:
 git diff src/data/
-npm run build && npm run deploy
+git add -A && git commit -m "Update candidates and responses"
+npm run deploy   # predeploy hook checks for uncommitted changes, then builds
 ```
 
 The script (`scripts/update-candidates.js`):
@@ -63,8 +64,9 @@ The script (`scripts/update-candidates.js`):
 - Filters for `Status === "Approved"` rows
 - Matches responses to candidates by name + office
 - Handles both elected office AND party committee candidates (routes by "DC Democratic Party" office value)
-- Has `OFFICE_ALIASES` map for normalizing Google Form office names
-- Has `BASE_CANDIDATES` array as the canonical candidate list for elected offices
+- Has `OFFICE_ALIASES` map for normalizing Google Form office names (includes ward-specific entries: Ward 1/3/5/6 Council Member)
+- Has `BASE_CANDIDATES` array as the canonical candidate list for elected offices (auto-sorted by party then last name within each office group)
+- Has `findResponse()` with fallback matching for legacy "Ward Council Member" form responses
 - Warns about unmatched responses
 
 ### Method 2: Google Apps Script (legacy)
@@ -73,7 +75,7 @@ The script (`scripts/update-candidates.js`):
 
 ## Adding a New Candidate
 
-1. Add to `BASE_CANDIDATES` array in `scripts/update-candidates.js`
+1. Add to `BASE_CANDIDATES` array in `scripts/update-candidates.js` (order doesn't matter — auto-sorted)
 2. Run the update script (or manually add to `candidates.json` / `party-candidates.json`)
 3. For party candidates, edit `party-candidates.json` directly (no base list in script)
 
@@ -91,7 +93,7 @@ The script (`scripts/update-candidates.js`):
 ```bash
 npm run dev              # Start dev server (Vite)
 npm run build            # Production build to dist/
-npm run deploy           # Build + deploy to GitHub Pages (gh-pages -d dist --dotfiles)
+npm run deploy           # Checks for uncommitted changes, builds, deploys to GitHub Pages
 npm run update-candidates <csv>  # Update JSON from Google Sheets CSV export
 npm run lint             # ESLint
 ```
@@ -101,7 +103,9 @@ npm run lint             # ESLint
 - `gh-pages` branch serves the `dist/` folder
 - CNAME: `candidates.representdc.org`
 - `--dotfiles` flag ensures `.nojekyll` is included
+- `predeploy` script blocks deploy if there are uncommitted changes (commit first!)
 - After deploy, changes are live in ~1-2 minutes
+- Committing to `main` does NOT affect the live site — only `npm run deploy` does
 
 ## Related Files
 
