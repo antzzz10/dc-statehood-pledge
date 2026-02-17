@@ -348,6 +348,12 @@ body {
   color: #1f2937;
 }
 
+.status-badge.withdrew {
+  background: #d1d5db;
+  color: #6b7280;
+  text-decoration: line-through;
+}
+
 .status-badge.undeliverable {
   background: #fbbf24;
   color: #78350f;
@@ -365,6 +371,20 @@ body {
 
 .sample-row.declined strong {
   color: #6b7280;
+}
+
+.sample-row.withdrew {
+  background: #f9fafb;
+  color: #9ca3af;
+}
+
+.sample-row.withdrew td {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.sample-row.withdrew strong {
+  color: #9ca3af;
 }
 
 /* Undeliverable row - subtle amber tint */
@@ -423,6 +443,14 @@ body {
 
 .slate-badge.independent {
   background: #6B5B95;
+}
+
+.slate-badge.fight-statehood {
+  background: #059669;
+}
+
+.slate-badge.act-now {
+  background: #d97706;
 }
 
 /* Slate Legend Section */
@@ -588,6 +616,7 @@ body {
   line-height: 1.6;
   color: #555;
   margin: 0;
+  white-space: pre-wrap;
 }
 
 .table-note {
@@ -741,18 +770,304 @@ body {
   color: #777;
 }
 
+/* Recent Responses Section */
+.recent-responses {
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #fef3c7 0%, #fff7ed 100%);
+  border-bottom: 2px solid #f59e0b;
+}
+
+.recent-responses h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid #f59e0b;
+}
+
+.recent-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.recent-new-badge {
+  display: inline-block;
+  background: #DC143C;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.recent-office {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.recent-date {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+.recent-statehood {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.recent-arrow {
+  color: #DC143C;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* NEW badge on table rows */
+.new-badge {
+  display: inline-block;
+  background: #DC143C;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* Highlight recent rows in table */
+.sample-row.recent {
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+}
+
+.sample-row.recent.responded {
+  background: linear-gradient(90deg, #fffbeb 0%, #f0fdf4 40%);
+}
+
+/* Mobile Card Layout — hidden by default, shown below 768px */
+.cards-container {
+  display: none;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.office-group {
+  margin-bottom: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.office-group-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #f9fafb;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.office-group-header.expanded {
+  background: #DC143C;
+  color: white;
+}
+
+.office-group-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.candidate-count {
+  font-weight: 400;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.expand-icon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.office-group-content {
+  padding: 0.5rem;
+}
+
+.candidate-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.candidate-card:last-child {
+  margin-bottom: 0;
+}
+
+.candidate-card.clickable {
+  cursor: pointer;
+}
+
+.candidate-card.clickable:active {
+  transform: scale(0.98);
+}
+
+.candidate-card.responded {
+  background: #f0fdf4;
+  border-left: 4px solid #10b981;
+}
+
+.candidate-card.no-response {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+}
+
+.candidate-card.declined {
+  background: #f3f4f6;
+  border-left: 4px solid #9ca3af;
+  opacity: 0.8;
+}
+
+.candidate-card.undeliverable {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+}
+
+.candidate-card.withdrew {
+  background: #f9fafb;
+  border-left: 4px solid #d1d5db;
+  opacity: 0.6;
+}
+
+.candidate-card.withdrew .candidate-name,
+.candidate-card.withdrew .info-value {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.candidate-card.recent.responded {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-left: 4px solid #10b981;
+}
+
+.candidate-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.candidate-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.candidate-card .candidate-name {
+  font-size: 1rem;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.candidate-badges {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.candidate-card-body {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.candidate-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.info-value {
+  font-size: 0.9rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.view-response-indicator {
+  font-size: 0.8rem;
+  color: #DC143C;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .cta-primary {
@@ -763,11 +1078,20 @@ body {
   .about h2,
   .results-preview h2,
   .questionnaire-info h2 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .about .lead {
-    font-size: 1.05rem;
+    font-size: 1rem;
+  }
+
+  /* Toggle table → cards on mobile */
+  .table-container {
+    display: none;
+  }
+
+  .cards-container {
+    display: block;
   }
 
   .info-grid {
@@ -806,6 +1130,20 @@ body {
   .office-filter {
     min-width: 100%;
     width: 100%;
+  }
+
+  .recent-item {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .recent-date {
+    margin-left: 0;
+  }
+
+  .recent-statehood {
+    width: 100%;
+    font-size: 0.85rem;
   }
 
   .view-response-btn {
@@ -847,15 +1185,29 @@ body {
   }
 
   .hero {
-    padding: 2.5rem 0 3rem 0;
+    padding: 2rem 0 2.5rem 0;
   }
 
   .hero-title {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .about h2,
+  .results-preview h2,
+  .questionnaire-info h2 {
+    font-size: 1.4rem;
+  }
+
+  .about .lead {
+    font-size: 0.95rem;
   }
 
   .cta-box {

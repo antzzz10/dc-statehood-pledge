@@ -8,6 +8,7 @@ function App() {
   const [selectedOffice, setSelectedOffice] = useState("all");
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [expandedGroups, setExpandedGroups] = useState(new Set());
 
   const openModal = (candidate) => {
     setSelectedCandidate(candidate);
@@ -17,6 +18,36 @@ function App() {
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedCandidate(null);
+  };
+
+  const toggleGroup = (office) => {
+    setExpandedGroups(prev => {
+      const next = new Set(prev);
+      if (next.has(office)) {
+        next.delete(office);
+      } else {
+        next.add(office);
+      }
+      return next;
+    });
+  };
+
+  // Recent responses (within last 14 days)
+  const RECENT_DAYS = 14;
+  const recentCutoff = useMemo(() => {
+    const d = new Date();
+    d.setDate(d.getDate() - RECENT_DAYS);
+    return d.toISOString().split('T')[0];
+  }, []);
+
+  const recentResponses = useMemo(() => {
+    return candidatesData.candidates
+      .filter(c => c.responded && c.respondedDate && c.respondedDate >= recentCutoff)
+      .sort((a, b) => b.respondedDate.localeCompare(a.respondedDate));
+  }, [recentCutoff]);
+
+  const isRecent = (candidate) => {
+    return candidate.responded && candidate.respondedDate && candidate.respondedDate >= recentCutoff;
   };
 
   // Get unique offices for filter
@@ -102,6 +133,35 @@ function App() {
         </div>
       </section>
 
+      {/* Recent Responses */}
+      {recentResponses.length > 0 && (
+        <section className="recent-responses">
+          <div className="container">
+            <h2>Latest Responses</h2>
+            <div className="recent-list">
+              {recentResponses.map(candidate => (
+                <div
+                  key={`recent-${candidate.name}`}
+                  className="recent-item"
+                  onClick={() => openModal(candidate)}
+                >
+                  <span className="recent-new-badge">NEW</span>
+                  <strong>{candidate.name}</strong>
+                  <span className="recent-office">{candidate.office}</span>
+                  <span className="recent-date">
+                    {new Date(candidate.respondedDate + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                  </span>
+                  <span className="recent-statehood">
+                    Supports Statehood: <strong>{candidate.supportsStatehood}</strong>
+                  </span>
+                  <span className="recent-arrow">View →</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Results Preview */}
       <section className="results-preview">
         <div className="container">
@@ -143,6 +203,7 @@ function App() {
                 {Object.entries(groupedCandidates).map(([office, candidates]) => (
                   candidates.map((candidate, index) => {
                     const getStatus = () => {
+                      if (candidate.withdrew) return { class: 'withdrew', label: '⊘ Withdrew' };
                       if (candidate.responded) return { class: 'responded', label: '✓ Yes' };
                       if (candidate.declined) return { class: 'declined', label: '✗ Declined' };
                       if (candidate.undeliverable) return { class: 'undeliverable', label: '⚠ No Valid Contact' };
@@ -150,8 +211,11 @@ function App() {
                     };
                     const status = getStatus();
                     return (
-                      <tr key={`${candidate.name}-${candidate.office}`} className={`sample-row ${status.class}`}>
-                        <td><strong>{candidate.name}</strong></td>
+                      <tr key={`${candidate.name}-${candidate.office}`} className={`sample-row ${status.class} ${isRecent(candidate) ? 'recent' : ''}`}>
+                        <td>
+                          <strong>{candidate.name}</strong>
+                          {isRecent(candidate) && <span className="new-badge">NEW</span>}
+                        </td>
                         <td>
                           <span className={`party-badge ${candidate.party.toLowerCase().replace(' ', '-')}`}>
                             {candidate.party.charAt(0)}
@@ -182,6 +246,72 @@ function App() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile Card Layout */}
+          <div className="cards-container">
+            {Object.entries(groupedCandidates).map(([office, candidates]) => {
+              const isExpanded = expandedGroups.has(office);
+              return (
+                <div key={office} className="office-group">
+                  <button
+                    className={`office-group-header ${isExpanded ? 'expanded' : ''}`}
+                    onClick={() => toggleGroup(office)}
+                    aria-expanded={isExpanded}
+                  >
+                    <span className="office-group-title">
+                      {office} <span className="candidate-count">({candidates.length})</span>
+                    </span>
+                    <span className="expand-icon">{isExpanded ? '−' : '+'}</span>
+                  </button>
+                  {isExpanded && (
+                    <div className="office-group-content">
+                      {candidates.map((candidate) => {
+                        const getStatus = () => {
+                          if (candidate.withdrew) return { class: 'withdrew', label: '⊘ Withdrew' };
+                          if (candidate.responded) return { class: 'responded', label: '✓ Yes' };
+                          if (candidate.declined) return { class: 'declined', label: '✗ Declined' };
+                          if (candidate.undeliverable) return { class: 'undeliverable', label: '⚠ No Valid Contact' };
+                          return { class: 'no-response', label: '— Pending' };
+                        };
+                        const status = getStatus();
+                        return (
+                          <div
+                            key={`card-${candidate.name}-${candidate.office}`}
+                            className={`candidate-card ${status.class} ${candidate.responded ? 'clickable' : ''} ${isRecent(candidate) ? 'recent' : ''}`}
+                            onClick={() => candidate.responded && openModal(candidate)}
+                          >
+                            <div className="candidate-card-header">
+                              <div className="candidate-name-row">
+                                <strong className="candidate-name">{candidate.name}</strong>
+                                {isRecent(candidate) && <span className="new-badge">NEW</span>}
+                              </div>
+                              <div className="candidate-badges">
+                                <span className={`party-badge ${candidate.party.toLowerCase().replace(' ', '-')}`}>
+                                  {candidate.party.charAt(0)}
+                                </span>
+                                <span className={`status-badge ${status.class}`}>
+                                  {status.label}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="candidate-card-body">
+                              <div className="candidate-info-row">
+                                <span className="info-label">Statehood:</span>
+                                <span className="info-value">{candidate.supportsStatehood || '—'}</span>
+                              </div>
+                              {candidate.responded && (
+                                <span className="view-response-indicator">View response →</span>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           <p className="table-note">
@@ -289,6 +419,7 @@ function App() {
               <ul>
                 <li><a href="https://www.representdc.org">Main Site</a></li>
                 <li><a href="https://billtracker.representdc.org">Bill Tracker</a></li>
+                <li><a href="https://action.representdc.org">Action Hub</a></li>
               </ul>
             </div>
           </div>

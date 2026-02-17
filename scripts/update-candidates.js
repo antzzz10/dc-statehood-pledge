@@ -30,6 +30,11 @@ const BASE_CANDIDATES = [
   { name: "Robert White", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Kelly Mikel Williams", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Kinney Zalesne", party: "Democratic", office: "Delegate to the House of Representatives" },
+  { name: "Deirdre Brown", party: "Democratic", office: "Delegate to the House of Representatives" },
+  { name: "Vince Morris", party: "Democratic", office: "Delegate to the House of Representatives" },
+  { name: "Mike Smith", party: "Democratic", office: "Delegate to the House of Representatives" },
+  { name: "Samuel Greenfield", party: "Democratic", office: "Delegate to the House of Representatives" },
+  { name: "Graciela A. DaCruz", party: "Statehood Green", office: "Delegate to the House of Representatives" },
   { name: "Nelson Rimensnyder", party: "Republican", office: "Delegate to the House of Representatives" },
   { name: "Denise Rosado", party: "Republican", office: "Delegate to the House of Representatives", declined: true },
   { name: "Kymone Freeman", party: "Statehood Green", office: "Delegate to the House of Representatives", undeliverable: true },
@@ -46,12 +51,20 @@ const BASE_CANDIDATES = [
   { name: "Anthony Muhammad", party: "Democratic", office: "Mayor" },
   { name: "Myrtle Patricia Alexander", party: "Republican", office: "Mayor" },
   { name: "Christopher E. Rossi", party: "Republican", office: "Mayor" },
+  { name: "José Font", party: "Democratic", office: "Mayor" },
+  { name: "Vincent Orange", party: "Democratic", office: "Mayor" },
+  { name: "Robert L. Gross", party: "Democratic", office: "Mayor" },
+  { name: "Talib Karim Muhammad", party: "Democratic", office: "Mayor" },
+  { name: "Hope Solomon", party: "Democratic", office: "Mayor" },
   { name: "Muhsin Boe Umar", party: "Statehood Green", office: "Mayor" },
   { name: "Brian L. Schwalb", party: "Democratic", office: "Attorney General" },
   { name: "J.P. Szymkowicz", party: "Democratic", office: "Attorney General" },
   { name: "Manuel Rivera", party: "Republican", office: "Attorney General" },
   { name: "Phil Mendelson", party: "Democratic", office: "Council Chairman" },
   { name: "Jack Evans", party: "Democratic", office: "Council Chairman" },
+  { name: "Calvin Gurley", party: "Democratic", office: "Council Chairman" },
+  { name: "Patricia Stamper", party: "Democratic", office: "Council Chairman" },
+  { name: "Abi-Ananiah Prudent", party: "Republican", office: "Council Chairman" },
   { name: "Kevin B. Chavous", party: "Democratic", office: "At-Large Council Member" },
   { name: "Dwight Davis", party: "Democratic", office: "At-Large Council Member" },
   { name: "Dyana Forester", party: "Democratic", office: "At-Large Council Member" },
@@ -62,7 +75,11 @@ const BASE_CANDIDATES = [
   { name: "Oye Owolewa", party: "Democratic", office: "At-Large Council Member" },
   { name: "Lisa Raymond", party: "Democratic", office: "At-Large Council Member" },
   { name: "Patricia Stamper", party: "Democratic", office: "At-Large Council Member" },
+  { name: "Eric Goulet", party: "Democratic", office: "At-Large Council Member" },
+  { name: "Michael Graham", party: "Democratic", office: "At-Large Council Member" },
+  { name: "Greg Jackson", party: "Democratic", office: "At-Large Council Member" },
   { name: "Darrell Green", party: "Republican", office: "At-Large Council Member", undeliverable: true },
+  { name: "Darryl Moch", party: "Statehood Green", office: "At-Large Council Member" },
   { name: "Rashida Brown", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Terry Lynch", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Aparna Raj", party: "Democratic", office: "Ward 1 Council Member" },
@@ -70,6 +87,7 @@ const BASE_CANDIDATES = [
   { name: "Miguel Trindade Deramo", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Jett James Jasper", party: "Republican", office: "Ward 1 Council Member" },
   { name: "Matthew Frumin", party: "Democratic", office: "Ward 3 Council Member" },
+  { name: "Adam J. Prinzo", party: "Democratic", office: "Ward 3 Council Member" },
   { name: "Bernita Carmichael", party: "Democratic", office: "Ward 5 Council Member" },
   { name: "Zachary Parker", party: "Democratic", office: "Ward 5 Council Member" },
   { name: "Jeffrey Kihien-Palza", party: "Republican", office: "Ward 5 Council Member" },
@@ -83,6 +101,9 @@ const BASE_CANDIDATES = [
   { name: "Brandon L. Winfield-Dean", party: "Democratic", office: "United States Senator", undeliverable: true },
   { name: "Milton Hardy", party: "Republican", office: "United States Representative" },
   { name: "Brian Ready", party: "Democratic", office: "United States Representative" },
+  { name: "Paul Strauss", party: "Democratic", office: "United States Senator" },
+  { name: "Franklin Garcia", party: "Democratic", office: "United States Representative" },
+  { name: "Ciprian Ivanof", party: "Republican", office: "United States Representative" },
   // Special Election - At-Large Council Member (same date as primary)
   { name: "Edward Daniels", party: "Independent", office: "At-Large Council Member (Special Election)" },
   { name: "Khalil Lee", party: "Independent", office: "At-Large Council Member (Special Election)" },
@@ -93,8 +114,31 @@ const BASE_CANDIDATES = [
   { name: "Addison Sarter", party: "Independent", office: "At-Large Council Member (Special Election)" },
   { name: "Elissa Silverman", party: "Independent", office: "At-Large Council Member (Special Election)" },
   { name: "Doug Sloan", party: "Independent", office: "At-Large Council Member (Special Election)" },
-  { name: "Nina Taylor", party: "Independent", office: "At-Large Council Member (Special Election)" }
+  { name: "Nina Taylor", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "De'Andre Anderson", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Senay Emmanuel", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Darryl Moch", party: "Statehood Green", office: "At-Large Council Member (Special Election)" }
 ];
+
+// Sort BASE_CANDIDATES: within each office group, Democratic first then other parties
+// alphabetically, then by last name within each party
+const officeOrder = [...new Set(BASE_CANDIDATES.map(c => c.office))];
+
+function getLastName(name) {
+  const cleaned = name.replace(/"[^"]*"\s*/g, '').replace(/\s+(Sr|Jr|III|II|IV)$/i, '');
+  const parts = cleaned.trim().split(/\s+/);
+  return parts[parts.length - 1].toLowerCase();
+}
+
+BASE_CANDIDATES.sort((a, b) => {
+  const officeDiff = officeOrder.indexOf(a.office) - officeOrder.indexOf(b.office);
+  if (officeDiff !== 0) return officeDiff;
+  const aDemo = a.party === 'Democratic' ? 0 : 1;
+  const bDemo = b.party === 'Democratic' ? 0 : 1;
+  if (aDemo !== bDemo) return aDemo - bDemo;
+  if (a.party !== b.party) return a.party.localeCompare(b.party);
+  return getLastName(a.name).localeCompare(getLastName(b.name));
+});
 
 function parseCSV(csvText) {
   // Properly parse CSV with quoted fields that may contain newlines and commas
@@ -183,14 +227,27 @@ function parseStatehoodAnswer(answer) {
 }
 
 // Normalize office names from form responses to match BASE_CANDIDATES
+// These map Google Form "Position running for?" values to BASE_CANDIDATES office values
 const OFFICE_ALIASES = {
+  // Google Form exact values (from dropdown options)
   'dc delegate': 'Delegate to the House of Representatives',
+  'dc democratic party': 'DC Democratic Party',  // handled separately — matches party-candidates.json
+  'at-large council member (special election)': 'At-Large Council Member (Special Election)',
+  // New form options — ward-specific entries (added Feb 2026)
+  'ward 1 council member': 'Ward 1 Council Member',
+  'ward 3 council member': 'Ward 3 Council Member',
+  'ward 5 council member': 'Ward 5 Council Member',
+  'ward 6 council member': 'Ward 6 Council Member',
+  // Legacy form option — fallback matching by name only
+  'ward council member (specify ward in comments)': 'Ward Council Member',
+  'ward council member': 'Ward Council Member',
+  'shadow u.s. senator': 'United States Senator',
+  'shadow u.s. representative': 'United States Representative',
+  // Short aliases
   'delegate': 'Delegate to the House of Representatives',
   'delegate to the house': 'Delegate to the House of Representatives',
   'shadow senator': 'United States Senator',
-  'shadow u.s. senator': 'United States Senator',
   'shadow representative': 'United States Representative',
-  'shadow u.s. representative': 'United States Representative',
   'us senator': 'United States Senator',
   'us representative': 'United States Representative',
   'council chairman': 'Council Chairman',
@@ -204,6 +261,30 @@ function normalizeOffice(office) {
   const trimmed = office.trim();
   const lower = trimmed.toLowerCase();
   return OFFICE_ALIASES[lower] || trimmed;
+}
+
+// Find a response matching a candidate, with fallback strategies
+function findResponse(responses, candidateName, candidateOffice) {
+  const nameLower = candidateName.toLowerCase();
+
+  // 1. Exact match on name + office
+  const exact = responses.find(r =>
+    r.name?.toLowerCase() === nameLower &&
+    r.office?.toLowerCase() === candidateOffice.toLowerCase()
+  );
+  if (exact) return exact;
+
+  // 2. "Ward Council Member" fallback — form doesn't include ward number,
+  //    so match by name if the candidate is a ward council member
+  if (candidateOffice.match(/^Ward \d+ Council Member$/)) {
+    const wardFallback = responses.find(r =>
+      r.name?.toLowerCase() === nameLower &&
+      r.office === 'Ward Council Member'
+    );
+    if (wardFallback) return wardFallback;
+  }
+
+  return null;
 }
 
 function updateCandidates(csvPath) {
@@ -234,10 +315,21 @@ function updateCandidates(csvPath) {
     return key ? row[key]?.trim() || '' : '';
   };
 
+  // Parse timestamp to ISO date string
+  const parseTimestamp = (ts) => {
+    if (!ts) return null;
+    // Format: "1/27/2026 22:44:51"
+    const match = ts.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+    if (!match) return null;
+    const [, month, day, year] = match;
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  };
+
   // Parse responses
   const responses = approved.map(row => ({
     name: row['Name of candidate']?.trim(),
     office: normalizeOffice(row['Position running for?']),
+    respondedDate: parseTimestamp(row['Timestamp']),
     statehoodSupport: parseStatehoodAnswer(getField(row, '1. Do you support DC Statehood')),
     responses: {
       statehoodSupport: getField(row, '1. Do you support DC Statehood'),
@@ -250,21 +342,23 @@ function updateCandidates(csvPath) {
     }
   }));
 
-  // Merge with base candidates
-  console.log('\n🔄 Updating candidates...');
+  // Split responses into elected office vs party committee
+  const electedResponses = responses.filter(r => r.office !== 'DC Democratic Party');
+  const partyResponses = responses.filter(r => r.office === 'DC Democratic Party');
+
+  // === Update elected office candidates ===
+  console.log('\n🔄 Updating elected office candidates...');
   const updated = BASE_CANDIDATES.map(candidate => {
-    const response = responses.find(r =>
-      r.name?.toLowerCase() === candidate.name.toLowerCase() &&
-      r.office?.toLowerCase() === candidate.office.toLowerCase()
-    );
+    const response = findResponse(electedResponses, candidate.name, candidate.office);
 
     if (response) {
-      console.log(`   ✓ ${candidate.name} (${candidate.office})`);
+      console.log(`   ✓ ${candidate.name} (${candidate.office}) — responded ${response.respondedDate}`);
       return {
         name: candidate.name,
         party: candidate.party,
         office: candidate.office,
         responded: true,
+        respondedDate: response.respondedDate,
         declined: false,
         supportsStatehood: response.statehoodSupport,
         responses: response.responses
@@ -279,13 +373,11 @@ function updateCandidates(csvPath) {
       supportsStatehood: null
     };
 
-    // Preserve declined status from base candidates
     if (candidate.declined) {
       result.declined = true;
       console.log(`   ✗ ${candidate.name} (${candidate.office}) - declined`);
     }
 
-    // Preserve undeliverable status from base candidates
     if (candidate.undeliverable) {
       result.undeliverable = true;
       console.log(`   ⚠ ${candidate.name} (${candidate.office}) - no valid contact`);
@@ -294,34 +386,72 @@ function updateCandidates(csvPath) {
     return result;
   });
 
-  // Check for unmatched responses
-  const matched = responses.filter(r =>
+  // Check for unmatched elected responses
+  const matchedElected = electedResponses.filter(r =>
     updated.some(c => c.responded && c.name.toLowerCase() === r.name?.toLowerCase())
   );
-  const unmatched = responses.filter(r =>
+  const unmatchedElected = electedResponses.filter(r =>
     !updated.some(c => c.responded && c.name.toLowerCase() === r.name?.toLowerCase())
   );
-  if (unmatched.length > 0) {
-    console.log('\n⚠️  Unmatched responses (name/office didn\'t match any candidate):');
-    unmatched.forEach(r => {
+  if (unmatchedElected.length > 0) {
+    console.log('\n⚠️  Unmatched elected office responses:');
+    unmatchedElected.forEach(r => {
       console.log(`   "${r.name}" — "${r.office}"`);
     });
   }
 
-  // Write to file
-  const outputPath = path.join(__dirname, '../src/data/candidates.json');
-  const json = JSON.stringify({ candidates: updated }, null, 2);
+  // Write elected office candidates
+  const electedOutputPath = path.join(__dirname, '../src/data/candidates.json');
+  fs.writeFileSync(electedOutputPath, JSON.stringify({ candidates: updated }, null, 2), 'utf-8');
 
-  fs.writeFileSync(outputPath, json, 'utf-8');
+  const electedMatched = updated.filter(c => c.responded).length;
+  console.log(`\n✅ Updated ${electedOutputPath}`);
+  console.log(`   ${electedMatched} responded, ${BASE_CANDIDATES.length - electedMatched} pending`);
 
-  console.log(`\n✅ Updated ${outputPath}`);
-  console.log(`   ${approved.length} candidates with responses`);
-  console.log(`   ${BASE_CANDIDATES.length - approved.length} candidates without responses`);
+  // === Update party committee candidates ===
+  if (partyResponses.length > 0) {
+    console.log('\n🔄 Updating party committee candidates...');
+
+    const partyDataPath = path.join(__dirname, '../src/data/party-candidates.json');
+    const partyData = JSON.parse(fs.readFileSync(partyDataPath, 'utf-8'));
+
+    let partyMatched = 0;
+    const unmatchedParty = [];
+
+    for (const response of partyResponses) {
+      // Match by name only (office varies: "Ward 5 Committeeman", etc.)
+      const candidate = partyData.candidates.find(c =>
+        c.name.toLowerCase() === response.name?.toLowerCase()
+      );
+
+      if (candidate) {
+        candidate.responded = true;
+        candidate.respondedDate = response.respondedDate;
+        candidate.supportsStatehood = response.statehoodSupport;
+        candidate.responses = response.responses;
+        partyMatched++;
+        console.log(`   ✓ ${candidate.name} (${candidate.office}) — responded ${response.respondedDate}`);
+      } else {
+        unmatchedParty.push(response);
+      }
+    }
+
+    if (unmatchedParty.length > 0) {
+      console.log('\n⚠️  Unmatched party committee responses:');
+      unmatchedParty.forEach(r => {
+        console.log(`   "${r.name}" — "${r.office}"`);
+      });
+    }
+
+    fs.writeFileSync(partyDataPath, JSON.stringify(partyData, null, 2) + '\n', 'utf-8');
+    console.log(`\n✅ Updated ${partyDataPath}`);
+    console.log(`   ${partyMatched} responded`);
+  }
+
   console.log('\n📝 Next steps:');
-  console.log('   git diff src/data/candidates.json  # Review changes');
-  console.log('   git add src/data/candidates.json');
-  console.log('   git commit -m "Update candidate responses"');
-  console.log('   npm run deploy');
+  console.log('   git diff src/data/  # Review changes');
+  console.log('   npm run build       # Verify no errors');
+  console.log('   npm run deploy      # Push to candidates.representdc.org');
 }
 
 // Main

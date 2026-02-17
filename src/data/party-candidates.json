@@ -1,72 +1,750 @@
 {
   "candidates": [
-    { "name": "Philip Pannell", "slate": "Free DC Slate", "office": "National Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Kelsye Adams", "slate": "Free DC Slate", "office": "National Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Sam Bonar", "slate": "Free DC Slate", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "David Sampe", "slate": "Free DC Slate", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Andrew DeFrank", "slate": "Free DC Slate", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Jordan Kagelmayer", "slate": "Free DC Slate", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Jerome Hinkle", "slate": "Free DC Slate", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Maleke Glee", "slate": "Free DC Slate", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Thomas Elias", "slate": "Free DC Slate", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Alan Karnofsky", "slate": "Democrats United to Free DC", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Charles E. Wilson", "slate": "Democrats United to Free DC", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Dave Donaldson", "slate": "Democrats United to Free DC", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "John C. Green", "slate": "Democrats United to Free DC", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "James S. Bubar", "slate": "Democrats United to Free DC", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Stuart W. Anderson", "slate": "Democrats United to Free DC", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Manny Geraldo", "slate": "Democrats United to Free DC", "office": "At-Large Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Samantha Davis", "slate": "Free DC Slate", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Emily Siegel", "slate": "Free DC Slate", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Aliyah McNeely", "slate": "Free DC Slate", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Sonya Joseph", "slate": "Free DC Slate", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Tiffany Pauls", "slate": "Free DC Slate", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Lia Lake Kuduk", "slate": "Free DC Slate", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Chioma Iwuoha", "slate": "Free DC Slate", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Irene Kang", "slate": "Democrats United to Free DC", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Dionna Maria Lewis", "slate": "Democrats United to Free DC", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Linda L. Gray", "slate": "Democrats United to Free DC", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Lisa R. Gore", "slate": "Democrats United to Free DC", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Maria Patricia Corrales", "slate": "Democrats United to Free DC", "office": "At-Large Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Ethan Arnheim", "slate": "Free DC Slate", "office": "Ward 1 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Alex Busbee", "slate": "Free DC Slate", "office": "Ward 1 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Stanley J Mayes", "slate": "Democrats United to Free DC", "office": "Ward 1 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Alexis Rangel", "slate": "Free DC Slate", "office": "Ward 1 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Michelle Chappell", "slate": "Free DC Slate", "office": "Ward 1 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Rebecca Ann Washington", "slate": "Democrats United to Free DC", "office": "Ward 1 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "E. Gail Anderson Holness", "slate": "Democrats United to Free DC", "office": "Ward 1 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Keaton DiCapo", "slate": "Free DC Slate", "office": "Ward 2 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Dan Winston", "slate": "Free DC Slate", "office": "Ward 2 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Ben Dalley", "slate": "Democrats United to Free DC", "office": "Ward 2 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "John Fanning", "slate": "Democrats United to Free DC", "office": "Ward 2 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Rachel Lesniak", "slate": "Free DC Slate", "office": "Ward 2 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Trupti Patel", "slate": "Free DC Slate", "office": "Ward 2 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Meg Roggensack", "slate": "Democrats United to Free DC", "office": "Ward 2 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Janice Ferebee", "slate": "Democrats United to Free DC", "office": "Ward 2 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Tarek Maassarani", "slate": "Free DC Slate", "office": "Ward 3 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Zachary Tashman", "slate": "Free DC Slate", "office": "Ward 3 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Enicia Porter", "slate": "Free DC Slate", "office": "Ward 3 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Elizabeth Mitchell", "slate": "Free DC Slate", "office": "Ward 3 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Slobodan Milic", "slate": "Free DC Slate", "office": "Ward 4 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Charlie Burgess", "slate": "Free DC Slate", "office": "Ward 4 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Corey Welcher", "slate": "Free DC Slate", "office": "Ward 4 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Brianna Gomez McGowan", "slate": "Free DC Slate", "office": "Ward 4 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Aaron Dickerson", "slate": "Free DC Slate", "office": "Ward 5 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Art Lloyd", "slate": "Free DC Slate", "office": "Ward 5 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Harry Thomas Jr.", "slate": "Democrats United to Free DC", "office": "Ward 5 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Timothy Thomas", "slate": "Democrats United to Free DC", "office": "Ward 5 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Yolanda Corbett", "slate": "Free DC Slate", "office": "Ward 5 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Shealia Tyson", "slate": "Free DC Slate", "office": "Ward 5 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Cierra Craig", "slate": "Democrats United to Free DC", "office": "Ward 5 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Angel Alston Johnson", "slate": "Democrats United to Free DC", "office": "Ward 5 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Paul Spires", "slate": "Free DC Slate", "office": "Ward 6 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Avram Reisman", "slate": "Free DC Slate", "office": "Ward 6 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Lauren Kuritz", "slate": "Free DC Slate", "office": "Ward 6 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Daraja Carroll", "slate": "Free DC Slate", "office": "Ward 6 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Corey Shaw", "slate": "Free DC Slate", "office": "Ward 7 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Dia King", "slate": "Free DC Slate", "office": "Ward 7 Committeeman", "responded": false, "supportsStatehood": null },
-    { "name": "Kenyatta Smith", "slate": "Free DC Slate", "office": "Ward 7 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Sonya T. Waterhouse", "slate": "Free DC Slate", "office": "Ward 7 Committeewoman", "responded": false, "supportsStatehood": null },
-    { "name": "Salim Adofo", "slate": "Independent", "office": "Ward 8 Committeeman", "responded": false, "supportsStatehood": null }
+    {
+      "name": "Philip Pannell",
+      "slate": "Free DC Slate",
+      "office": "National Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Mike Panetta",
+      "slate": "Independent",
+      "office": "National Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Kelsye Adams",
+      "slate": "Free DC Slate",
+      "office": "National Committeewoman",
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "respondedDate": "2026-02-05",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "Using culture as a tool for Statehood advocacy.\nAs Executive Director of Long Live GoGo and Co Founder of Free DC Project, I’ve helped lead and produce Statehood-focused cultural activations—from GoGo-powered demonstrations and Art All Night Statehood stages to national moments like the DNC—centering DC residents and our lived experience while making Statehood visible, accessible, and undeniable.",
+        "intendedActions": "Use my platform to publicly and consistently defend DC autonomy, not just when it’s politically convenient.\n\nWork in partnership with advocacy organizations to mobilize residents, educate voters, and activate cultural spaces around Statehood.\n\nPush for formal resolutions, hearings, and public education efforts that keep congressional interference visible and unacceptable.",
+        "congressResponse": "Mobilizing residents and partner organizations for rapid-response actions, public statements, and demonstrations.\n\nWorking with advocacy partners to elevate the issue nationally, ensuring congressional interference becomes politically costly—not normalized.\n\nCongress should never be allowed to quietly override the will of DC residents.",
+        "partners": "Free DC Coalition – I am a co-founder and active organizer, working daily with partners to defend Home Rule and respond to congressional attacks.\n\nDC Council and the Mayor of the District of Columbia – I intend to work in close partnership with the DC Council and the Mayor to present a united local front against federal interference, coordinate responses to congressional attacks, and ensure Statehood and Home Rule remain core priorities of the District’s elected leadership.\n\nState-level parties and national Democratic partners – I will collaborate with state-level Democratic parties and national party leaders to continue elevating DC Statehood as a democracy and civil rights issue, building off existing relationships developed through national advocacy, coalition work, and presidential election cycles.",
+        "voterInvolvement": "Meet residents where they are—at schools, cultural events, neighborhood gatherings, and faith spaces.\n\nUse music, art, storytelling, and public space as entry points to civic education.\n\nCreate opportunities for residents to take ownership of the fight, whether through advocacy days, creative campaigns, or local organizing efforts.\n\nEnsure youth voices are centered, not tokenized.",
+        "additionalComments": "DC Statehood is not symbolic to me—it’s personal. I believe Home Rule and Statehood are fundamental to racial justice, democracy, and dignity for the nearly 700,000 people who call this city home. I have spent my career fighting this fight with my whole heart, and I will continue to do so with urgency, creativity, and accountability."
+      }
+    },
+    {
+      "name": "Sam Bonar",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "David Sampe",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Andrew DeFrank",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Jordan Kagelmayer",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeeman",
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "respondedDate": "2026-01-31",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "Organized office visits in the Wilson building with Free DC to demand the Mayor and Council reign in federal agents' overreach in DC. Synthesized and shared talking points for residents discussing how the federal law enforcement surge makes DC less safe. Successfully campaigned against repealing SVA in DC FY2026 budget.",
+        "intendedActions": "As a committee member of the DC Democratic Party, I will pitch DC Statehood to national Democrats as a key priority for the Party moving into 2028. Statehood for DC and Puerto Rico should be at the front of every Democratic candidate's platform, and those who oppose it should be rightfully branded as cowards who look down on the people and fear true democracy. Only with this kind of messaging, bold and consistent, over and over, can we hope to turn DC Statehood from a pipe dream to a political reality.",
+        "congressResponse": "DC's government often assumes a defensive stance, carefully crafting laws to preemptively avoid Congressional interference. When we do this, we teach Congress that we fear them, and that they can control us - merely by the threat of their interference.\n\nI would want to flip the script on this, and teach Congress a different lesson. Every congressperson works in DC, and they should not get to go into work and vote against our people without having to see us and hear from us. I would respond to Congressional attacks by rallying our Local officials and leaders in organizations like Free DC and ACLU DC. I would call for a united front and mass, visible resistance - protests, call-ins, sit-ins, press conferences, the whole menu. By making our presence on Capitol Hill constant, consistently voicing our demands, and showing a united front, we can convince Congress that messing with DC is more trouble than it's worth.",
+        "partners": "Free DC. Renewed campaign for DC Home Rule and Statehood. Joined in March of 2025 and have been co-chair of the DC Local Government Working Group since July.\n\nDeFlock DC. Grassroots campaign against mass deployment of surveillance technologies in DC. Joined in November 2025.",
+        "voterInvolvement": "I believe the path to DC Statehood is paved with mass, sustained public pressure. I would invite all DC voters and residents to be a part of paving that path, whether by formally joining a campaign like Free DC, or by participating in smaller ways - going to a protest, or calling Congress, or having conversations with family and friends about why DC Statehood matter. I would promote and create opportunities to participate in this fight, for example by observing or testifying at hearings, attending demonstrations, or visiting Congressional offices.",
+        "additionalComments": "Our fight for Statehood must not stop at that word. Our Party needs to provide a vision for what DC as the 51st state would look like. True freedom requires expanding healthcare; food and housing justice; funding schools and childcare; keeping our air and water clean; and investing in true violence prevention, not just more cops. All of that needs to be included in our pitch for DC Statehood."
+      }
+    },
+    {
+      "name": "Jerome Hinkle",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Maleke Glee",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Thomas Elias",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Alan Karnofsky",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Charles E. Wilson",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Dave Donaldson",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "John C. Green",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "James S. Bubar",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeeman",
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "respondedDate": "2026-01-31",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "I co-lead the Democratic party’s Statehood committee, where I’ve been working to bring full democracy to DC citizens.  Elected as a delegate and serving on the national platform committee, I fought to include Statehood in the national Democratic party platform.  As an attorney and co-chair of the Bar’s DC Affairs Community, I filed amicus briefs before the US Supreme Court for equal Congressional voting rights.",
+        "intendedActions": "We must continue to stand up for equal justice and the rule of law. Listen to constituents and find ways to take action to protect home rule and advance statehood.",
+        "congressResponse": "Meet with our friends on Capitol Hill and persuade them to protect District residents",
+        "partners": "Our own DC Dems Statehood Committee which I co-lead, the Statehood Delegation, and our elected officials.",
+        "voterInvolvement": "Continue to lead organizations that educate and support our voters and residents",
+        "additionalComments": "I am open to questions and comments about taking action to protect our home rule and advance statehood"
+      }
+    },
+    {
+      "name": "Stuart W. Anderson",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Manny Geraldo",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Samantha Davis",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Emily Siegel",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Aliyah McNeely",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Sonya Joseph",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Tiffany Pauls",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Lia Lake Kuduk",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Chioma Iwuoha",
+      "slate": "Free DC Slate",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Irene Kang",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Dionna Maria Lewis",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Linda L. Gray",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Lisa R. Gore",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Maria Patricia Corrales",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Ethan Arnheim",
+      "slate": "Free DC Slate",
+      "office": "Ward 1 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Alex Busbee",
+      "slate": "Free DC Slate",
+      "office": "Ward 1 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Stanley J Mayes",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 1 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Vida Rangel",
+      "slate": "Free DC Slate",
+      "office": "Ward 1 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Michelle Chappell",
+      "slate": "Free DC Slate",
+      "office": "Ward 1 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Rebecca Ann Washington",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 1 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "E. Gail Anderson Holness",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 1 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Keaton DiCapo",
+      "slate": "Free DC Slate",
+      "office": "Ward 2 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Ben Dalley",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 2 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "John Fanning",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 2 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Steven M. McCarty",
+      "slate": "Free DC Slate",
+      "office": "Ward 2 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Rachel Lesniak",
+      "slate": "Free DC Slate",
+      "office": "Ward 2 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Trupti Patel",
+      "slate": "Free DC Slate",
+      "office": "Ward 2 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Meg Roggensack",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 2 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Janice Ferebee",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 2 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Tarek Maassarani",
+      "slate": "Free DC Slate",
+      "office": "Ward 3 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Zachary Tashman",
+      "slate": "Free DC Slate",
+      "office": "Ward 3 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Enicia Porter",
+      "slate": "Free DC Slate",
+      "office": "Ward 3 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Elizabeth Mitchell",
+      "slate": "Free DC Slate",
+      "office": "Ward 3 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Slobodan Milic",
+      "slate": "Free DC Slate",
+      "office": "Ward 4 Committeeman",
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "respondedDate": "2026-02-01",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "As a Free DC organizer, I mobilized DC residents to lobby Congress against the proposed $1.1 billion cut to the District’s budget and other legislation undermining DC’s autonomy. I also helped organize consumer boycotts of Whole Foods and Target in response to their cooperation with ICE operations in the District. In addition, I serve as Free DC’s lead organizer engaging Washington Spirit supporters to raise public awareness about ongoing attacks on DC self-governance. As a result of this effort, more than 15,000 fans chant “Free DC” in the 51st minute of every home match, symbolizing our demand for DC to become the 51st state.",
+        "intendedActions": "My approach to defending DC Home Rule is grounded in nonviolent resistance, solidarity, and political organizing. I believe we must refuse to normalize federal overreach by declining voluntary cooperation with federal agencies whose actions undermine DC’s self-governance and harm our communities. \n\nAt the same time, I plan to build durable alliances with aligned movements and party partners across the country, so that once Democrats defeat the opposition in the general election, there is a coordinated national push to secure DC statehood and protect the District’s right to self-determination.",
+        "congressResponse": "When Congress attempts to overturn DC laws or block our budget, I would push the Democratic Party to show up, visibly and publicly, alongside DC residents. \n\nOur party has been largely absent from the streets, and that needs to change. I would use the full organizing capacity of the largest political organization in the District to mobilize residents through coordinated town halls, mass call-in days, and nonviolent public actions that make clear DC will not quietly accept federal interference. \n\nOne specific action I would take is organizing rapid-response mobilizations at key moments of congressional intervention, ensuring that attacks on Home Rule are met with immediate, citywide political pressure.",
+        "partners": "I intend to work closely with organizations that have consistently and visibly defended DC’s autonomy, including Free DC, Harriet’s Wildest Dream, DC Vote, and the Fair Budget Coalition. I already have active relationships with several of these groups through organizing, coalition work, and joint mobilizations around Home Rule and budget autonomy, and I would build on that trust to better align party resources with movement-led efforts for statehood.\n\nIn addition, I would deepen collaboration with Advisory Neighborhood Commissioners, who are often on the front lines of defending local self-government. ANCs play a critical role in mobilizing residents, responding quickly to federal overreach, and grounding the statehood movement in neighborhood-level leadership.",
+        "voterInvolvement": "I intend to involve DC voters by treating them not just as supporters, but as organizers and leaders in the fight for statehood. Drawing on proven approaches used by Free DC, I would focus on giving residents real agency — equipping them with tools, messaging, and support to organize in their own neighborhoods, recruit their neighbors, and take local action.",
+        "additionalComments": "DC statehood will not be gifted from above — it will be won by the people who live here."
+      }
+    },
+    {
+      "name": "Charlie Burgess",
+      "slate": "Free DC Slate",
+      "office": "Ward 4 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Antoine M. Kirby",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 4 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Michael Cohen",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 4 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Corey Welcher",
+      "slate": "Free DC Slate",
+      "office": "Ward 4 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Brianna Gomez McGowan",
+      "slate": "Free DC Slate",
+      "office": "Ward 4 Committeewoman",
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "respondedDate": "2026-02-02",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "1) Lead a ballot initiative (83) to improve our local democracy, free our vote, and open it to more voters - setting the stage for a strong democratic process leading up to Statehood\n2) Participated in actions for Statehood with Defend DC and Free DC - one notably being an art build at Freedom Plaza in support of Statehood\n3) Phone banked Pennsylvania and Texas Democrats to urge them not only to turn out to vote in the elections, but to also reach out to their representatives to support HR51",
+        "intendedActions": "It is a core message on our Free DC slate. I believe collective action over individual actions are more effective. As a DC Democratic State Committee member, I will organize within the groups/organizations that are already doing Statehood work, such as Free DC, DC Vote, 51 for 51; DC for Democracy; invite them to speak at our events; and citizen lobbying in the halls of power.",
+        "congressResponse": "As Congress has attempted to do this in the past, I protested/lobbied in the halls of power. I would go to national elected officials and urge them to protect our sovereignty.",
+        "partners": "Free DC, DC Vote, 51 for 51; DC for Democracy. Great relationships with all of the organizations I listed. I am an organizer and friend of many of the organizers in Free DC. My partner worked for 51 for 51 and has made meaningful connections with organizations across the country in support of DC Statehood, and I am deeply connected with the youth organizers; I've been to many DC Vote events and connected with their leadership in the past to support some of the pro-democracy work I've done (such as Initiative 83); and I am on the steering committee of DC for Democracy.",
+        "voterInvolvement": "We have to acknowledge that the fight for DC had been an arduous road. While we are facing high levels of voter apathy, we much also continue to make the case and fight for DC Statehood. And it's time to go beyond making the case for Statehood. It's a time where we embody Statehood and have our executive leadership wield a budget that puts power in the average person's hands, to give them purpose and meaning, and stop selling out our city to the highest bidder who give nothing back to us. When things feel the most stuck, is also when they are the most fragile. We are in a fragile time, and being prepared for statehood while it feels the most out of reach is paramount to achieving it when the time does come; because it will come. The last thing people want is to be preached at, so we will have to offer a vision that is irresistible of what the future can look like to mobilize and inspire people from all backgrounds. The first thing is centering conversation around food; and how we use food to convene, break bread, and discuss different topics together while making sure our basic needs are met. That is one of the ways to fight for Statehood.",
+        "additionalComments": "There are many things to prepare for, and one of them is having clarity and conversation around the State Constitution and imagine a future where we can co-create our future 51st State."
+      }
+    },
+    {
+      "name": "Melissa Irby",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 4 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Aaron Dickerson",
+      "slate": "Free DC Slate",
+      "office": "Ward 5 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Art Lloyd",
+      "slate": "Free DC Slate",
+      "office": "Ward 5 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Harry Thomas Jr.",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 5 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Timothy Thomas",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 5 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "John Lucio",
+      "slate": "Fight For Statehood|Free D.C.",
+      "office": "Ward 5 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Yolanda Corbett",
+      "slate": "Free DC Slate",
+      "office": "Ward 5 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Shealia Tyson",
+      "slate": "Free DC Slate",
+      "office": "Ward 5 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Cierra Craig",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 5 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Angel Alston Johnson",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 5 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Paul Spires",
+      "slate": "Free DC Slate",
+      "office": "Ward 6 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Avram Reisman",
+      "slate": "Free DC Slate",
+      "office": "Ward 6 Committeeman",
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "respondedDate": "2026-02-04",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "I was a part of early Free DC organizing - I was on the Hill and spoke personally with Sen. Angus King to encourage him to prioritize the DC Local Funds Act and oppose the budget without it. I also went to many other offices and spoke with staff about it.\n\nOn May Day, I mobilized Free DC's presence at the May Day rally to build greater visibility with union allies.\n\nI designed a canvassing program for Free DC's Ward 6 team that builds relationships and connects neighbors in Ward 6 to each other and to Free DC's efforts.",
+        "intendedActions": "We on the Free DC Slate intend to turn the DC Democratic Party into an organization that organizes the people's collective power and listens more closely to what DC residents need and want for their city. Through that engagement we can build solidarity and trust and have a people that is more ready to take action together.",
+        "congressResponse": "We have to move fast and slow. Fast - when DC autonomy is violated, we have to mobilized people to rally and at a certain point take direct action.\n\nSlow - we have to continually be building relationships and organizing our communities to be resilient and ready to keep turning out and to increase the number of people who turn out as well as the willingness to use collective power to compel the government to comply.",
+        "partners": "Free DC - as noted I have strong connections to the campaign and as I am running on the Free DC Slate I expect those to deepen.\nFaith Communities - I am a member of the New Synagogue Project and connected to organizations in the broader faith community through that membership. I've participated in many interfaith actions on different issues.\nUnions - I am a union steward and connected to union staff through my work within Free DC as well as my membership in Metro DC Democratic Socialists of America.",
+        "voterInvolvement": "The Free DC Slate is running on a plan to renew the DC Democratic Party - to actively organize our communities, listen to their concerns, and defend our neighbors from federal overreach. In practice, this means relational organizing similar to the program I designed for Ward 6 Free DC. It means participatory mechanisms for public engagement. We can use the party budget to engage in real mass politics and build a movement that will stand united against this authoritarian.",
+        "additionalComments": "DC statehood is the tip of the spear for democracy in this country. Statehood is about autonomy and so many cities do not have autonomy under this competitive authoritarian regime or under state governments that do not represent them. DC Statehood is about equality and freedom - the promise of democracy - and we cannot stop at Statehood to ensure that promise is real for the generations to come. We need a third Reconstruction to bring about a true multiracial democracy - the kind that has not yet existed yet is in sight."
+      }
+    },
+    {
+      "name": "Lauren Kuritz",
+      "slate": "Free DC Slate",
+      "office": "Ward 6 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Daraja Carroll",
+      "slate": "Free DC Slate",
+      "office": "Ward 6 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Corey Shaw",
+      "slate": "Free DC Slate",
+      "office": "Ward 7 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Dia King",
+      "slate": "Free DC Slate",
+      "office": "Ward 7 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Victor Horton",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 7 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Jimmie Williams",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 7 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Kenyatta Smith",
+      "slate": "Free DC Slate",
+      "office": "Ward 7 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Sonya T. Waterhouse",
+      "slate": "Free DC Slate",
+      "office": "Ward 7 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Ashley R. Ruff",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 7 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Patricia Stamper",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 7 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Salim Adofo",
+      "slate": "Independent",
+      "office": "Ward 8 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "David Meadows",
+      "slate": "Democrats United to Free DC",
+      "office": "National Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Wanda D. Lockridge",
+      "slate": "Democrats United to Free DC",
+      "office": "National Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Monica Roaché",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Patricia (Pat) Elwood",
+      "slate": "Democrats United to Free DC",
+      "office": "At-Large Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Neena Murphy Martin",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 4 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Shango Taylor",
+      "slate": "Fight For Statehood|Free D.C.",
+      "office": "Ward 5 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Ana Rodriguez",
+      "slate": "Fight For Statehood|Free D.C.",
+      "office": "Ward 5 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Hazel B. Thomas",
+      "slate": "Fight For Statehood|Free D.C.",
+      "office": "Ward 5 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Travon Hawkins",
+      "slate": "Act Now DC",
+      "office": "Ward 8 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Tim Durant Jr",
+      "slate": "Independent",
+      "office": "Ward 8 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Joseph Johnson",
+      "slate": "Act Now DC",
+      "office": "Ward 8 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Alejaibra Sloan",
+      "slate": "Free DC Slate",
+      "office": "Ward 8 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Michael I. Watts, Jr.",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 8 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Kelly Mikel Williams",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 8 Committeeman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Charnal Chaney",
+      "slate": "Free DC Slate",
+      "office": "Ward 8 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Georgette Johnson",
+      "slate": "Free DC Slate",
+      "office": "Ward 8 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Anaiah Mitchell",
+      "slate": "Independent",
+      "office": "Ward 8 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Sandra V. Williams",
+      "slate": "Act Now DC",
+      "office": "Ward 8 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Robbie Woodland",
+      "slate": "Act Now DC",
+      "office": "Ward 8 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Robin McKinney",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 8 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Regina Sharlita Pixley",
+      "slate": "Democrats United to Free DC",
+      "office": "Ward 8 Committeewoman",
+      "responded": false,
+      "supportsStatehood": null
+    }
   ]
 }
