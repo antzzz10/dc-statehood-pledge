@@ -1,11 +1,36 @@
 {
   "candidates": [
     {
+      "name": "Deirdre Brown",
+      "party": "Democratic",
+      "office": "Delegate to the House of Representatives",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Gordon Chaffin",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
       "supportsStatehood": null
+    },
+    {
+      "name": "Samuel Greenfield",
+      "party": "Democratic",
+      "office": "Delegate to the House of Representatives",
+      "responded": true,
+      "respondedDate": "2026-02-18",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "Over the past two years, three actions stand out as especially meaningful in advancing DC Statehood:\n\n1. Elevating Public Awareness Nationwide\nI’ve consistently highlighted the case for DC Statehood in discussions, educational content, and civic conversations—helping explain why over 700,000 residents of Washington, D.C. deserve full voting representation in Congress. Increasing general understanding is foundational to building sustained national support.\n\n2. Supporting Legislative Momentum\nI’ve helped clarify and communicate the details and significance of the Washington, D.C. Admission Act, including what statehood would mean for representation, budgeting, and local autonomy. Clear explanations help more people engage meaningfully with the policy itself rather than just the politics around it.\n\n3. Centering Democratic Principles\nI’ve emphasized the broader constitutional and civil rights arguments—framing DC Statehood as an issue of equal citizenship and democratic fairness. By grounding the conversation in shared democratic values, it strengthens long-term advocacy efforts beyond any single news cycle.",
+        "intendedActions": "As a DC elected official, I would focus on five key actions to advance Statehood and protect Home Rule:\n\n1. Push for passage of the Washington, D.C. Admission Act by working closely with the United States Congress. \n\n2. Defend the District of Columbia Home Rule Act by opposing congressional attempts to overturn locally passed laws.\n\n3. Mobilize residents and national allies to frame Statehood as a civil rights and democracy issue.\n\n4. Protect DC’s budget autonomy to reduce federal interference in locally raised funds.\nPrepare operationally for Statehood to ensure a smooth transition when enacted.\n\nDC residents deserve full representation and control over their own laws.",
+        "congressResponse": "If elected, I will defend the right of the people of the District of Columbia to govern themselves.\n\nIf United States Congress attempts to overturn DC laws or block the budget, I would publicly oppose the action and I would take three specific actions:\n\n1. Formally oppose and lobby against disapproval resolutions in the United States House of Representatives and the United States Senate, organizing a rapid-response coalition to stop them before passage.\n\n2. Pursue legal action by directing the DC Attorney General to challenge any overreach in federal court.\n\n3. Push for permanent reform, including passage of the Washington, D.C. Admission Act and stronger local budget autonomy protections.\n\nMy priority would be defending DC’s right to govern itself.",
+        "partners": "The top partners I plan to engage in promoting DC statehood include my colleagues in the U.S. Senate and House of Representatives, as well as national and local advocacy organizations that have long championed this cause, such as DC Vote and other civic groups. By combining these legislative and grassroots partnerships, I aim to build momentum and foster bipartisan support for the District of Columbia Admission Act (S. 51). I also maintain professional relationships with several congressional staffers whose members support DC statehood, which will help advance these efforts.",
+        "voterInvolvement": "To involve D.C. voters and residents in the fight for Statehood, I would focus on three priorities:\n\n1. Educate and Inform\nHost ward-based forums explaining how lack of statehood affects taxation, budget control, and representation in the United States Congress. Share clear comparisons showing that states like Wyoming have full representation while D.C. does not.\n\n2. Mobilize Grassroots Action\nBuild neighborhood-based Statehood Action Teams, partner with local organizations, and work closely with leaders to connect residents directly to federal advocacy efforts.\n\n3. Engage Youth and Community Voices\nActivate students at institutions such as Howard University and empower young leaders to drive digital campaigns, rallies, and storytelling initiatives.\n\nThe goal is to make statehood personal, visible, and community-led—so residents aren’t just supporting the movement, but shaping it.",
+        "additionalComments": "I strongly support DC statehood because the more than 700,000 residents of the District pay federal taxes, serve in the military, and fulfill all the responsibilities of citizenship — yet they lack full voting representation in Congress. That fundamental imbalance contradicts the democratic principles our nation claims to uphold.\n\nFor decades, residents of Washington, D.C. have been denied voting representation in the United States Congress, despite having a population larger than several existing states. The rallying cry on DC license plates — “Taxation Without Representation” — is not symbolic; it reflects a real democratic deficit.\n\nStatehood would:\n1. Provide two U.S. Senators and at least one voting Representative.\n2. Grant full local autonomy over budgeting and laws.\n3. Ensure DC residents have equal standing with citizens in all 50 states.\n\nI believe DC statehood is not a partisan issue — it is a fairness issue. If we believe in government by the people, then we must ensure all Americans have an equal voice in that government.\n\nDC voters deserve nothing less than full democracy."
+      }
     },
     {
       "name": "Trent Holbrook",
@@ -22,7 +47,28 @@
       "supportsStatehood": null
     },
     {
+      "name": "Greg Maye",
+      "party": "Democratic",
+      "office": "Delegate to the House of Representatives",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Vince Morris",
+      "party": "Democratic",
+      "office": "Delegate to the House of Representatives",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Brooke Pinto",
+      "party": "Democratic",
+      "office": "Delegate to the House of Representatives",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Mike Smith",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
       "responded": false,
@@ -79,41 +125,6 @@
       }
     },
     {
-      "name": "Deirdre Brown",
-      "party": "Democratic",
-      "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Vince Morris",
-      "party": "Democratic",
-      "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Mike Smith",
-      "party": "Democratic",
-      "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Samuel Greenfield",
-      "party": "Democratic",
-      "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Graciela A. DaCruz",
-      "party": "Statehood Green",
-      "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
       "name": "Nelson Rimensnyder",
       "party": "Republican",
       "office": "Delegate to the House of Representatives",
@@ -129,6 +140,13 @@
       "declined": true
     },
     {
+      "name": "Graciela A. DaCruz",
+      "party": "Statehood Green",
+      "office": "Delegate to the House of Representatives",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Kymone Freeman",
       "party": "Statehood Green",
       "office": "Delegate to the House of Representatives",
@@ -137,9 +155,9 @@
       "undeliverable": true
     },
     {
-      "name": "Greg Maye",
+      "name": "José Font",
       "party": "Democratic",
-      "office": "Delegate to the House of Representatives",
+      "office": "Mayor",
       "responded": false,
       "supportsStatehood": null
     },
@@ -174,6 +192,13 @@
         "voterInvolvement": "Statehood cannot be won by elected officials alone. It will require sustained civic engagement from residents. As Mayor, I will:\n\nIntegrate statehood education into civic engagement programs, including through initiatives like the Capital Corps, which will train thousands of DC residents in civic participation. The Capital Corps, which is one of my priority initiatives, will create pathways for 5,000 DC residents to serve their communities while earning education credits, job training, and professional certifications. Eight specialized service branches give every Washingtonian a place to serve, a path to grow, and a reason to stay.\n\nI will ensure that efforts to reach statehood have the backing and visibility of the Mayor's office and that we provide support and amplify resident-led advocacy, ensuring that when DC residents organize, lobby, or speak out for statehood.\n\nMake the connection between daily governance and statehood explicit. Every time Congress interferes with our laws, every time we face budget uncertainty, I will communicate clearly to residents: this is why statehood matters to your life.",
         "additionalComments": "DC Statehood is not a partisan issue; it is a democracy issue. 700,000 Americans are denied full representation in Congress. We pay federal taxes, serve in the military, and contribute to the nation, yet we lack the same rights and representation as other states.\n\nAs someone who served in the U.S. Army and has built my life in this city, I take the principle of self-determination personally. DC residents deserve the same rights as every other American. As Mayor, I will never stop fighting for statehood. Not as a rhetorical exercise, but as a governing priority."
       }
+    },
+    {
+      "name": "Robert L. Gross",
+      "party": "Democratic",
+      "office": "Mayor",
+      "responded": false,
+      "supportsStatehood": null
     },
     {
       "name": "Kathy Henderson",
@@ -226,21 +251,7 @@
       "supportsStatehood": null
     },
     {
-      "name": "Myrtle Patricia Alexander",
-      "party": "Republican",
-      "office": "Mayor",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Christopher E. Rossi",
-      "party": "Republican",
-      "office": "Mayor",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "José Font",
+      "name": "Talib Karim Muhammad",
       "party": "Democratic",
       "office": "Mayor",
       "responded": false,
@@ -254,22 +265,22 @@
       "supportsStatehood": null
     },
     {
-      "name": "Robert L. Gross",
-      "party": "Democratic",
-      "office": "Mayor",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Talib Karim Muhammad",
-      "party": "Democratic",
-      "office": "Mayor",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
       "name": "Hope Solomon",
       "party": "Democratic",
+      "office": "Mayor",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Myrtle Patricia Alexander",
+      "party": "Republican",
+      "office": "Mayor",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Christopher E. Rossi",
+      "party": "Republican",
       "office": "Mayor",
       "responded": false,
       "supportsStatehood": null
@@ -303,13 +314,6 @@
       "supportsStatehood": null
     },
     {
-      "name": "Phil Mendelson",
-      "party": "Democratic",
-      "office": "Council Chairman",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
       "name": "Jack Evans",
       "party": "Democratic",
       "office": "Council Chairman",
@@ -329,6 +333,13 @@
     },
     {
       "name": "Calvin Gurley",
+      "party": "Democratic",
+      "office": "Council Chairman",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Phil Mendelson",
       "party": "Democratic",
       "office": "Council Chairman",
       "responded": false,
@@ -370,6 +381,31 @@
       "supportsStatehood": null
     },
     {
+      "name": "Eric Goulet",
+      "party": "Democratic",
+      "office": "At-Large Council Member",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Michael Graham",
+      "party": "Democratic",
+      "office": "At-Large Council Member",
+      "responded": true,
+      "respondedDate": "2026-02-17",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "However, I can share the three ways I have most effectively supported the discourse on statehood (such as for Washington D.C. or Puerto Rico) for over the last two years. My \"pride\" comes from providing objective, high-quality information that helps people understand complex constitutional issues. \n\n1. Synthesizing Complex Legal Arguments\nThe debate over statehood involves intricate constitutional law, specifically regarding the Admissions Clause and the District Clause. \nWhat I’ve done: I have researched on the hundreds breaking down the \"Tennessee Plan\" (a historical strategy for statehood) and explain how it might apply to modern territories.\nThe Impact: This turns dense legal theories into accessible knowledge, allowing to engage in the debate with a firmer grasp of the precedent. \n\n2. Providing Non-Partisan Comparative Analysis\nStatehood is often viewed through a purely political lens. I focus on providing a balanced view of the pros and cons across different dimensions: \nEconomic: Analyzing federal funding shifts vs. local tax autonomy.\nPolitical: Explaining the potential impact on the Electoral College and Congressional balance.\nCivil: Highlighting the arguments regarding voting representation and self-determination. \n\n3. Creating Educational Frameworks\nI have research educators and students in creating structured debates and research papers on the topic.\nWhat I’ve done: I studied and researched comprehensive bibliographies, summarize historical referendums (like those in Puerto Rico in 2012, 2017, and 2020), and outline the legislative hurdles currently facing bills like H.R. 51.\nThe Impact: This ensures that the next generation of voters understands the mechanics of how the Union actually grows and changes.",
+        "intendedActions": "I, Michael \"The Enforcer\" Graham, a former Georgetown Hoya basketball champion, has centered my campaign on \"giving the people back their city\". While his primary focus has been on affordability for youth and seniors, his candidacy is framed as a defense of community empowerment against outside influence. \n\nCommunity Advocacy: He emphasizes using his \"Enforcer\" reputation to fight for local control and ensure D.C. residents have a primary voice in their city's future.\nGrassroots Mobilization: His campaign utilizes grassroots activities to engage voters directly on issues of local sovereignty and economic stability. \nSpecific Actions to Promote D.C. Statehood\n\nD.C. leaders are taking the following legislative and advocacy steps in 2025 and 2026:\nThe Washington, D.C. Admission Act (H.R. 51): Reintroducing and championing this bill to admit the residential areas of D.C. as the 51st state (the Douglass Commonwealth) while maintaining a smaller federal district for government buildings.\n\nD.C. Statehood Pledge: Mobilizing candidates and elected officials to sign the D.C. Statehood Pledge, committing to the formal admission of D.C. into the Union.\nNational Education Campaigns: Using the upcoming U.S. 250th anniversary in 2026 as a platform to highlight the lack of voting representation for D.C.’s 700,000 residents. \nProtecting Home Rule from Federal Interference\n\nIn response to \"attacks on limited Home Rule\" in 2025 and early 2026, officials are focused on:\nThe District of Columbia Legislative Home Rule Act: Supporting federal legislation (like H.R. 214) designed to eliminate Congress's authority to nullify locally enacted D.C. laws.\nDefending Local Prosecution Power: Opposing efforts to strip the D.C. Attorney General of power and fighting for the transfer of local prosecution authority from the federal U.S. Attorney’s Office to local control.\n\nPolice and Guard Autonomy: Advocating for the repeal of Section 740 of the Home Rule Act, which allows the President to seize control of the Metropolitan Police Department during \"emergencies,\" and seeking mayoral control over the D.C. National Guard.",
+        "congressResponse": "As a candidate for the D.C. Council in 2026, I Michael Graham has positioned myself as a community-first advocate who intends to lead aggressive grassroots and legislative defenses against federal interference. \nIf elected, I will response to congressional attempts to overturn D.C. laws or block the budget would center on the following specific actions:\n\n1. Direct Grassroots Mobilization and Civil Resistance\nMichael Graham, known as \"The Enforcer,\" has stated that his primary response to federal overreach will be activating the community for direct action.\nSpecific Action: Graham intends to organize and lead large-scale \"rapid-response\" grassroots demonstrations across the city to physically and politically protest congressional interference.\nGoal: He views his role as a \"liberation fighter\" who uses public pressure to make the political cost of overturning local D.C. laws too high for members of Congress to ignore. \n\n2. Legal Challenges to the Home Rule Act\nIn 2026, the D.C. government faces renewed threats to its autonomy. Graham plans to utilize the Council’s legal standing to challenge federal mandates.\nSpecific Action: He supports filing injunctions and lawsuits against federal attempts to seize control of local functions—such as the Metropolitan Police Department or the local budget—arguing that such moves violate the spirit of the 1973 Home Rule Act.\nJudicial Advocacy: He would push for the Council to formally demand that the federal government fill local judicial vacancies with the District's recommended nominees to ensure the local court system remains independent of federal political agendas. \n\n3. Legislative Decoupling of the Budget\nTo prevent the federal government from \"starving\" D.C. services through budget riders, Graham supports structural changes to how the city manages its finances.\nSpecific Action: He advocates for the Council to work with Delegate Eleanor Holmes Norton to pass legislation that would make the D.C. local budget financially independent and distinct from the U.S. federal budget process.\nFiscal Autonomy: This would involve a strategy where local tax dollars are managed under a separate authority that does not require an annual affirmative act of Congress to be spent. \n\n4. Expanding the National Statehood Platform\nGraham intends to use D.C.’s status in 2026—the year of the U.S. 250th anniversary—to frame congressional interference as a national civil rights crisis.\nSpecific Action: He plans to launch an educational grant program through the Council to inform the national public about the lack of voting representation in D.C., using the \"DC250\" celebrations to lobby for the admission of D.C. as the 51st state.",
+        "partners": "As a candidate for the D.C. Council At-Large seat in 2026, Michael Graham has identified key strategic partners whose collaboration is essential to his mission of achieving statehood and safeguarding local autonomy.\n\n1. D.C. Statehood Delegation (Shadow Senators and Representative) \nGraham views the District's elected \"Shadow\" delegation as the primary frontline in the legislative battle for statehood.\nThe Partnership: If elected, Graham intends to coordinate directly with the Shadow Senators and Representative to align Council-led grassroots mobilization with federal legislative strategy.\nCurrent Relationship: Graham is a signatory of the D.C. Statehood Pledge, which formally aligns his campaign with the goals of the Shadow Delegation and other statehood-focused candidates. He maintains a communicative relationship with current and aspiring delegation members to ensure a unified front in 2026. \n\n2. 100 Black Men of America, Inc. \nAs a long-standing leader within this organization, Graham intends to leverage its national network to broaden the D.C. statehood movement into a national civil rights issue.\nThe Partnership: He plans to utilize the organization’s reach to educate communities outside the District about the lack of voting representation, treating statehood as a fundamental issue of democratic equality.\nCurrent Relationship: Graham has been a founding member of the Prince George's County chapter since 2012 and serves as the National Chairman of the Communications and Public Relations Committee. This deep-rooted leadership role provides him with a powerful platform to amplify D.C.'s message nationally. \n\n3. Progressive Advocacy Groups (e.g., DC for Democracy)\nTo combat congressional attempts to overturn local laws, Graham intends to work closely with local activist organizations that can mobilize \"rapid-response\" resistance.\nThe Partnership: These partners would be responsible for the ground-level execution of the grassroots demonstrations Graham plans to lead when Home Rule is threatened.\nCurrent Relationship: Graham is actively engaging with these groups during the 2026 campaign cycle. For instance, he participated in the DC for Democracy candidate forums, demonstrating an ongoing dialogue with the city's most active progressive organizers.",
+        "voterInvolvement": "I, Michael Graham, as a 2026 candidate for the DC Council, intends to involve voters and residents through a strategy centered on grassroots mobilization, national coalition-building, and high-visibility public education. His approach emphasizes transforming statehood from a local legislative goal into an active community movement.\n\n1. Direct Community Mobilization & \"Rapid Response\"\nGraham plans to turn residents into \"liberation fighters\" to defend local sovereignty. \nMass Demonstrations: He intends to organize and lead large-scale community protests to physically and politically challenge any congressional attempts to overturn local laws or block the D.C. budget.\nVoter Empowerment: His campaign is built on the philosophy of \"giving the people back their city,\" focusing on empowering neighborhood groups to act as the primary defense against federal overreach. \n\n2. National Advocacy & Strategic Partnerships\nGraham intends to use his national leadership roles to connect D.C. residents with allies across the United States.\n100 Black Men of America: Leveraging his role as a national leader in this organization, he plans to involve D.C. residents in national education campaigns that frame statehood as a fundamental civil rights and democratic equality issue.\nDC Statehood PAC: As a co-chair, he urges residents to join organized efforts to identify and support pro-statehood candidates in congressional races nationwide, helping D.C. voters influence the makeup of the body that currently governs them. \n\n3. Civic Education & Public Awareness\nTo sustain long-term engagement, Graham focuses on increasing the \"civic literacy\" of the District.\n\nThe DC250 Initiative: He plans to use the U.S. 250th anniversary in 2026 to host town halls, exhibits, and educational grants that highlight D.C.'s 200-year struggle for representation.\nInteractive Toolkits: He supports providing residents with structured toolkits—similar to those from the Official DC Statehood Site—to help them lobby members of Congress directly and participate in \"Statehood Day\" activities. \n\nRelated Events for Resident Involvement\nResidents can currently engage in the statehood and home rule dialogue through these upcoming local events: \n\nThe Last Battlefront Screening and Panel Discussion\nDate & Time: Wednesday, February 25, 2026, at 5:30 PM\nLocation: Woodridge Neighborhood Library\nType: Community Discussion / Film Screening\nDescription: Hosted by Free DC, this event focuses on the ongoing struggle for self-governance and statehood.\n\nThe First Ask 2026 Kickoff Event\nDate & Time: Thursday, February 26, 2026, at 6:00 PM\nLocation: Foundry Gallery\nType: Political Kickoff\nDescription: An event to introduce endorsed 2026 candidates who support progressive representation and D.C. autonomy.",
+        "additionalComments": "Michael Graham, as a candidate for the D.C. Council in 2026  has emphasized that the quest for statehood is currently in \"great danger\" due to increased federal attacks on local autonomy. \n\nHe wishes to share the following core beliefs and calls to action with D.C. voters:\n1. Rejection of the \"Patronage Plantation System\"\nGraham strongly opposes any return to the era before the 1973 Home Rule Act, when D.C. was governed by unelected representatives. \nThe Vision: He views the current federal oversight as a \"colonizing\" force and believes that full statehood is the only way to achieve \"Full Self Determination\".\nThe Struggle: He frames the fight for statehood as a modern liberation movement, calling residents to act as \"DC Liberation Fighters\" to protect the District's limited sovereignty. \n\n2. Strategic National Political Engagement\nGraham believes the path to statehood requires D.C. voters to influence national politics beyond the District's borders.\nTargeting Federal Enemies: He advocates for identifying \"enemies\" of D.C. statehood in Congress and actively working to remove them through political organizing.\nSeating National Allies: Conversely, he urges residents to help seat pro-statehood allies across the U.S. to build a legislative majority capable of passing admission acts like H.R. 51. \n\n3. Immediate Defense of Home Rule\nWhile statehood is the long-term goal, Graham insists that protecting Home Rule is the immediate priority for 2026. \nLocal Control of Funds: He warns that federal attempts to seize control of D.C. tax dollars and law enforcement are direct threats to the city's future.\nCollective Action: He urges voters to support the DC Statehood PAC to provide the financial and organizational infrastructure needed to \"fight back\" against these federal incursions."
+      }
+    },
+    {
       "name": "Fred Hill",
       "party": "Democratic",
       "office": "At-Large Council Member",
@@ -378,6 +414,13 @@
     },
     {
       "name": "Joe Jackson",
+      "party": "Democratic",
+      "office": "At-Large Council Member",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Greg Jackson",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
@@ -430,27 +473,6 @@
       "supportsStatehood": null
     },
     {
-      "name": "Eric Goulet",
-      "party": "Democratic",
-      "office": "At-Large Council Member",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Michael Graham",
-      "party": "Democratic",
-      "office": "At-Large Council Member",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Greg Jackson",
-      "party": "Democratic",
-      "office": "At-Large Council Member",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
       "name": "Darrell Green",
       "party": "Republican",
       "office": "At-Large Council Member",
@@ -484,6 +506,13 @@
       }
     },
     {
+      "name": "Miguel Trindade Deramo",
+      "party": "Democratic",
+      "office": "Ward 1 Council Member",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Terry Lynch",
       "party": "Democratic",
       "office": "Ward 1 Council Member",
@@ -499,13 +528,6 @@
     },
     {
       "name": "Jackie Reyes Yanes",
-      "party": "Democratic",
-      "office": "Ward 1 Council Member",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Miguel Trindade Deramo",
       "party": "Democratic",
       "office": "Ward 1 Council Member",
       "responded": false,
@@ -587,15 +609,15 @@
       "supportsStatehood": null
     },
     {
-      "name": "Jorge Rice",
-      "party": "Republican",
+      "name": "Marquell Merlin Washington",
+      "party": "Democratic",
       "office": "Ward 6 Council Member",
       "responded": false,
       "supportsStatehood": null
     },
     {
-      "name": "Marquell Merlin Washington",
-      "party": "Democratic",
+      "name": "Jorge Rice",
+      "party": "Republican",
       "office": "Ward 6 Council Member",
       "responded": false,
       "supportsStatehood": null
@@ -604,12 +626,23 @@
       "name": "Markus Batchelor",
       "party": "Democratic",
       "office": "United States Senator",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-02-18",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "1. I have been an active member of the Free DC movement and other local efforts to defend Home Rule and advance DC Statehood, including public demonstrations, press conferences, lobby days, coalition calls, and organizing meetings.\n\n2. Joined the board of DC Statehood PAC to advance our federal fight for self-determination, directing funds to congressional candidates in support of the Washington DC Admission Act.\n\n3. Been an effective spokesperson to media, helping to shape the local and national narrative in the midst of attacks on DC's Home Rule under both the Biden and Trump administrations.",
+        "intendedActions": "1. I will use the full platform of the office to keep DC Statehood at the center of the national conversation by building and maintaining a bipartisan congressional coalition, working with state legislators across the country to pass supportive resolutions, and partnering with civil rights, labor, democracy, and good-government organizations to elevate statehood as a national democracy issue. Statehood must be framed not as a local preference, but as unfinished civil rights work and a critical democratic reform.\n\n2. I will actively monitor and respond to congressional riders and oversight efforts that threaten DC’s autonomy. That means coordinated rapid response with the Mayor, Council, Delegate, and regional allies; direct engagement with appropriators; public testimony; and national media advocacy to raise the political cost of federal interference. Congress should not be able to quietly undermine DC’s locally enacted laws.\n\n3. I will treat every major federal debate, from voting rights to reproductive freedom to criminal justice, as connected to DC’s fight. As long as 700,000 residents lack full representation, our democracy remains incomplete.",
+        "congressResponse": "If Congress attempts to overturn DC laws or block the District’s budget, I will respond immediately, publicly, and in coordination with every available ally because congressional interference is not just a policy disagreement, it is a denial of democratic self-governance for 700,000 residents.\n\nOne specific action I would take is to organize and lead a coordinated federal advocacy push targeting key appropriators and leadership offices the moment a rider or disapproval resolution is introduced. That means direct meetings with members of Congress, mobilizing national civil rights and democracy organizations to apply pressure, and ensuring the issue receives sustained national media attention. Congressional interference often succeeds quietly — I intend to raise the political cost of interference.\n\nI would also work closely with the Mayor, Council, the District’s Delegate to Congress, and my delegation colleagues to present a unified front. When appropriate, I would support litigation strategies to challenge overreach.\n\nAbove all, I would make clear that every attempt to override DC law strengthens the moral and political case for Statehood. If Congress insists on governing a city whose residents it does not represent, then it must be prepared to defend that position in full public view.",
+        "partners": "Concerned DC Residents and Statehood Advocates: DC residents are the heart of the Statehood movement. As a lifelong Washingtonian, former elected official, and Ward 8 community leader, I have organized alongside neighbors, testified with advocates, and worked in coalition spaces where Statehood has long been a core demand. My relationship with residents and grassroots advocates is not transactional — it’s rooted in shared lived experience. As Senator, I would treat you as essential partners in strategy, mobilization, and movement-building.\n\nNational Pro-Democracy Organizations: National pro-democracy and civil rights organizations are essential to framing DC Statehood as a structural democracy issue. In my current role as National Political Director at People For the American Way, I work closely with allied organizations across the country to defend voting rights, civil liberties, and representative government. Those relationships position me to quickly align national messaging, research, grassroots organizing, and federal advocacy efforts around the urgency of Statehood.\n\nElected Leaders on Capitol Hill and Around the Nation: Building the legislative coalition for Statehood requires sustained engagement with members of Congress and state leaders nationwide. Through my work in national politics and my service as a DC elected official, I have developed relationships with progressive lawmakers, staff, and policy advocates across the country. As Shadow Senator, I would leverage those connections to grow co-sponsors, coordinate public support, and ensure that DC Statehood remains a live and active priority within the broader pro-democracy agenda.",
+        "voterInvolvement": "Statehood will not be won solely through congressional maneuvering — it will be won through organized, sustained pressure from DC residents themselves.\n\n1. I will treat the office as an organizing platform, not just an advocacy role. That means hosting regular town halls, ward-based forums, and issue briefings that connect statehood directly to the everyday concerns of residents — housing costs, public safety, reproductive freedom, transportation funding, and protection from federal interference. When people see how lack of representation affects their daily lives, the fight becomes personal and urgent.\n\n2. I will help build and maintain a citywide Statehood coalition that includes civic associations, faith leaders, labor unions, small business owners, students, and neighborhood groups. My goal is to make Statehood visible in every ward — through coordinated days of action, voter education drives, and partnerships with local institutions. We cannot allow Statehood to feel abstract or episodic; it must be woven into the civic culture of the District.\n\n3. I will prioritize youth engagement. Young Washingtonians have often led the moral charge for democracy in this country. By investing in civic education, leadership development, and direct organizing opportunities, we can build the next generation of Statehood advocates who see this as their unfinished work.\n\n4. I will ensure transparency and accountability. Residents deserve regular updates on federal strategy, congressional engagement, and progress. Statehood is a collective effort — and DC voters should feel not like spectators, but like co-authors of the movement that finally secures full representation.",
+        "additionalComments": "DC Statehood is not a new position for me, it is the throughline of my public life.\n\nAs a student in DC Public Schools, I came to understand early that the decisions shaping my education, my neighborhood, and my future were influenced by members of Congress I could not vote for. That realization didn’t make me cynical. It made me organize. From my earliest days as a youth advocate and student activist, I saw Statehood not as an abstract constitutional debate, but as a question of dignity and equal citizenship.\n\nAs an elected member of the DC State Board of Education, I experienced firsthand how vulnerable our local decisions can be to federal interference. And as a national political organizer working to defend democracy across the country, I’ve seen how deeply Americans value representation and self-determination — except, too often, when it comes to the people of their own capital city.\n\nMy stance is simple and unwavering: DC deserves full Statehood, full representation, and full control over its budget and laws. Not as a favor. Not as a bargaining chip. But as a matter of fundamental democratic principle.\n\nI am running to be DC’s last Shadow Senator — to help close this chapter in our history and ensure that the next generation of Washingtonians grows up not fighting for equality, but living it."
+      }
     },
     {
-      "name": "Robert Simmons",
-      "party": "Republican",
+      "name": "Paul Strauss",
+      "party": "Democratic",
       "office": "United States Senator",
       "responded": false,
       "supportsStatehood": null
@@ -623,22 +656,8 @@
       "undeliverable": true
     },
     {
-      "name": "Milton Hardy",
+      "name": "Robert Simmons",
       "party": "Republican",
-      "office": "United States Representative",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Brian Ready",
-      "party": "Democratic",
-      "office": "United States Representative",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Paul Strauss",
-      "party": "Democratic",
       "office": "United States Senator",
       "responded": false,
       "supportsStatehood": null
@@ -662,6 +681,20 @@
       }
     },
     {
+      "name": "Brian Ready",
+      "party": "Democratic",
+      "office": "United States Representative",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Milton Hardy",
+      "party": "Republican",
+      "office": "United States Representative",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Ciprian Ivanof",
       "party": "Republican",
       "office": "United States Representative",
@@ -669,7 +702,32 @@
       "supportsStatehood": null
     },
     {
+      "name": "De'Andre Anderson",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": true,
+      "respondedDate": "2026-02-17",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "Marching for Statehood with Mayor Bowser; volunteering with DC Vote demanding action from Congress; and working with Congresswoman Norton's office to promote Statehood.",
+        "intendedActions": "Demand that our delegate becomes a representative with voting rights; demand that a constitutional amendment be introduced in Congress that States would vote on to make DC a U.S. State; and demand that DC controls its own financial affairs.",
+        "congressResponse": "If elected, I would meet with Members of Congress to let them know that blocking DC's budget is not good governance, and eventually would protest these attempts.",
+        "partners": "DC Vote; and future Congressman Robert White. I've volunteered with DC Vote in the past, and worked with Councilmember White's office on various issues in the past.",
+        "voterInvolvement": "By informing them of the importance of Statehood through my council actions; via social media posts; and asking DC voters to join me in the fight.",
+        "additionalComments": "I've been a long-time supporter of DC Statehood. I support our lone member of Congress having voting rights in the House of Representatives, and will do everything in my power to secure DC Statehood for DC residents, if elected to the DC Council."
+      }
+    },
+    {
       "name": "Edward Daniels",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Senay Emmanuel",
       "party": "Independent",
       "office": "At-Large Council Member (Special Election)",
       "responded": false,
@@ -748,20 +806,6 @@
         "voterInvolvement": "It is important to humanize the impact...Clearly communicate how specific instances of congressional overreach affect daily life, from school funding to local safety and how statehood would have mitigated those issues. I love data! it's important to equip residents with the data, DC pays more in federal taxes per capita than any other state and has a larger population than both Vermont and Wyoming. I also believe it's important to modernize the argument against DC Statehood... We will workshop responses to hyper-partisan talking points, reminding the country that the Framers of the constitution could not have foreseen a modern, decentralized society where 700,000+ Americans are structurally excluded out of representation.",
         "additionalComments": "I want to commend the generations of advocates who have carried this torch. However, the game is evolving, and we must move with it. In a 2026 reality of remote work and decentralized government, the \"federal enclave\" is a specific footprint not an entire population of 700,000. I am an independent thinker, researcher and a people centric advocate who views statehood as modernization full stop. We are not asking for a favor; we are demanding the return of the rights we already pay more than ever one else for. It is time to align our 18th-century governing documents with our 21st-century reality."
       }
-    },
-    {
-      "name": "De'Andre Anderson",
-      "party": "Independent",
-      "office": "At-Large Council Member (Special Election)",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Senay Emmanuel",
-      "party": "Independent",
-      "office": "At-Large Council Member (Special Election)",
-      "responded": false,
-      "supportsStatehood": null
     },
     {
       "name": "Darryl Moch",
