@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "predeploy": "node -e \"const r=require('child_process').execSync('git status --porcelain').toString();if(r){console.error('\\n⚠️  You have uncommitted changes:\\n'+r+'Commit first: git add -A && git commit -m \"your message\"\\n');process.exit(1)}\" && npm run build",
     "deploy": "gh-pages -d dist --dotfiles",
-    "update-candidates": "node scripts/update-candidates.js"
+    "update-candidates": "node scripts/update-candidates.js",
+    "sync-boe": "node scripts/sync-boe.js"
   },
   "dependencies": {
     "react": "19.2.3",
@@ -27,6 +28,7 @@
     "eslint-plugin-react-refresh": "0.4.26",
     "gh-pages": "6.3.0",
     "globals": "16.5.0",
+    "pdf-parse": "^2.4.5",
     "vite": "7.3.1"
   }
 }
