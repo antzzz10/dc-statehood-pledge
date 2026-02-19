@@ -43,7 +43,7 @@ const BASE_CANDIDATES = [
   { name: "Janeese Lewis George", party: "Democratic", office: "Mayor" },
   { name: "Gary Goodweather", party: "Democratic", office: "Mayor" },
   { name: "Kathy Henderson", party: "Democratic", office: "Mayor" },
-  { name: "Ernest Johnson", party: "Democratic", office: "Mayor", undeliverable: true },
+  { name: "Ernest Johnson", party: "Democratic", office: "Mayor" },
   { name: "Regan Jones", party: "Democratic", office: "Mayor" },
   { name: "Stanley V Lawson Sr", party: "Democratic", office: "Mayor" },
   { name: "Terri \"Ginger\" Little", party: "Democratic", office: "Mayor" },
