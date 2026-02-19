@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "node -e \"const r=require('child_process').execSync('git status --porcelain').toString();if(r){console.error('\\n⚠️  You have uncommitted changes:\\n'+r+'Commit first: git add -A && git commit -m \"your message\"\\n');process.exit(1)}\" && npm run build",
+    "predeploy": "node -e \"const r=require('child_process').execSync('git status --porcelain').toString();if(r){console.error('\\n⚠️  You have uncommitted changes:\\n'+r+'Commit first: git add -A && git commit\\n');process.exit(1)}\" && npm run build",
     "deploy": "gh-pages -d dist --dotfiles",
     "update-candidates": "node scripts/update-candidates.js",
     "sync-boe": "node scripts/sync-boe.js"
