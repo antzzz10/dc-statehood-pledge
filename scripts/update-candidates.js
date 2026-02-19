@@ -287,15 +287,8 @@ function findResponse(responses, candidateName, candidateOffice) {
   return null;
 }
 
-function updateCandidates(csvPath) {
-  console.log('📊 Reading CSV file...');
-
-  if (!fs.existsSync(csvPath)) {
-    console.error(`❌ Error: File not found: ${csvPath}`);
-    process.exit(1);
-  }
-
-  const csvText = fs.readFileSync(csvPath, 'utf-8');
+function updateCandidates(csvText) {
+  console.log('📊 Reading CSV...');
   const rows = parseCSV(csvText);
 
   console.log(`   Found ${rows.length} total responses`);
@@ -454,16 +447,48 @@ function updateCandidates(csvPath) {
   console.log('   npm run deploy      # Push to candidates.representdc.org');
 }
 
+// Google Sheets CSV export URL (uses gviz endpoint which works with "anyone with link" sharing)
+const SHEET_ID = '1uPXHjcu8u2RHaZ1VgOIcEuvwvSzXy_N4zGH0pbkakNw';
+const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
+
+async function fetchSheet(url) {
+  const https = await import('https');
+  return new Promise((resolve, reject) => {
+    https.default.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return fetchSheet(res.headers.location).then(resolve, reject);
+      }
+      if (res.statusCode !== 200) {
+        return reject(new Error(`HTTP ${res.statusCode} fetching Google Sheet`));
+      }
+      const chunks = [];
+      res.on('data', (chunk) => chunks.push(chunk));
+      res.on('end', () => resolve(Buffer.concat(chunks).toString('utf-8')));
+      res.on('error', reject);
+    }).on('error', reject);
+  });
+}
+
 // Main
 const csvPath = process.argv[2];
 
-if (!csvPath) {
-  console.log('Usage: npm run update-candidates path/to/responses.csv');
-  console.log('\nSteps:');
-  console.log('1. Open your Google Sheet');
-  console.log('2. File → Download → Comma Separated Values (.csv)');
-  console.log('3. Run: npm run update-candidates ~/Downloads/[filename].csv');
-  process.exit(1);
+if (csvPath) {
+  // Local file mode
+  if (!fs.existsSync(csvPath)) {
+    console.error(`Error: File not found: ${csvPath}`);
+    process.exit(1);
+  }
+  updateCandidates(fs.readFileSync(csvPath, 'utf-8'));
+} else {
+  // Fetch from Google Sheets directly
+  console.log('Fetching responses from Google Sheets...');
+  try {
+    const csvText = await fetchSheet(SHEET_CSV_URL);
+    updateCandidates(csvText);
+  } catch (err) {
+    console.error(`Error fetching Google Sheet: ${err.message}`);
+    console.error('\nFallback: download CSV manually and run:');
+    console.error('  npm run update-candidates ~/Downloads/file.csv');
+    process.exit(1);
+  }
 }
-
-updateCandidates(csvPath);
