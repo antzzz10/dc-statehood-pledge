@@ -48,18 +48,24 @@ Candidates display one of four states (check order matters):
 
 Two methods exist — the CSV script is preferred:
 
-### Method 1: CSV Script (preferred)
+### Method 1: Fetch from Google Sheets (preferred)
 ```bash
-# 1. Download CSV from Google Sheets (must have "Status" column with "Approved")
-# 2. Run:
-npm run update-candidates ~/Downloads/responses.csv
-# 3. Review, commit, deploy:
+# 1. Fetch directly from Google Sheets and update JSON:
+npm run update-candidates
+# 2. Review, commit, deploy:
 git diff src/data/
 git add -A && git commit -m "Update candidates and responses"
 npm run deploy   # predeploy hook checks for uncommitted changes, then builds
 ```
 
+### Method 2: Local CSV file (fallback)
+```bash
+# If Google Sheets fetch fails, download CSV manually and pass the path:
+npm run update-candidates ~/Downloads/responses.csv
+```
+
 The script (`scripts/update-candidates.js`):
+- Fetches CSV from Google Sheets via gviz endpoint (Sheet ID: `1uPXHjcu8u2RHaZ1VgOIcEuvwvSzXy_N4zGH0pbkakNw`), or reads a local CSV file if a path is provided
 - Parses CSV with proper quoted-field handling
 - Filters for `Status === "Approved"` rows
 - Matches responses to candidates by name + office
@@ -69,7 +75,7 @@ The script (`scripts/update-candidates.js`):
 - Has `findResponse()` with fallback matching for legacy "Ward Council Member" form responses
 - Warns about unmatched responses
 
-### Method 2: Google Apps Script (legacy)
+### Method 3: Google Apps Script (legacy)
 - `scripts/GoogleSheetsToJSON.gs` — generates JSON directly in Google Sheets sidebar
 - Copy/paste into `candidates.json`
 
@@ -94,7 +100,7 @@ The script (`scripts/update-candidates.js`):
 npm run dev              # Start dev server (Vite)
 npm run build            # Production build to dist/
 npm run deploy           # Checks for uncommitted changes, builds, deploys to GitHub Pages
-npm run update-candidates <csv>  # Update JSON from Google Sheets CSV export
+npm run update-candidates        # Fetch from Google Sheets and update JSON (or pass a local CSV path as fallback)
 npm run lint             # ESLint
 ```
 
