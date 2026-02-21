@@ -6,6 +6,7 @@ import candidatesData from './data/candidates.json'
 function App() {
   const PRIMARY_DATE = "June 16, 2026";
   const [selectedOffice, setSelectedOffice] = useState("all");
+  const [selectedParty, setSelectedParty] = useState("all");
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expandedGroups, setExpandedGroups] = useState(new Set());
@@ -56,13 +57,20 @@ function App() {
     return uniqueOffices.sort();
   }, []);
 
+  // Get unique parties for filter
+  const parties = useMemo(() => {
+    const uniqueParties = [...new Set(candidatesData.candidates.map(c => c.party))];
+    return uniqueParties.sort();
+  }, []);
+
   // Filter and group candidates
   const filteredCandidates = useMemo(() => {
-    if (selectedOffice === "all") {
-      return candidatesData.candidates;
-    }
-    return candidatesData.candidates.filter(c => c.office === selectedOffice);
-  }, [selectedOffice]);
+    return candidatesData.candidates.filter(c => {
+      const matchesOffice = selectedOffice === "all" || c.office === selectedOffice;
+      const matchesParty = selectedParty === "all" || c.party === selectedParty;
+      return matchesOffice && matchesParty;
+    });
+  }, [selectedOffice, selectedParty]);
 
   // Group candidates by office
   const groupedCandidates = useMemo(() => {
@@ -167,24 +175,42 @@ function App() {
         <div className="container">
           <h2>Candidate Responses — Updated as They Come In</h2>
           <p className="section-intro">
-            Showing {filteredCandidates.length} of {candidatesData.candidates.length} candidates. Filter by office to narrow down the list.
+            Showing {filteredCandidates.length} of {candidatesData.candidates.length} candidates. Filter by office or party to narrow down the list.
           </p>
 
-          {/* Office Filter */}
-          <div className="filter-container">
-            <label htmlFor="office-filter" className="filter-label">Filter by Office:</label>
-            <select
-              id="office-filter"
-              className="office-filter"
-              value={selectedOffice}
-              onChange={(e) => setSelectedOffice(e.target.value)}
-            >
-              <option value="all">All Offices ({candidatesData.candidates.length})</option>
-              {offices.map(office => {
-                const count = candidatesData.candidates.filter(c => c.office === office).length;
-                return <option key={office} value={office}>{office} ({count})</option>;
-              })}
-            </select>
+          {/* Filters */}
+          <div className="filter-row">
+            <div className="filter-container">
+              <label htmlFor="office-filter" className="filter-label">Filter by Office:</label>
+              <select
+                id="office-filter"
+                className="office-filter"
+                value={selectedOffice}
+                onChange={(e) => setSelectedOffice(e.target.value)}
+              >
+                <option value="all">All Offices ({candidatesData.candidates.length})</option>
+                {offices.map(office => {
+                  const count = candidatesData.candidates.filter(c => c.office === office).length;
+                  return <option key={office} value={office}>{office} ({count})</option>;
+                })}
+              </select>
+            </div>
+
+            <div className="filter-container">
+              <label htmlFor="party-filter" className="filter-label">Filter by Party:</label>
+              <select
+                id="party-filter"
+                className="office-filter"
+                value={selectedParty}
+                onChange={(e) => setSelectedParty(e.target.value)}
+              >
+                <option value="all">All Parties ({candidatesData.candidates.length})</option>
+                {parties.map(party => {
+                  const count = candidatesData.candidates.filter(c => c.party === party).length;
+                  return <option key={party} value={party}>{party} ({count})</option>;
+                })}
+              </select>
+            </div>
           </div>
 
           <div className="table-container">
