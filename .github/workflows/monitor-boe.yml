@@ -1,0 +1,116 @@
+name: Monitor BOE Candidates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * *'  # 10 AM UTC / 6 AM ET
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run BOE sync (report only)
+        run: node scripts/sync-boe.js > boe-report.txt 2>&1 || true
+
+      - name: Display report
+        run: cat boe-report.txt
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if grep -q "No changes detected" boe-report.txt; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Apply changes to CSV
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: node scripts/sync-boe.js --apply >> boe-report.txt 2>&1
+
+      - name: Commit and push updated CSV
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --global user.name 'BOE Candidate Monitor'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add candidate-outreach-tracking.csv
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update tracking CSV from BOE PDFs - $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Upload report artifact
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: boe-report-${{ github.run_id }}
+          path: boe-report.txt
+          retention-days: 90
+
+      - name: Send email notification
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "BOE Candidate Changes Detected - ${{ github.run_id }}"
+          to: ${{ secrets.NOTIFICATION_EMAIL }}
+          from: BOE Candidate Monitor <noreply@representdc.org>
+          body: |
+            The BOE candidate sync detected changes in the DC Board of Elections candidate PDFs.
+
+            The tracking CSV (candidate-outreach-tracking.csv) has been automatically updated and committed.
+
+            (Full report attached as boe-report.txt)
+
+            ===== WHAT HAPPENED AUTOMATICALLY =====
+
+            - Downloaded latest candidate PDFs from dcboe.org
+            - Compared against candidate-outreach-tracking.csv
+            - Applied changes (new candidates added, withdrawals marked, contact info updated)
+            - Committed and pushed the updated CSV to the repo
+
+            ===== WHAT TO DO IF YOU APPROVE =====
+
+            FOR NEW CANDIDATES:
+            1. Open scripts/update-candidates.js
+            2. Add new candidates to the BASE_CANDIDATES array
+            3. Run: npm run update-candidates
+            4. Review changes: git diff src/data/
+            5. Commit and deploy: git add -A && git commit -m "Add new candidates" && npm run deploy
+
+            FOR WITHDRAWALS:
+            1. In scripts/update-candidates.js, add `withdrew: true` to the candidate in BASE_CANDIDATES
+            2. Run: npm run update-candidates
+            3. Commit and deploy
+
+            FOR CONTACT INFO CHANGES:
+            - Already applied to the tracking CSV (for outreach purposes)
+            - No action needed for the live site unless you want to update candidate data
+
+            ===== IF SOMETHING LOOKS WRONG =====
+
+            No action needed — the live site (candidates.representdc.org) is NOT affected.
+            Only the tracking CSV was updated. The live site only changes when you manually run `npm run deploy`.
+
+            View workflow run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          attachments: boe-report.txt
+          ignore_cert: false
+          convert_markdown: true
