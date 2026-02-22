@@ -39,6 +39,7 @@ const BASE_CANDIDATES = [
   { name: "Denise Rosado", party: "Republican", office: "Delegate to the House of Representatives", declined: true },
   { name: "Kymone Freeman", party: "Statehood Green", office: "Delegate to the House of Representatives", undeliverable: true },
   { name: "Greg Maye", party: "Democratic", office: "Delegate to the House of Representatives" },
+  { name: "Greg Jaczko", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Yaida Ford", party: "Democratic", office: "Mayor" },
   { name: "Janeese Lewis George", party: "Democratic", office: "Mayor" },
   { name: "Gary Goodweather", party: "Democratic", office: "Mayor" },
@@ -56,7 +57,11 @@ const BASE_CANDIDATES = [
   { name: "Robert L. Gross", party: "Democratic", office: "Mayor" },
   { name: "Talib Karim Muhammad", party: "Democratic", office: "Mayor" },
   { name: "Hope Solomon", party: "Democratic", office: "Mayor" },
+  { name: "Rini Sampath", party: "Democratic", office: "Mayor" },
+  { name: "Melodie Shuler", party: "Democratic", office: "Mayor" },
   { name: "Muhsin Boe Umar", party: "Statehood Green", office: "Mayor" },
+  { name: "Alexis Littlefield", party: "Republican", office: "Mayor" },
+  { name: "Esa Muhammad", party: "Republican", office: "Mayor" },
   { name: "Brian L. Schwalb", party: "Democratic", office: "Attorney General" },
   { name: "J.P. Szymkowicz", party: "Democratic", office: "Attorney General" },
   { name: "Manuel Rivera", party: "Republican", office: "Attorney General" },
@@ -74,8 +79,8 @@ const BASE_CANDIDATES = [
   { name: "Candace Tiana Nelson", party: "Democratic", office: "At-Large Council Member" },
   { name: "Oye Owolewa", party: "Democratic", office: "At-Large Council Member" },
   { name: "Lisa Raymond", party: "Democratic", office: "At-Large Council Member" },
-  { name: "Patricia Stamper", party: "Democratic", office: "At-Large Council Member" },
-  { name: "Eric Goulet", party: "Democratic", office: "At-Large Council Member" },
+  { name: "Patricia Stamper", party: "Democratic", office: "At-Large Council Member", withdrew: true },
+  { name: "Eric Goulet", party: "Democratic", office: "At-Large Council Member", withdrew: true },
   { name: "Michael Graham", party: "Democratic", office: "At-Large Council Member" },
   { name: "Greg Jackson", party: "Democratic", office: "At-Large Council Member" },
   { name: "Darrell Green", party: "Republican", office: "At-Large Council Member", undeliverable: true },
@@ -117,7 +122,10 @@ const BASE_CANDIDATES = [
   { name: "Nina Taylor", party: "Independent", office: "At-Large Council Member (Special Election)" },
   { name: "De'Andre Anderson", party: "Independent", office: "At-Large Council Member (Special Election)" },
   { name: "Senay Emmanuel", party: "Independent", office: "At-Large Council Member (Special Election)" },
-  { name: "Darryl Moch", party: "Statehood Green", office: "At-Large Council Member (Special Election)" }
+  { name: "Darryl Moch", party: "Statehood Green", office: "At-Large Council Member (Special Election)" },
+  { name: "Doni Crawford", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Cynthia Phillips", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Andrew Smith", party: "Independent", office: "At-Large Council Member (Special Election)" },
 ];
 
 // Sort BASE_CANDIDATES: within each office group, Democratic first then other parties
@@ -341,7 +349,14 @@ function updateCandidates(csvText) {
 
   // === Update elected office candidates ===
   console.log('\n🔄 Updating elected office candidates...');
-  const updated = BASE_CANDIDATES.map(candidate => {
+  const activeCandidates = BASE_CANDIDATES.filter(c => {
+    if (c.withdrew) {
+      console.log(`   ↩ ${c.name} (${c.office}) — withdrew, excluding from site`);
+      return false;
+    }
+    return true;
+  });
+  const updated = activeCandidates.map(candidate => {
     const response = findResponse(electedResponses, candidate.name, candidate.office);
 
     if (response) {
@@ -399,7 +414,7 @@ function updateCandidates(csvText) {
 
   const electedMatched = updated.filter(c => c.responded).length;
   console.log(`\n✅ Updated ${electedOutputPath}`);
-  console.log(`   ${electedMatched} responded, ${BASE_CANDIDATES.length - electedMatched} pending`);
+  console.log(`   ${electedMatched} responded, ${activeCandidates.length - electedMatched} pending`);
 
   // === Update party committee candidates ===
   if (partyResponses.length > 0) {

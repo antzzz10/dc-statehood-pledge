@@ -51,6 +51,13 @@
       "supportsStatehood": null
     },
     {
+      "name": "Greg Jaczko",
+      "party": "Democratic",
+      "office": "Delegate to the House of Representatives",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Robert L. Matthews",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
@@ -275,6 +282,20 @@
       "supportsStatehood": null
     },
     {
+      "name": "Rini Sampath",
+      "party": "Democratic",
+      "office": "Mayor",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Melodie Shuler",
+      "party": "Democratic",
+      "office": "Mayor",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Hope Solomon",
       "party": "Democratic",
       "office": "Mayor",
@@ -283,6 +304,20 @@
     },
     {
       "name": "Myrtle Patricia Alexander",
+      "party": "Republican",
+      "office": "Mayor",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Alexis Littlefield",
+      "party": "Republican",
+      "office": "Mayor",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Esa Muhammad",
       "party": "Republican",
       "office": "Mayor",
       "responded": false,
@@ -391,13 +426,6 @@
       "supportsStatehood": null
     },
     {
-      "name": "Eric Goulet",
-      "party": "Democratic",
-      "office": "At-Large Council Member",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
       "name": "Michael Graham",
       "party": "Democratic",
       "office": "At-Large Council Member",
@@ -470,13 +498,6 @@
     },
     {
       "name": "Lisa Raymond",
-      "party": "Democratic",
-      "office": "At-Large Council Member",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Patricia Stamper",
       "party": "Democratic",
       "office": "At-Large Council Member",
       "responded": false,
@@ -741,6 +762,13 @@
       }
     },
     {
+      "name": "Doni Crawford",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Edward Daniels",
       "party": "Independent",
       "office": "At-Large Council Member (Special Election)",
@@ -776,6 +804,13 @@
       "supportsStatehood": null
     },
     {
+      "name": "Cynthia Phillips",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Ryan Prince",
       "party": "Independent",
       "office": "At-Large Council Member (Special Election)",
@@ -805,6 +840,13 @@
     },
     {
       "name": "Doug Sloan",
+      "party": "Independent",
+      "office": "At-Large Council Member (Special Election)",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Andrew Smith",
       "party": "Independent",
       "office": "At-Large Council Member (Special Election)",
       "responded": false,
