@@ -79,34 +79,40 @@ jobs:
           body: |
             The BOE candidate sync detected changes in the DC Board of Elections candidate PDFs.
 
-            The tracking CSV (candidate-outreach-tracking.csv) has been automatically updated and committed.
+            The tracking CSV has been automatically updated and committed.
+            The LIVE SITE has NOT been changed — manual action is required (see below).
 
-            (Full report attached as boe-report.txt)
+            Full report is attached as boe-report.txt. The report includes:
+            - NEW CANDIDATES — not yet in tracking CSV
+            - NOT YET ON SITE — in BOE PDF but missing from candidates.representdc.org
+            - WITHDRAWALS — candidates who withdrew from their race
+            - WITHDRAWALS STILL ON SITE — withdrawn candidates still showing on the live site
+            - CONTACT INFO CHANGES — updated phone/email
 
             ===== WHAT HAPPENED AUTOMATICALLY =====
 
             - Downloaded latest candidate PDFs from dcboe.org
-            - Compared against candidate-outreach-tracking.csv
-            - Applied changes (new candidates added, withdrawals marked, contact info updated)
+            - Compared against tracking CSV AND live site data
+            - Applied CSV changes (new candidates added, withdrawals marked, contact info updated)
             - Committed and pushed the updated CSV to the repo
 
-            ===== WHAT TO DO IF YOU APPROVE =====
+            ===== WHAT TO DO NEXT =====
 
-            FOR NEW CANDIDATES:
+            TO ADD MISSING CANDIDATES TO THE SITE:
             1. Open scripts/update-candidates.js
             2. Add new candidates to the BASE_CANDIDATES array
             3. Run: npm run update-candidates
-            4. Review changes: git diff src/data/
+            4. Review: git diff src/data/
             5. Commit and deploy: git add -A && git commit -m "Add new candidates" && npm run deploy
 
-            FOR WITHDRAWALS:
+            TO REMOVE WITHDRAWN CANDIDATES FROM THE SITE:
             1. In scripts/update-candidates.js, add `withdrew: true` to the candidate in BASE_CANDIDATES
             2. Run: npm run update-candidates
             3. Commit and deploy
 
-            FOR CONTACT INFO CHANGES:
+            CONTACT INFO CHANGES:
             - Already applied to the tracking CSV (for outreach purposes)
-            - No action needed for the live site unless you want to update candidate data
+            - No action needed for the live site
 
             ===== IF SOMETHING LOOKS WRONG =====
 

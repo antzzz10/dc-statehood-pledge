@@ -600,25 +600,95 @@ function compareCandidates(boeCandidates, existingRows) {
 }
 
 // ============================================================
+// Step 5b: Compare BOE candidates against live site data
+// ============================================================
+
+function readSiteData() {
+  const candidatesPath = path.join(__dirname, '..', 'src', 'data', 'candidates.json');
+  const partyPath = path.join(__dirname, '..', 'src', 'data', 'party-candidates.json');
+
+  const elected = fs.existsSync(candidatesPath)
+    ? JSON.parse(fs.readFileSync(candidatesPath, 'utf-8')).candidates
+    : [];
+  const party = fs.existsSync(partyPath)
+    ? JSON.parse(fs.readFileSync(partyPath, 'utf-8')).candidates
+    : [];
+
+  return [...elected, ...party];
+}
+
+function compareBoeToSite(boeCandidates) {
+  const siteCandidates = readSiteData();
+
+  // Build a set of normalized keys from the site data
+  const siteKeys = new Set();
+  for (const c of siteCandidates) {
+    siteKeys.add(candidateKey(c.name, c.office));
+  }
+
+  // Build a map from site key to candidate for withdrawal check
+  const siteMap = new Map();
+  for (const c of siteCandidates) {
+    siteMap.set(candidateKey(c.name, c.office), c);
+  }
+
+  const notOnSite = [];
+  const withdrawalsOnSite = [];
+
+  for (const boe of boeCandidates) {
+    const key = candidateKey(boe.name, boe.office);
+
+    if (boe.withdrew) {
+      // Check if this withdrawn candidate is still on the site
+      if (siteKeys.has(key)) {
+        withdrawalsOnSite.push(boe);
+      }
+      continue;
+    }
+
+    if (!siteKeys.has(key) && !boe.isPartyCommittee) {
+      // Only flag elected office candidates missing from the elected site
+      // Party committee candidates are in a separate JSON
+      notOnSite.push(boe);
+    } else if (!siteKeys.has(key) && boe.isPartyCommittee) {
+      notOnSite.push(boe);
+    }
+  }
+
+  return {
+    notOnSite,
+    withdrawalsOnSite,
+    totalOnSite: siteCandidates.length,
+  };
+}
+
+// ============================================================
 // Step 6: Print diff report
 // ============================================================
 
-function printReport(diff, boeCandidates) {
+function printReport(diff, boeCandidates, siteComparison) {
   const { newCandidates, withdrawals, contactChanges, removed } = diff;
+  const { notOnSite, withdrawalsOnSite, totalOnSite } = siteComparison;
 
   console.log('\n' + '='.repeat(60));
   console.log('BOE SYNC REPORT');
   console.log('='.repeat(60));
   console.log(`Total candidates in BOE PDFs: ${boeCandidates.filter(c => !c.withdrew).length}`);
+  console.log(`Total candidates on live site: ${totalOnSite}`);
 
-  if (newCandidates.length === 0 && withdrawals.length === 0 &&
-      contactChanges.length === 0 && removed.length === 0) {
-    console.log('\n  No changes detected. Tracking CSV is up to date.');
+  const csvHasChanges = newCandidates.length > 0 || withdrawals.length > 0 ||
+      contactChanges.length > 0 || removed.length > 0;
+  const siteHasChanges = notOnSite.length > 0 || withdrawalsOnSite.length > 0;
+
+  if (!csvHasChanges && !siteHasChanges) {
+    console.log('\n  No changes detected. Tracking CSV and live site are up to date.');
     return;
   }
 
+  // --- CSV changes ---
+
   if (newCandidates.length > 0) {
-    console.log(`\n NEW CANDIDATES (${newCandidates.length}):`);
+    console.log(`\n NEW CANDIDATES — not in tracking CSV (${newCandidates.length}):`);
     for (const c of newCandidates) {
       console.log(`  + ${c.name} (${c.party}) — ${c.office}`);
       console.log(`    Phone: ${c.phone || 'N/A'}  Email: ${c.email || 'N/A'}  Filed: ${c.dateFiled}`);
@@ -651,7 +721,26 @@ function printReport(diff, boeCandidates) {
     }
   }
 
-  if (!APPLY) {
+  // --- Site comparison ---
+
+  if (notOnSite.length > 0) {
+    console.log(`\n NOT YET ON SITE — in BOE PDF but not on candidates.representdc.org (${notOnSite.length}):`);
+    console.log('  (Add these to BASE_CANDIDATES in update-candidates.js, then run npm run update-candidates)');
+    for (const c of notOnSite) {
+      const label = c.isPartyCommittee ? 'party-candidates.json' : 'candidates.json';
+      console.log(`  + ${c.name} (${c.party}) — ${c.office}  [→ ${label}]`);
+    }
+  }
+
+  if (withdrawalsOnSite.length > 0) {
+    console.log(`\n WITHDRAWALS STILL ON SITE — should be removed (${withdrawalsOnSite.length}):`);
+    console.log('  (Add withdrew: true in BASE_CANDIDATES, then run npm run update-candidates)');
+    for (const c of withdrawalsOnSite) {
+      console.log(`  ! ${c.name} (${c.party}) — ${c.office}`);
+    }
+  }
+
+  if (!APPLY && csvHasChanges) {
     console.log('\n' + '-'.repeat(60));
     console.log('Run with --apply to update the CSV:');
     console.log('  npm run sync-boe -- --apply');
@@ -793,11 +882,15 @@ async function main() {
     const existingData = readExistingCSV();
     console.log(`Existing CSV has ${existingData.rows.length} rows`);
 
-    // Step 5: Compare
+    // Step 5: Compare against CSV
     const diff = compareCandidates(allBoeCandidates, existingData.rows);
 
+    // Step 5b: Compare against live site
+    const siteComparison = compareBoeToSite(allBoeCandidates);
+    console.log(`Live site has ${siteComparison.totalOnSite} candidates`);
+
     // Step 6: Print report
-    printReport(diff, allBoeCandidates);
+    printReport(diff, allBoeCandidates, siteComparison);
 
     // Step 7: Apply if requested
     if (APPLY && (diff.newCandidates.length > 0 || diff.withdrawals.length > 0 ||
