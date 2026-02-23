@@ -32,7 +32,7 @@ A React SPA that tracks 2026 DC election candidates' positions on statehood and 
 - `responses` object keys: `statehoodSupport`, `topThreeActions`, `intendedActions`, `congressResponse`, `partners`, `voterInvolvement`, `additionalComments`
 
 ### `src/data/party-candidates.json`
-- DC Democratic Party committee candidates
+- DC Democratic Party committee candidates only (no Republican party positions)
 - Same shape but uses `slate` instead of `party` (e.g., "Free DC Slate", "Democrats United to Free DC")
 - Positions: National/At-Large/Ward Committeeman/Committeewoman
 
@@ -72,6 +72,7 @@ The script (`scripts/update-candidates.js`):
 - Handles both elected office AND party committee candidates (routes by "DC Democratic Party" office value)
 - Has `OFFICE_ALIASES` map for normalizing Google Form office names (includes ward-specific entries: Ward 1/3/5/6 Council Member)
 - Has `BASE_CANDIDATES` array as the canonical candidate list for elected offices (auto-sorted by party then last name within each office group)
+- Candidates with `withdrew: true` in BASE_CANDIDATES are excluded from the site JSON output
 - Has `findResponse()` with fallback matching for legacy "Ward Council Member" form responses
 - Warns about unmatched responses
 
@@ -84,6 +85,98 @@ The script (`scripts/update-candidates.js`):
 1. Add to `BASE_CANDIDATES` array in `scripts/update-candidates.js` (order doesn't matter — auto-sorted)
 2. Run the update script (or manually add to `candidates.json` / `party-candidates.json`)
 3. For party candidates, edit `party-candidates.json` directly (no base list in script)
+
+## Removing a Candidate (Withdrawal)
+
+1. Add `withdrew: true` to the candidate in `BASE_CANDIDATES` in `scripts/update-candidates.js`
+2. Run `npm run update-candidates` — the candidate will be excluded from the output JSON
+3. For party candidates, remove the entry from `party-candidates.json` directly
+4. Commit and deploy
+
+## Automated BOE Candidate Monitoring
+
+A GitHub Actions workflow monitors the DC Board of Elections for candidate changes.
+
+### How It Works
+
+**Workflow:** `.github/workflows/monitor-boe.yml`
+**Schedule:** Daily at 10 AM UTC (6 AM ET) + manual trigger via `workflow_dispatch`
+**Script:** `scripts/sync-boe.js`
+
+1. Scrapes https://dcboe.org/elections/2026-elections to find current candidate PDFs
+2. Downloads and parses primary + special election candidate lists
+3. Compares against `candidate-outreach-tracking.csv` (tracking) AND `src/data/candidates.json` + `party-candidates.json` (live site)
+4. If changes detected: applies updates to CSV, commits, pushes
+5. Sends email notification with full report and next-step instructions
+
+### Report Sections
+
+- **NEW CANDIDATES** — not yet in tracking CSV
+- **NOT YET ON SITE** — in BOE PDF but missing from candidates.representdc.org
+- **WITHDRAWALS** — candidates who withdrew
+- **WITHDRAWALS STILL ON SITE** — withdrawn candidates still showing on live site
+- **CONTACT INFO CHANGES** — updated phone/email
+
+### What It Changes Automatically
+
+- `candidate-outreach-tracking.csv` — adds new candidates, marks withdrawals in Notes, updates contact info
+- All existing outreach tracking columns (Date Contacted, Notes, etc.) are preserved
+
+### What It Does NOT Change
+
+- `src/data/candidates.json` — never touched
+- `src/data/party-candidates.json` — never touched
+- The live site — only changes when you manually run `npm run deploy`
+
+### Required Secrets (repo Settings → Secrets → Actions)
+
+- `EMAIL_USERNAME` — Gmail address (sender)
+- `EMAIL_PASSWORD` — Gmail App Password (16-character)
+- `NOTIFICATION_EMAIL` — where reports are delivered (any email, e.g., ProtonMail)
+
+### Required Repo Settings
+
+- Settings → Actions → General → Workflow permissions → **"Read and write permissions"**
+
+### Manual Run
+
+```bash
+# Run locally (report only):
+npm run sync-boe
+
+# Run locally (apply changes to CSV):
+npm run sync-boe -- --apply
+
+# Trigger via GitHub Actions:
+# Actions tab → "Monitor BOE Candidates" → "Run workflow"
+```
+
+### Known Issue: Name Matching False Positives
+
+The `normalizeName` function in `sync-boe.js` can produce false positives for:
+- Accented characters (David Sampé vs David Sampe)
+- Period in initials (Stanley J. Mayes vs Stanley J Mayes)
+
+Review the "NOT YET ON SITE" section manually to skip duplicates.
+
+## Google Sheets Push (Outreach Tracking)
+
+**Status:** Scripts written, not yet deployed. See `SHEETS-PUSH-SETUP.md` for setup instructions.
+
+Pushes new candidates from the tracking CSV directly into the Google Sheets outreach tracker, deduplicating by name+office. Existing outreach data is never touched.
+
+**Tracking Sheet ID:** `1IRp4eGz79vklgN1OjNzESABlHot2ZTCdliaPmGsAaUc` (gid: `293497211`)
+
+### Files
+- `scripts/push-to-sheets.js` — Node script, reads CSV and POSTs to Apps Script web app
+- `scripts/google-apps-script-push.gs` — Paste into Google Sheet's Apps Script editor
+- `.env` (not committed) — stores `SHEETS_WEBAPP_URL`
+
+### Usage (after setup)
+```bash
+npm run push-to-sheets              # Push new candidates to Google Sheets
+npm run push-to-sheets -- --dry-run # Preview without pushing
+```
 
 ## Key Patterns
 
@@ -101,6 +194,8 @@ npm run dev              # Start dev server (Vite)
 npm run build            # Production build to dist/
 npm run deploy           # Checks for uncommitted changes, builds, deploys to GitHub Pages
 npm run update-candidates        # Fetch from Google Sheets and update JSON (or pass a local CSV path as fallback)
+npm run sync-boe         # Compare BOE PDFs against CSV and site data (report only)
+npm run push-to-sheets   # Push new candidates to Google Sheets (requires setup)
 npm run lint             # ESLint
 ```
 
@@ -117,5 +212,9 @@ npm run lint             # ESLint
 
 - `QUICK-UPDATE.md` — Condensed update workflow reference
 - `UPDATING-RESPONSES.md` — Detailed guide including Google Apps Script setup
-- `candidate-outreach-tracking.csv` — Outreach tracking (not deployed)
+- `SHEETS-PUSH-SETUP.md` — Google Sheets push integration setup guide
+- `candidate-outreach-tracking.csv` — Outreach tracking (not deployed, updated by BOE workflow)
 - `scripts/generate-tracking-sheet.js` — Generates the tracking CSV
+- `scripts/sync-boe.js` — BOE candidate sync pipeline
+- `scripts/push-to-sheets.js` — Push candidates to Google Sheets
+- `scripts/google-apps-script-push.gs` — Apps Script for Google Sheets integration
