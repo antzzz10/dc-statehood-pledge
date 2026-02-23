@@ -400,19 +400,82 @@ function App() {
       <section className="questionnaire-info">
         <div className="container">
           <h2>About This Tracker</h2>
-          <div className="cta-box">
-            <p style={{ marginBottom: '1rem' }}>
-              This questionnaire was organized by the DC Democratic Party Statehood Committee
-              and sent to all declared candidates regardless of party affiliation.
+          <div className="about-content">
+            <p className="about-mission">
+              DC's elected leaders are the front line of defense for home rule and the face of the
+              statehood movement. This tracker exists so voters can see where every candidate stands
+              before they vote — because the fight for DC's rights starts with who we elect.
             </p>
-            <p style={{ marginBottom: '1rem' }}>
-              Results are published independently on RepresentDC.org to provide non-partisan
-              voter information. We believe DC voters deserve to know where every candidate—Democrat,
-              Republican, and Statehood Green—stands on statehood, home rule, and congressional interference.
-            </p>
-            <p style={{ fontSize: '0.9rem', color: '#666' }}>
-              Questions or feedback? Contact: <a href="mailto:info@representdc.org" style={{ color: '#DC143C' }}>info@representdc.org</a>
-            </p>
+
+            <div className="faq-section">
+              <details className="faq-item">
+                <summary>Why does this matter?</summary>
+                <div className="faq-answer">
+                  <p>
+                    DC is under unprecedented attack. Congress has introduced 74+ anti-DC bills, blocked
+                    $1.1 billion of our budget, overturned local criminal justice reforms, and passed
+                    bills to eliminate traffic cameras. This isn't another policy questionnaire — it's
+                    about whether candidates will defend DC's basic right to self-governance.
+                  </p>
+                  <p>
+                    Our elected leaders are the front line. Voters deserve to know who will fight boldly
+                    for DC, not just talk about it.
+                  </p>
+                </div>
+              </details>
+
+              <details className="faq-item">
+                <summary>Who is behind this?</summary>
+                <div className="faq-answer">
+                  <p>
+                    The questionnaire was developed by the DC Democratic Party Statehood Committee and
+                    sent to all declared candidates regardless of party. Results are published independently
+                    on <a href="https://www.representdc.org">RepresentDC.org</a>, a volunteer-run advocacy
+                    platform. This project is not affiliated with any campaign or political organization.
+                  </p>
+                </div>
+              </details>
+
+              <details className="faq-item">
+                <summary>Why are Republicans and independents included?</summary>
+                <div className="faq-answer">
+                  <p>
+                    Statehood and home rule are about the democratic rights of 700,000 DC residents, not
+                    partisan politics. Every candidate for DC office will face congressional interference.
+                    Voters of all affiliations deserve to know where candidates stand on defending DC's
+                    right to govern itself.
+                  </p>
+                </div>
+              </details>
+
+              <details className="faq-item">
+                <summary>How are responses handled?</summary>
+                <div className="faq-answer">
+                  <p>
+                    Candidates submit responses via a secure Google Form. Each response is reviewed before
+                    publication and published exactly as submitted — nothing is edited or summarized.
+                    Candidates who haven't responded yet are shown as "Pending," not penalized.
+                  </p>
+                </div>
+              </details>
+
+              <details className="faq-item">
+                <summary>What is RepresentDC?</summary>
+                <div className="faq-answer">
+                  <p>
+                    RepresentDC is a volunteer-run advocacy platform for DC statehood and home rule. In
+                    addition to this candidate tracker, it includes
+                    a <a href="https://billtracker.representdc.org">bill tracker</a> monitoring 74+
+                    anti-DC bills in Congress and an <a href="https://action.representdc.org">action hub</a> for
+                    getting involved.
+                  </p>
+                  <p>
+                    Questions or feedback? Contact us
+                    at <a href="mailto:info@representdc.org">info@representdc.org</a>.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
         </div>
       </section>
