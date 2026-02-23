@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import './App.css'
 
 function Respond() {
-  const QUESTIONNAIRE_LINK = "https://docs.google.com/forms/d/e/1FAIpQLScQ0P9SS8VRLoZsQCtDBbl70znVX0kGMQu92R42WPAK5AFyRg/viewform";
   const PRIMARY_DATE = "June 16, 2026";
 
   return (
@@ -21,12 +20,10 @@ function Respond() {
             Your responses will be published on candidates.representdc.org for all DC voters to see before the {PRIMARY_DATE} primary election.
           </p>
           <a
-            href={QUESTIONNAIRE_LINK}
+            href="mailto:info@representdc.org?subject=Statehood%20Questionnaire%20Request"
             className="cta-primary"
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            Complete Questionnaire →
+            Request the Questionnaire →
           </a>
           <p className="deadline">Takes 10-15 minutes • Primary Election: {PRIMARY_DATE}</p>
         </div>
@@ -38,7 +35,7 @@ function Respond() {
           <h2>Why Respond?</h2>
           <div className="info-grid">
             <div className="info-card">
-              <h3>📊 Transparency Matters</h3>
+              <h3>Transparency Matters</h3>
               <ul>
                 <li>Voters deserve to know where you stand</li>
                 <li>Shows you're serious about engaging with constituents</li>
@@ -47,7 +44,7 @@ function Respond() {
             </div>
 
             <div className="info-card">
-              <h3>🗳️ Timely Issue</h3>
+              <h3>Timely Issue</h3>
               <ul>
                 <li>Congress blocked $1.1 billion of DC's budget</li>
                 <li>74+ bills undermining DC autonomy introduced</li>
@@ -56,7 +53,7 @@ function Respond() {
             </div>
 
             <div className="info-card">
-              <h3>✅ Quick & Easy</h3>
+              <h3>Quick & Easy</h3>
               <ul>
                 <li>Takes just 10-15 minutes</li>
                 <li>Published on a rolling basis</li>
@@ -74,26 +71,26 @@ function Respond() {
 
           <div className="info-grid">
             <div className="info-card">
-              <h3>📝 Core Questions</h3>
+              <h3>Core Questions</h3>
               <ul>
                 <li>Do you support DC Statehood?</li>
-                <li>Have you signed the DC Statehood Pledge?</li>
                 <li>What actions have you taken to advance statehood?</li>
+                <li>What will you do to promote statehood and protect home rule?</li>
                 <li>How will you respond to congressional overreach?</li>
               </ul>
             </div>
 
             <div className="info-card">
-              <h3>📋 Your Information</h3>
+              <h3>Your Information</h3>
               <ul>
                 <li>Name and office you're running for</li>
-                <li>Contact information (optional)</li>
+                <li>Party affiliation</li>
                 <li>Campaign website (optional)</li>
               </ul>
             </div>
 
             <div className="info-card">
-              <h3>⏱️ Timeline</h3>
+              <h3>Timeline</h3>
               <ul>
                 <li><strong>Time:</strong> 10-15 minutes</li>
                 <li><strong>Published:</strong> Rolling basis</li>
@@ -104,14 +101,15 @@ function Respond() {
 
           <div className="cta-box">
             <h3>Ready to Share Your Position?</h3>
-            <p>Complete the questionnaire now to help DC voters make informed decisions.</p>
+            <p>
+              We're reaching out to all declared candidates directly. If you haven't been contacted yet,
+              email us and we'll send you the questionnaire right away.
+            </p>
             <a
-              href={QUESTIONNAIRE_LINK}
+              href="mailto:info@representdc.org?subject=Statehood%20Questionnaire%20Request"
               className="cta-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Complete Questionnaire →
+              Email info@representdc.org →
             </a>
           </div>
         </div>
@@ -133,7 +131,6 @@ function Respond() {
                   <th>Office</th>
                   <th>Responded?</th>
                   <th>Supports Statehood?</th>
-                  <th>Signed Pledge?</th>
                 </tr>
               </thead>
               <tbody>
@@ -142,13 +139,11 @@ function Respond() {
                   <td>Your Office</td>
                   <td><span className="status-badge responded">✓ Yes</span></td>
                   <td>Your Response</td>
-                  <td>Your Response</td>
                 </tr>
                 <tr className="sample-row pending">
                   <td><strong>Other Candidate</strong></td>
                   <td>Same Office</td>
                   <td><span className="status-badge pending">⏳ Pending</span></td>
-                  <td>—</td>
                   <td>—</td>
                 </tr>
               </tbody>
