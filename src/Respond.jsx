@@ -178,7 +178,6 @@ function Respond() {
               <ul>
                 <li><a href="https://www.representdc.org">Main Site</a></li>
                 <li><a href="https://billtracker.representdc.org">Bill Tracker</a></li>
-                <li><a href="https://action.representdc.org">Action Hub</a></li>
               </ul>
             </div>
           </div>

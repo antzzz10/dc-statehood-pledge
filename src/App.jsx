@@ -466,8 +466,7 @@ function App() {
                     RepresentDC is a volunteer-run advocacy platform for DC statehood and home rule. In
                     addition to this candidate tracker, it includes
                     a <a href="https://billtracker.representdc.org">bill tracker</a> monitoring 74+
-                    anti-DC bills in Congress and an <a href="https://action.representdc.org">action hub</a> for
-                    getting involved.
+                    anti-DC bills in Congress.
                   </p>
                   <p>
                     Questions or feedback? Contact us
@@ -508,7 +507,6 @@ function App() {
               <ul>
                 <li><a href="https://www.representdc.org">Main Site</a></li>
                 <li><a href="https://billtracker.representdc.org">Bill Tracker</a></li>
-                <li><a href="https://action.representdc.org">Action Hub</a></li>
               </ul>
             </div>
           </div>
