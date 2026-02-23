@@ -472,8 +472,19 @@
       "name": "Greg Jackson",
       "party": "Democratic",
       "office": "At-Large Council Member",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-02-23",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "I have attended DC Statehood events, donated to DC Statehood oriented events and have directly advocated for Statehood with members of Congress during our last lobby day while serving at Community Justice.",
+        "intendedActions": "As council member, I aim to build on my existing relationships within Congress to directly advocate to protect Home Rule and promote DC statehood.  Prior to running, I have briefed Leader Pelosi, Leader Jeffries, the Congressional Black Caucus seven times, the Gun Violence Prevention Task Force three times and worked directly with Senators Murphy, Lisa Blunt-Rochester, Booker, Collins and Durbin.  Specifically, I look forward to ensuring that these members of Congress are solidified as allies in our efforts to achieve Statehood and conduct annual briefings with members of Congress about the importance of these advocacy efforts.",
+        "congressResponse": "I will leverage my Congressional relationships to advocate for our District, partner with allied members to create \"Dear Colleague\" letters to build solidarity and partner with local organizations for grassroots advocacy efforts to apply pressure on the Appropriations Committee and other major stakeholders that have the power to overturn our budget or laws.",
+        "partners": "Senator Chris Murphy - A powerful rising voice in the Senate, Senator Murphy is also a close ally of mine from our work together developing the first law passed to gun violence in 30 years, the Bipartisan Safer Communities Act.  He and I have been long time colleagues and leaders in the fight to prevent gun violence in our country. \nRepresentative Maxwell Frost - A leading voice for statehood in the House of Representatives, Rep. Frost will be an amazing partner in our efforts.  I was on his campaign committee and have worked with him for the last 6 years even before his election.  He is also a strong supporter of my campaign for Council At-Large. \nSenator Lisa Blunt-Rochester - A rising star and one of only two Black women in Senate, Senator Blunt-Rochester has immense influence in both House and Senate. Together we designed the \"Break the Cycle of Violence Act\" which was passed in the House in 2022. An avid supporter of me, she will be a powerful ally for decades in pushing for Statehood.",
+        "voterInvolvement": "Primarily I hope to serve as a convener and fellow organizer in the fight for Statehood. As At-Large Council Member, I will work with voters and local organizations to help organize or amplify advocacy campaigns toward Congress.  I have a great deal of experience in these efforts, as I organized over 400 gun violence prevention groups nationwide as part of the \"Invest in Us\" coalition that led the efforts to pass multiple bills in the House and making the Bipartisan Safer Communities Act law in 2022.",
+        "additionalComments": ""
+      }
     },
     {
       "name": "Leniqua'dominique Jenkins",

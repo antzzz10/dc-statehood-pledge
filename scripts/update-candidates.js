@@ -20,6 +20,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Nickname aliases: maps form submission names → canonical BASE_CANDIDATES names
+// Add entries here when candidates submit responses using a different name variant
+const NAME_ALIASES = {
+  'gregory jackson': 'greg jackson',
+};
+
 // Base candidate list (same as Apps Script)
 const BASE_CANDIDATES = [
   { name: "Gordon Chaffin", party: "Democratic", office: "Delegate to the House of Representatives" },
@@ -274,11 +280,18 @@ function normalizeOffice(office) {
 // Find a response matching a candidate, with fallback strategies
 function findResponse(responses, candidateName, candidateOffice) {
   const nameLower = candidateName.toLowerCase();
+  const officeLower = candidateOffice.toLowerCase();
 
-  // 1. Exact match on name + office
+  // Build list of name variants to match against (canonical + any aliases that map to it)
+  const nameVariants = [nameLower];
+  for (const [alias, canonical] of Object.entries(NAME_ALIASES)) {
+    if (canonical === nameLower) nameVariants.push(alias);
+  }
+
+  // 1. Exact match on name (or alias) + office
   const exact = responses.find(r =>
-    r.name?.toLowerCase() === nameLower &&
-    r.office?.toLowerCase() === candidateOffice.toLowerCase()
+    nameVariants.includes(r.name?.toLowerCase()) &&
+    r.office?.toLowerCase() === officeLower
   );
   if (exact) return exact;
 
@@ -286,7 +299,7 @@ function findResponse(responses, candidateName, candidateOffice) {
   //    so match by name if the candidate is a ward council member
   if (candidateOffice.match(/^Ward \d+ Council Member$/)) {
     const wardFallback = responses.find(r =>
-      r.name?.toLowerCase() === nameLower &&
+      nameVariants.includes(r.name?.toLowerCase()) &&
       r.office === 'Ward Council Member'
     );
     if (wardFallback) return wardFallback;
@@ -394,12 +407,15 @@ function updateCandidates(csvText) {
     return result;
   });
 
-  // Check for unmatched elected responses
-  const matchedElected = electedResponses.filter(r =>
-    updated.some(c => c.responded && c.name.toLowerCase() === r.name?.toLowerCase())
-  );
+  // Check for unmatched elected responses (account for aliases)
+  const isNameMatch = (responseName, candidateName) => {
+    const rLower = responseName?.toLowerCase();
+    const cLower = candidateName.toLowerCase();
+    if (rLower === cLower) return true;
+    return NAME_ALIASES[rLower] === cLower;
+  };
   const unmatchedElected = electedResponses.filter(r =>
-    !updated.some(c => c.responded && c.name.toLowerCase() === r.name?.toLowerCase())
+    !updated.some(c => c.responded && isNameMatch(r.name, c.name))
   );
   if (unmatchedElected.length > 0) {
     console.log('\n⚠️  Unmatched elected office responses:');
