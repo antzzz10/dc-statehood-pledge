@@ -29,6 +29,49 @@ const CSV_PATH = path.join(__dirname, '..', 'candidate-outreach-tracking.csv');
 const APPLY = process.argv.includes('--apply');
 
 // ============================================================
+// Ignore list — suppress known false positives from reports
+// ============================================================
+// Each entry matches by normalized name + office. Add candidates here
+// that you've reviewed and intentionally decided not to act on, so
+// the daily notification only flags truly new changes.
+//
+// Format: { name, office } — name matching is fuzzy (same normalization
+// as the rest of the script), office must match the BOE-normalized form.
+// Use office: '*' to ignore a name in ALL offices.
+
+const KNOWN_IGNORES = [
+  // Name normalization false positives (accents/periods cause mismatches)
+  { name: 'David Sampé', office: 'At-Large Committeeman' },
+  { name: 'Stanley J. Mayes', office: 'Ward 1 Committeeman' },
+
+  // PDF parsing bug — address fragment parsed as candidate name
+  { name: 'th St. NW', office: '*' },
+
+  // Party candidates reviewed and intentionally not added to site
+  { name: 'Trupti "Trip" J. Patel', office: 'Ward 2 Committeewoman' },
+  { name: 'Hazel Bland Thomas', office: 'Ward 5 Committeewoman' },
+  { name: 'Georgette Joy Johnson', office: 'Ward 8 Committeewoman' },
+
+  // Republican Chairperson positions — not relevant to statehood tracker
+  { name: 'John Fredericks', office: 'Republican Chairperson Ward 2' },
+  { name: 'Teresa Maria Giral', office: 'Republican Chairperson Ward 3' },
+  { name: 'Fred Oladeinde', office: 'Republican Chairperson Ward 4' },
+  { name: 'Jon Hanen', office: 'Republican Chairperson Ward 6' },
+];
+
+function isIgnored(candidate) {
+  const nameNorm = normalizeName(candidate.name);
+  const officeNorm = (candidate.office || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  return KNOWN_IGNORES.some(ig => {
+    if (ig.office !== '*') {
+      const igOfficeNorm = ig.office.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (igOfficeNorm !== officeNorm) return false;
+    }
+    return normalizeName(ig.name) === nameNorm;
+  });
+}
+
+// ============================================================
 // HTTP helpers
 // ============================================================
 
@@ -667,14 +710,24 @@ function compareBoeToSite(boeCandidates) {
 // ============================================================
 
 function printReport(diff, boeCandidates, siteComparison) {
-  const { newCandidates, withdrawals, contactChanges, removed } = diff;
-  const { notOnSite, withdrawalsOnSite, totalOnSite } = siteComparison;
+  // Filter out ignored candidates from all report sections
+  const newCandidates = diff.newCandidates.filter(c => !isIgnored(c));
+  const { withdrawals, contactChanges, removed } = diff;
+  const notOnSite = siteComparison.notOnSite.filter(c => !isIgnored(c));
+  const { withdrawalsOnSite, totalOnSite } = siteComparison;
+
+  const ignoredNewCount = diff.newCandidates.length - newCandidates.length;
+  const ignoredSiteCount = siteComparison.notOnSite.length - notOnSite.length;
+  const totalIgnored = ignoredNewCount + ignoredSiteCount;
 
   console.log('\n' + '='.repeat(60));
   console.log('BOE SYNC REPORT');
   console.log('='.repeat(60));
   console.log(`Total candidates in BOE PDFs: ${boeCandidates.filter(c => !c.withdrew).length}`);
   console.log(`Total candidates on live site: ${totalOnSite}`);
+  if (totalIgnored > 0) {
+    console.log(`Suppressed from report: ${totalIgnored} known/ignored entries`);
+  }
 
   const csvHasChanges = newCandidates.length > 0 || withdrawals.length > 0 ||
       contactChanges.length > 0 || removed.length > 0;
@@ -762,7 +815,9 @@ function escapeCSV(value) {
 }
 
 function applyChanges(diff, boeCandidates, existingData) {
-  const { newCandidates, withdrawals, contactChanges } = diff;
+  // Filter out ignored candidates so they don't get added to the CSV
+  const newCandidates = diff.newCandidates.filter(c => !isIgnored(c));
+  const { withdrawals, contactChanges } = diff;
   let { headers, rows } = existingData;
 
   // Ensure we have all needed headers
