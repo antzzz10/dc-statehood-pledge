@@ -21,7 +21,6 @@
 
 import fs from 'fs';
 import path from 'path';
-import https from 'https';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -102,44 +101,19 @@ function readCSV() {
   return rows;
 }
 
-function post(url, data) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify(data);
-    const urlObj = new URL(url);
-
-    const options = {
-      hostname: urlObj.hostname,
-      path: urlObj.pathname + urlObj.search,
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(body),
-      },
-    };
-
-    const req = https.request(options, (res) => {
-      // Follow redirects (Apps Script returns 302)
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return post(res.headers.location, data).then(resolve, reject);
-      }
-
-      const chunks = [];
-      res.on('data', (chunk) => chunks.push(chunk));
-      res.on('end', () => {
-        const text = Buffer.concat(chunks).toString('utf-8');
-        try {
-          resolve(JSON.parse(text));
-        } catch {
-          resolve({ status: 'ok', raw: text });
-        }
-      });
-      res.on('error', reject);
-    });
-
-    req.on('error', reject);
-    req.write(body);
-    req.end();
+async function post(url, data) {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+    redirect: 'follow',
   });
+  const text = await response.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    return { status: 'ok', raw: text };
+  }
 }
 
 async function main() {
@@ -174,14 +148,23 @@ async function main() {
   console.log(`Pushing to Google Sheets...`);
   const result = await post(WEBAPP_URL, { candidates });
 
+  if (result.raw) {
+    // Got HTML or non-JSON response — show a snippet for debugging
+    const snippet = result.raw.substring(0, 500);
+    if (snippet.includes('Error') || snippet.includes('error') || snippet.includes('<!DOCTYPE')) {
+      console.error(`\nApps Script returned non-JSON response:\n${snippet}...`);
+      process.exit(1);
+    }
+  }
+
   if (result.status === 'error') {
     console.error(`Error from Apps Script: ${result.message}`);
     process.exit(1);
   }
 
-  console.log(`\n${result.message}`);
+  console.log(`\n${result.added || 0} candidates added, ${result.skipped?.length || 0} already existed`);
   if (result.skipped && result.skipped.length > 0 && result.skipped.length <= 10) {
-    console.log(`Skipped (already in sheet): ${result.skipped.join(', ')}`);
+    console.log(`Skipped: ${result.skipped.join(', ')}`);
   }
 }
 
