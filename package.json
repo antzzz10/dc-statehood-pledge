@@ -12,7 +12,8 @@
     "deploy": "gh-pages -d dist --dotfiles",
     "update-candidates": "node scripts/update-candidates.js",
     "sync-boe": "node scripts/sync-boe.js",
-    "push-to-sheets": "node scripts/push-to-sheets.js"
+    "push-to-sheets": "node scripts/push-to-sheets.js",
+    "email-lists": "node scripts/email-lists.js"
   },
   "dependencies": {
     "react": "19.2.3",
