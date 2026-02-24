@@ -70,10 +70,10 @@ async function findPdfLinks() {
 
   // Find the primary candidates PDF and special election candidates PDF
   const primaryPdf = links.find(l =>
-    /primary.*candidates/i.test(l) && !/calendar/i.test(l) && !/circulat/i.test(l)
+    /primary.*candidate/i.test(l) && !/calendar/i.test(l) && !/circulat/i.test(l)
   );
   const specialPdf = links.find(l =>
-    /special.*election.*candidates/i.test(l) && !/calendar/i.test(l) && !/circulat/i.test(l)
+    /special.*election.*candidate/i.test(l) && !/calendar/i.test(l) && !/circulat/i.test(l)
   );
 
   if (!primaryPdf) {
