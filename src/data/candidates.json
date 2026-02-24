@@ -223,6 +223,13 @@
       }
     },
     {
+      "name": "Virginia Griggs",
+      "party": "Democratic",
+      "office": "Mayor",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
       "name": "Robert L. Gross",
       "party": "Democratic",
       "office": "Mayor",
@@ -635,6 +642,13 @@
     {
       "name": "Jeffrey Kihien-Palza",
       "party": "Republican",
+      "office": "Ward 5 Council Member",
+      "responded": false,
+      "supportsStatehood": null
+    },
+    {
+      "name": "Joyce Robinson Paul",
+      "party": "Statehood Green",
       "office": "Ward 5 Council Member",
       "responded": false,
       "supportsStatehood": null
