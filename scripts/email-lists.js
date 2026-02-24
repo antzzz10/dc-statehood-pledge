@@ -138,9 +138,13 @@ function printList(label, entries) {
     console.log(`  ${e.name} — ${e.office}`);
   }
 
-  // Print comma-separated emails (copy-paste ready)
-  const emails = entries.map(e => e.email).join(', ');
-  console.log(`\nEmails (comma-separated):\n${emails}\n`);
+  // Print deduplicated comma-separated emails (copy-paste ready)
+  const uniqueEmails = [...new Set(entries.map(e => e.email))];
+  const emails = uniqueEmails.join(', ');
+  const dupeNote = uniqueEmails.length < entries.length
+    ? ` (${uniqueEmails.length} unique)`
+    : '';
+  console.log(`\nEmails${dupeNote}:\n${emails}\n`);
 
   return emails;
 }
