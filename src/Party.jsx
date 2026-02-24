@@ -25,8 +25,9 @@ function Party() {
 
   const slates = ['Free DC Slate', 'Democrats United to Free DC', 'Fight For Statehood|Free D.C.', 'Act Now DC', 'Independent'];
 
-  // Recent responses (within last 14 days)
+  // Recent responses (within last 14 days, capped at 8)
   const RECENT_DAYS = 14;
+  const MAX_RECENT = 8;
   const recentCutoff = useMemo(() => {
     const d = new Date();
     d.setDate(d.getDate() - RECENT_DAYS);
@@ -36,7 +37,8 @@ function Party() {
   const recentResponses = useMemo(() => {
     return candidatesData.candidates
       .filter(c => c.responded && c.respondedDate && c.respondedDate >= recentCutoff)
-      .sort((a, b) => b.respondedDate.localeCompare(a.respondedDate));
+      .sort((a, b) => b.respondedDate.localeCompare(a.respondedDate))
+      .slice(0, MAX_RECENT);
   }, [recentCutoff]);
 
   const isRecent = (candidate) => {
