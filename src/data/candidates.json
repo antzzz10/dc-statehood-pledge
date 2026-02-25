@@ -86,8 +86,19 @@
       "name": "Vince Morris",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-02-24",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "My work as a journalist during the control board era pointing out the inequities of 'home fool' were read by thousands of DC residents and consistently provided helpful information about our plight. Later, as a father I worked as a volunteer at my daughters school and talked about the lack of statehood and its impact on the District. And of course, by running I am offering myself as the only candidate with an actual plan to achieve statehood.",
+        "intendedActions": "I will seek to restore the damage to Home Rule that has happened under Rep. Norton. Sadly my children who are third generation DC residents are further from seeing statehood than we were under President Richard Nixon. I will undo that damage by finally creating dates and benchmarks, and being deliberate about engaging with Republicans.",
+        "congressResponse": "I will bring Rep. Comer on a driving tour of DC neighborhoods to educate him on the normalcy of District families.",
+        "partners": "Sen. Schumer (Friends with him for 25 years)\nSen. Collins (former colleague on Appropriations)\nSen. Sanders (former boss)",
+        "voterInvolvement": "By encouraging continued direct action where appropriate",
+        "additionalComments": "I am the only candidate who has a plan and understanding of the process. The rest are like children promising unlimited recess in a junior high school class president contest."
+      }
     },
     {
       "name": "Brooke Pinto",
