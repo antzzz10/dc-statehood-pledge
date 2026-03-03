@@ -672,8 +672,19 @@
       "name": "Zachary Parker",
       "party": "Democratic",
       "office": "Ward 5 Council Member",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-03-02",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "Over the last almost four years, I am most proud of three actions I have taken in support of DC Statehood. First, I have consistently fought against congressional interference in our local laws, using my vote and my voice to defend the District’s autonomy whenever Congress attempted to override the will of DC residents. Protecting Home Rule is foundational to the broader fight for statehood.\n\nSecond, I have used my platform to actively educate leaders and audiences outside of DC about why statehood is a matter of civil rights, democracy, and racial equity. Whether in national forums, meetings with stakeholders, or public commentary, I have made clear that taxation without representation is unacceptable in 2026.\n\nThird, I have publicly and unequivocally endorsed DC Statehood as a policy priority, integrating it into my advocacy rather than treating it as symbolic rhetoric. Statehood is not an abstract issue. It is about full voting representation, budget autonomy, and self-determination for our residents, and I will continue advancing that fight both inside and outside the District.",
+        "intendedActions": "I have and intend to hold the line aggressively against congressional interference, including in the current tax fight. When Congress attempts to overturn or undermine locally enacted revenue measures, I will use every available platform to defend the District’s authority to govern its own budget and tax policy.",
+        "congressResponse": "When Congress has attempted to overturn DC laws or interfere with our budget, I have responded immediately and publicly. I have educated residents about what was at stake through town halls, media appearances, and direct communication, making clear how congressional interference harms DC families in real and tangible ways. I have worked with my Council colleagues to pass formal resolutions rejecting interference and affirming our commitment to Home Rule.\n\nI have also lobbied members of Congress, met with federal offices, and partnered with national civil rights and democracy organizations to build opposition to these efforts. When necessary, I have supported exploring legal strategies through the Attorney General. I have refused to normalize interference as routine, and I will continue using my voice and my office to defend DC’s autonomy and advance Statehood.",
+        "partners": "In promoting DC Statehood, I intend to continue working closely with our Delegate to Congress, our Shadow Representative and Shadow Senators, and the DC Democratic Party.\n\nI have an active working relationship with our Delegate’s office and have partnered on messaging and advocacy when Congress has attempted to interfere with DC laws or our budget. I have also engaged with our Shadow delegation to amplify statehood education efforts and align local and national advocacy strategies. In addition, I have worked with leaders within the DC Democratic Party to elevate Statehood as a core civil rights and democracy issue in local and national political spaces. These relationships are ongoing and collaborative, and I will continue strengthening them to ensure our push for Statehood is coordinated, visible, and persistent.",
+        "voterInvolvement": "I believe Statehood will only be won if DC residents are organized, informed, and mobilized. I have already worked to educate voters about congressional interference and what it means for our budget, our laws, and our rights. Most recently, I led a delegation of nearly 50 Ward 5 neighbors to Capitol Hill to meet directly with Members of Congress and their staff to lobby against harmful congressional action. That kind of direct civic engagement matters. It shows that DC residents are not passive observers. We are active participants in defending our democracy.\n\nGoing forward, I will continue hosting town halls, organizing advocacy days, and partnering with civic and community organizations to equip residents with the tools to contact Congress, submit testimony, and elevate their voices nationally. Statehood cannot just be a slogan from elected officials. It must be a people powered movement. My role is to educate, convene, and mobilize residents so they are empowered to demand full representation and self determination.",
+        "additionalComments": "Now more than ever, DC needs serious, steady leadership in the face of unprecedented congressional interference and political uncertainty. Statehood is not a symbolic issue for me. It is about protecting our budget, our public safety laws, our healthcare programs, and our fundamental right to self governance. Given the level of change and disruption facing the District, we must rely on experienced, proven leaders who understand both the policy and political terrain and who believe deeply in Statehood as a matter of civil rights and democracy.\n\nI have not wavered on this issue. I have fought against congressional overreach, educated audiences inside and outside the District, mobilized residents to advocate on the Hill, and used my platform to center Statehood in the broader national conversation. DC voters deserve representation that is consistent, informed, and unafraid to defend our autonomy. I remain fully committed to that fight."
+      }
     },
     {
       "name": "Jeffrey Kihien-Palza",
@@ -925,8 +936,19 @@
       "name": "Doug Sloan",
       "party": "Independent",
       "office": "At-Large Council Member (Special Election)",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-03-02",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "I worked with DC NAACP to get DC Statehood introduced as a continuing resolution at the NAACP National Convention to ensure its part of the regular congressional lobbying efforts of the NAACP on Capitol Hill. I lobbied congressional members on Capitol Hill for DC Statehood. I actively promoted DC Statehood in international media interviews on Al Jazeera and CGTN America (I am a regular contributor on China Global Television Network - CGTN).",
+        "intendedActions": "I intend to promote DC Statehood on international news stations (I regulary appear on CGTN America, Al-Jazeera and TRT-World) and proactively work with our DC State Senators to promte DC Statehood via social and mass media outlets.",
+        "congressResponse": "Work with the Attorney General on a legal response, actively lobby conressional members on Capitol Hill to come to their senses, engage in peaceful protest if necessary.",
+        "partners": "The NAACP - Former First Vice-President of the DC NAACP.\nCongressional Rep - Elect, Robert White - Neighbor, acquaintance and probable winner of the Congressional Representative election",
+        "voterInvolvement": "Honestly, outside of the DC Statehood diehards, I just dont see a big DC Statehood rush happening, unless there is a way to get it through congress and onto the desk of a Democrat President. If Dems get a super majority, like Obama had in 2009-2010 (when there was unfortunately no Statehood Bill on the floor to even be considered), then DC has a chance. But sans that I struggle to see how we can motivate people over an issue that has stood stagnant for 50+ years. We need a congressional super-majority.",
+        "additionalComments": "The history of DC's fight for statehood, lack of voting representation and right to self-determination should be a mandatory part of the curriculum in all DC schools (public, charter and private)."
+      }
     },
     {
       "name": "Andrew Smith",
