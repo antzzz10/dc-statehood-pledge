@@ -104,8 +104,19 @@
       "name": "Brooke Pinto",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-03-03",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "This is a crisis moment for DC - and it’s why I decided to step up and run for Congress in the first place. The first action I’m proudest of is fighting back against the decision to revoke DC’s sanctuary city status. After the Mayor decided to repeal DC’s sanctuary values law, I led the fight to place it back into the budget - and we won. Second, I’m using my position as Chair of the Council Committee on Public Safety and the Judiciary to ensure that DC residents have transparency and accountability from our MPD and federal law enforcement operating here. That’s why I introduced a body worn camera bill in February, to ensure that when federal officers engage in a violent incident, that footage must be released to the public. Finally, I’ve been on Capitol Hill nearly every week since Donald Trump’s inauguration championing the case of DC’s self-determination in Congress, making sure that members of both parties understand the consequences of their actions for the safety and livelihoods of DC residents.",
+        "intendedActions": "As a current member of the DC Council, I’m fighting every single day to protect Home Rule. I’m very proud of the work of my office to protect DC’s sanctuary city law, even in the face of threats from the Trump Administration.",
+        "congressResponse": "In Congress, it will be my job to protect every DC law passed by our DC Council - because my job is to protect our democracy, not pick and choose which laws I support and overturn the ones I don’t. I’ll use my committee assignments and office to make the case to all my colleagues about the impacts of their legislation, and I’ll campaign across the country to build a pro-statehood majority in Congress so we never have to be held hostage to the whims of Congress again.",
+        "partners": "First, local activists who have made this fight a reality for the last several decades, including the DC Democratic Party and the DC Statehood PAC. Second, I believe that we need to build a national movement to elect a pro-statehood majority to the House and Senate - so I’ll work with progressive allies in every corner of the country to elect federal officials who will center DC Statehood in their campaigns.",
+        "voterInvolvement": "Every single issue facing our city today - from our Medicaid allocation, to funding for our schools, to police presence in our streets - is a function of DC’s lack of statehood. I’ll plan to regularly convene advocates on all of these issues to strategize on how to build national power for a pro-statehood majority in the Senate and the House nationally.",
+        "additionalComments": "Every single issue facing our city is exacerbated due to our lack of statehood and voting representation in Congress. We need to build a national movement to elevate this issue to the top of the Democratic agenda in every single federal race across the country so we can build a pro-statehood majority in the House and Senate."
+      }
     },
     {
       "name": "Mike Smith",
