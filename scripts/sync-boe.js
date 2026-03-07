@@ -44,9 +44,6 @@ const KNOWN_IGNORES = [
   { name: 'David Sampé', office: 'At-Large Committeeman' },
   { name: 'Stanley J. Mayes', office: 'Ward 1 Committeeman' },
 
-  // PDF parsing bug — address fragment parsed as candidate name
-  { name: 'th St. NW', office: '*' },
-
   // Party candidates reviewed and intentionally not added to site
   { name: 'Trupti "Trip" J. Patel', office: 'Ward 2 Committeewoman' },
   { name: 'Hazel Bland Thomas', office: 'Ward 5 Committeewoman' },
@@ -384,6 +381,9 @@ function parseCandidateLine(line, party, office) {
   // Remove trailing quotes/nicknames for cleaner matching but keep the original form
   name = name.split('\n')[0].trim();
 
+  // Reject address fragments and other parsing artifacts
+  if (isJunkName(name)) return null;
+
   // Find phone (pattern: XXX-XXX-XXXX)
   const phoneRegex = /(\d{3}-\d{3}-\d{4})/;
   // Find email
@@ -442,6 +442,9 @@ function parseSpecialElectionLine(line) {
   name = name.replace(/\n?\(Currently,.*?\)/gs, '').trim();
   name = name.split('\n')[0].trim();
 
+  // Reject address fragments and other parsing artifacts
+  if (isJunkName(name)) return null;
+
   const fullLine = parts.join(' ');
 
   // Detect party from the line (check before cleaning name since party
@@ -483,6 +486,22 @@ function cleanName(name) {
   // Collapse whitespace
   name = name.replace(/\s+/g, ' ').trim();
   return name;
+}
+
+/**
+ * Reject parsed "candidates" that are actually address fragments or other
+ * PDF parsing artifacts. Returns true if the name looks like junk.
+ */
+function isJunkName(name) {
+  const n = name.toLowerCase().trim();
+  // Address fragments: "th St. NW", "rd St. NW", "1234 Some Ave", etc.
+  if (/^(st|nd|rd|th)\b/i.test(n)) return true;
+  if (/\b(st|ave|blvd|dr|pl|ct|ln|way)\.\s*(nw|ne|se|sw)\b/i.test(n)) return true;
+  // Too short to be a real name (less than 3 alpha chars)
+  if (n.replace(/[^a-z]/g, '').length < 3) return true;
+  // Looks like a pure number / zip code
+  if (/^\d+$/.test(n)) return true;
+  return false;
 }
 
 // ============================================================
