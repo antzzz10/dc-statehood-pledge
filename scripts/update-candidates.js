@@ -24,6 +24,7 @@ const __dirname = path.dirname(__filename);
 // Add entries here when candidates submit responses using a different name variant
 const NAME_ALIASES = {
   'gregory jackson': 'greg jackson',
+  'david t gatling': 'david gatling',
 };
 
 // Base candidate list (same as Apps Script)
@@ -37,7 +38,7 @@ const BASE_CANDIDATES = [
   { name: "Kelly Mikel Williams", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Kinney Zalesne", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Deirdre Brown", party: "Democratic", office: "Delegate to the House of Representatives" },
-  { name: "Vince Morris", party: "Democratic", office: "Delegate to the House of Representatives" },
+  { name: "Vince Morris", party: "Democratic", office: "Delegate to the House of Representatives", withdrew: true },
   { name: "Mike Smith", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Samuel Greenfield", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Graciela A. DaCruz", party: "Statehood Green", office: "Delegate to the House of Representatives" },
@@ -60,7 +61,8 @@ const BASE_CANDIDATES = [
   { name: "Christopher E. Rossi", party: "Republican", office: "Mayor" },
   { name: "José Font", party: "Democratic", office: "Mayor" },
   { name: "Vincent Orange", party: "Democratic", office: "Mayor" },
-  { name: "Robert L. Gross", party: "Democratic", office: "Mayor" },
+  { name: "Robert L. Gross", party: "Democratic", office: "Mayor", withdrew: true },
+  { name: "Robert L. Gross", party: "Statehood Green", office: "Mayor" },
   { name: "Talib Karim Muhammad", party: "Democratic", office: "Mayor" },
   { name: "Hope Solomon", party: "Democratic", office: "Mayor" },
   { name: "Rini Sampath", party: "Democratic", office: "Mayor" },
@@ -68,8 +70,9 @@ const BASE_CANDIDATES = [
   { name: "Muhsin Boe Umar", party: "Statehood Green", office: "Mayor" },
   { name: "Alexis Littlefield", party: "Republican", office: "Mayor" },
   { name: "Esa Muhammad", party: "Republican", office: "Mayor" },
-  { name: "Virginia Griggs", party: "Democratic", office: "Mayor" },
+  { name: "Virginia Griggs", party: "Democratic", office: "Mayor", withdrew: true },
   { name: "David Gatling", party: "Democratic", office: "Mayor" },
+  { name: "Ginny Griggs", party: "Statehood Green", office: "Mayor" },
   { name: "Brian L. Schwalb", party: "Democratic", office: "Attorney General" },
   { name: "J.P. Szymkowicz", party: "Democratic", office: "Attorney General" },
   { name: "Manuel Rivera", party: "Republican", office: "Attorney General" },
@@ -98,6 +101,7 @@ const BASE_CANDIDATES = [
   { name: "Aparna Raj", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Jackie Reyes Yanes", party: "Democratic", office: "Ward 1 Council Member" },
   { name: "Miguel Trindade Deramo", party: "Democratic", office: "Ward 1 Council Member" },
+  { name: "Jude Crannitch", party: "Statehood Green", office: "Ward 1 Council Member" },
   { name: "Jett James Jasper", party: "Republican", office: "Ward 1 Council Member" },
   { name: "Matthew Frumin", party: "Democratic", office: "Ward 3 Council Member" },
   { name: "Adam J. Prinzo", party: "Democratic", office: "Ward 3 Council Member" },
