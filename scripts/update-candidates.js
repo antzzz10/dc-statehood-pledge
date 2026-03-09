@@ -422,12 +422,25 @@ function updateCandidates(csvText) {
     if (rLower === cLower) return true;
     return NAME_ALIASES[rLower] === cLower;
   };
+  const withdrawnCandidates = BASE_CANDIDATES.filter(c => c.withdrew);
   const unmatchedElected = electedResponses.filter(r =>
     !updated.some(c => c.responded && isNameMatch(r.name, c.name))
   );
-  if (unmatchedElected.length > 0) {
+  const unmatchedWithdrawn = unmatchedElected.filter(r =>
+    withdrawnCandidates.some(c => isNameMatch(r.name, c.name))
+  );
+  const unmatchedUnknown = unmatchedElected.filter(r =>
+    !withdrawnCandidates.some(c => isNameMatch(r.name, c.name))
+  );
+  if (unmatchedWithdrawn.length > 0) {
+    console.log('\n   ↩ Skipping responses from withdrawn candidates:');
+    unmatchedWithdrawn.forEach(r => {
+      console.log(`     "${r.name}" — "${r.office}"`);
+    });
+  }
+  if (unmatchedUnknown.length > 0) {
     console.log('\n⚠️  Unmatched elected office responses:');
-    unmatchedElected.forEach(r => {
+    unmatchedUnknown.forEach(r => {
       console.log(`   "${r.name}" — "${r.office}"`);
     });
   }
