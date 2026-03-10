@@ -65,8 +65,19 @@
       "name": "Greg Jaczko",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-03-10",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "I am running for the DC delegate because I have the experience on Capitoll Hill to work with Republicans and Democrats to demonstrate why statehood matters to their constituents.",
+        "intendedActions": "I will introduce legislation to eliminate federal income tax requirements on DC residents until DC becomes a state, to achieve parity with other non-state portions of the US.   I will undertake efforts to support candidates for other in other jurisdictions who support statehood.",
+        "congressResponse": "I will use my experience to build coalitions in Congress to prevent passage of these laws. Without a full vote in the House, the DC Delegate position relies primarily on the use of the bully pulpit to sway public opinion to oppose these efforts. I have extensive experience working with public interest groups, the media and other government officials to make change.",
+        "partners": "Once elected, I will spend the initial part of my work identifying key stakeholders for statehood. For this effort to be successful, elected officials from other states must choose to adopt statement. In addition, I will work closely with the mayor and city council to ensure efforts for statehood are coordinated and do not lead to additional federal intervention in the district until we achieve statehood.",
+        "voterInvolvement": "I will engage voters through townhalls to identify preferred options in lieu of full statehood and organize an effort to eliminate the requirement for federal income tax payments for DC taxpayers, including businesses and personal taxpayers until statehood is achieved.",
+        "additionalComments": "I am running for the DC delegate in large part to finally bring statehood to DC and eliminate federal income tax payments until we achieve statehood."
+      }
     },
     {
       "name": "Robert L. Matthews",
@@ -305,8 +316,19 @@
       "name": "Kenyan R. McDuffie",
       "party": "Democratic",
       "office": "Mayor",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-03-10",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "The fight for Statehood has shaped my work long before I ran for office. As a student at Howard University, I was inspired by the legacy of civil rights leaders such as Charles Hamilton Houston and Thurgood Marshall who fought for dignity and self determination in this city. That history motivated me to become a civil rights attorney at the Department of Justice and continues to guide my approach to public service today.\n\nAs a Councilmember,  I have consistently defended the District’s right to govern itself and pushed back against federal interference in our laws and policies. Over the past two years, I have met with lawmakers on the Hill consistently to advocate for statehood and lobby against Republican interference in DC's ability to self-govern. I have supported legislation and public advocacy that protects Home Rule and advances the Statehood movement. I have also worked to demonstrate that DC government can deliver results for residents through effective policymaking.",
+        "intendedActions": "As Mayor, I will pursue three specific strategies to advance Statehood and protect Home Rule. First, I will work closely with the District’s congressional delegation to support Statehood legislation and defend the city from federal interference. Second, I will coordinate with mayors and state leaders across the country to build national support for DC’s democratic rights. Third, I will ensure that the District aggressively defends its authority in court when Congress attempts to override locally enacted laws or restrict our budget.\nThe people of DC deserve full representation and the right to govern themselves, and my administration will fight every day to achieve that goal.",
+        "congressResponse": "Congress has repeatedly intruded on DC’s autonomy by attempting to overturn our local laws, interfere with our criminal code, and create uncertainty in our budget process. We are seeing that again right now with congressional actions that have created confusion during tax season and threatened the District’s fiscal stability. \n\nAs Mayor, one specific action I will take is to establish a standing Home Rule Defense Task Force composed of the Office of the Attorney General, my administration, and the Office of the Chief Financial Officer. This task force will proactively monitor congressional actions, coordinate legal strategies to challenge unlawful interference, and prepare fiscal contingency plans to protect the District’s budget from federal disruption. When Congress attempts to overturn our laws or create fiscal instability, we will respond immediately through litigation, coordinated federal advocacy with our congressional delegation, and clear communication with residents about how we are protecting the District’s autonomy. Defending Home Rule cannot be reactive. It must be organized, strategic, and relentless.",
+        "partners": "The Statehood movement has always depended on strong partnerships between elected leaders, advocates, and residents who believe in democratic representation. As your next Mayor, I will lean into the strong partnerships and relationships I have developed over the years to ensure we have a strong, coordinated, and ever ready coalition prepared to fight for Statehood on day 1. \n\nOne of the most important partners in this work is the District’s congressional delegation. Congresswoman Eleanor Holmes Norton has spent decades fighting for Statehood and representation for DC residents, and I will work closely with her replacement and our federal partners to advance legislation that secures full democratic rights for the people of this city.\nAdvocacy organizations and grassroots groups are also critical partners in this movement. Groups like Free DC have helped mobilize residents, elevate public awareness, and hold leaders accountable in the fight for Home Rule and Statehood. I look forward to strengthening these partnerships as Mayor and ensuring that advocacy organizations continue to have a strong voice in shaping the city’s future.\n\nFinally, I will work with leaders across the country who understand that the denial of representation to DC residents undermines democratic principles nationwide. Building a broad national coalition will be essential to achieving Statehood.",
+        "voterInvolvement": "As Mayor, I will make the fight for DC Statehood a true citywide effort by engaging residents, community leaders, students, and advocates in a sustained campaign for full representation and self-government. My administration will partner with civic organizations, faith communities, schools, and neighborhood groups to expand public education about why Statehood matters to ensure every resident understands how the lack of voting representation in Congress and limits on our local autonomy affect our daily lives.\n\nI will also create more opportunities for residents to participate directly in advocacy and organizing, including coordinated days of action, partnerships with grassroots groups, and youth engagement initiatives that empower the next generation of Statehood advocates. As Mayor, I will use the platform of the office to amplify the voices of DC residents on the national stage, working with the DC Council, our Congressional Delegate, and allies across the country to keep Statehood front and center.\n\nDC residents pay federal taxes, serve in our nation’s military, and contribute enormously to the country and yet we still lack full representation. I will continue to push for Statehood with urgency and ensure that residents are not just supporters of the effort, but active participants in the movement to secure equal rights and full democracy for the people of Washington, DC.",
+        "additionalComments": "Statehood represents the fulfillment of a promise that every American deserves equal rights and representation under the law. For the people of Washington, DC, it means finally having the ability to determine our own future and govern our city without interference from politicians who do not live here and are not accountable to our residents. As Mayor, I will continue that fight by defending our autonomy, strengthening the District’s legal and policy infrastructure to respond to federal overreach, and working with our congressional delegation and national partners to advance Statehood. DC residents deserve full representation, full democracy, and a government that answers to them."
+      }
     },
     {
       "name": "Anthony Muhammad",
@@ -517,8 +539,19 @@
       "name": "Dyana Forester",
       "party": "Democratic",
       "office": "At-Large Council Member",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "respondedDate": "2026-03-10",
+      "declined": false,
+      "supportsStatehood": "Yes",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "As a proud D.C. native, I have stood alongside residents at rallies and protests advocating for D.C. Statehood. As a former labor leader, my union endorsed the campaign for statehood and ensured that support for D.C. Statehood was included as a question in our endorsement questionnaires for candidates.\n\nAs a 2016 delegate to the Democratic National Convention, I also participated in efforts to engage and mobilize support from other state delegations, helping build broader national awareness and backing for D.C. Statehood.",
+        "intendedActions": "Now more than ever, it is time for us to amplify the fight for D.C. Statehood. D.C. is home to residents from across the country and welcomes millions of visitors every year. I see this as an opportunity to educate and activate allies from other states to support our efforts.\n\nD.C. and throughout our region also host large national conventions and gatherings, and we should ensure that D.C. Statehood is part of those conversations and on those agendas.\n\nAs a Councilmember, I will leverage national partnerships and coalition-building to highlight the underrepresentation of D.C. residents and continue pushing for full democratic rights and statehood.",
+        "congressResponse": "I will join the D.C. Democratic Statehood Party in their lobby days and rallies to continue building visible support for statehood. In addition, I believe we should organize phone banks to target states whose representatives are undermining D.C.’s authority and self-governance. By engaging constituents in those states and asking them to call their representatives, we can send a clear message to Congress to keep their hands off D.C. and respect the rights of our residents.",
+        "partners": "AFL-CIO, and other unions that have endorsed my candidacy. Maryland's Federal Delegation, NAACP, CASA and Black Women's Roundtable.",
+        "voterInvolvement": "As I campaign for office, I have encountered many new residents in D.C. who still maintain their right to vote in their hometowns. Often, they ask me how they can get involved in D.C. politics. These have been some of the conversations I enjoy most because I’ve found that many people truly want to know how to get involved and how to be good allies to D.C. residents.\n\nThis weekend, I’ve been invited back to have brunch with a group of new residents to host a “D.C. Politics 101” conversation. My daughter is also turning 18 this weekend, and she and I are hosting a discussion for first-time voters about civic engagement and participating in our democracy.\n\nWhile the recent presence of ICE and federal law enforcement in our city has been unsettling for many residents, it has also created an opportunity to educate, organize, and mobilize people around the importance of protecting D.C.’s democracy and continuing the fight for full representation and self-governance.",
+        "additionalComments": "While Democrats are fighting for redistricting to ensure we don’t lose Democratic control, I believe we should also push the DNC to use this moment to promote D.C. Statehood as an opportunity to gain seats in Congress. Statehood would not only correct the injustice of taxation without representation for D.C. residents, but it would also strengthen our democracy by giving more Americans full representation."
+      }
     },
     {
       "name": "Michael Graham",

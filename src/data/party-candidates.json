@@ -399,8 +399,18 @@
       "name": "Kurt Vorndran",
       "slate": "Democrats United to Free DC",
       "office": "Ward 3 Committeeman",
-      "responded": false,
-      "supportsStatehood": null
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "respondedDate": "2026-03-09",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "While I have been an activist for DC Statehood and self-determination since I was 18 years old, I have continued that work in recent years by proudly represented my national labor union on Capitol Hill advocating for DC Statehood, bringing the message to Senators and Representatives to that our union members in all 50 states are demanding DC Statehood.  \n\nI have also worked with other national labor unions and national organizations to not just get a statement of support for DC Statehood, but to include Statehood in their official voting records and candidate interviews.  This harnesses the clout of national membership organizations with powerful political programs behind DC Statehood.  \n\nFurther, I have been an active member and Executive Board member of the Ward Three Democratic Committee.  The Ward Three Democrats have a robust Statehood Committee (which I am a member) and our highly effective Blue Wave Task Force, which supports pro-Statehood candidates across the country.",
+        "intendedActions": "We have built a beautiful constellation of groups in DC advocating for Statehood, all who are working diligently for our cause.  I have involvement and connections with a good many of these groups and I want to make sure the DC Democratic State Committee is working in concert with them and in support of them.  My own Ward Democratic organization's Statehood Committee and Blue Wave Task Force, the Capital Stonewall Democratic Club (DC's leading LGBTQ+ political organization of which I am a member and past president), our Woman's Democratic clubs (of which I am a member but my slatemates are both active leaders), and the labor unions (of which I have 40 years of involvement) are all groups for who I will work to see the DC Democratic Party is hearing from and working with towards our goal.",
+        "congressResponse": "When I first became involved with DC self-determination at age 18, we had a long list of supporting national organizations.  The list today is sadly much smaller.  But these groups have strong lobbying presences in Congress.  I believe they still care about DC self-government.  I want to continue my work to engage and mobilize them.",
+        "partners": "I have a 40 year career in the labor movement and know leaders in most of the national unions.  I have been a leader in the LGBTQ+ community as an officer of DC and national organizations. I also want to engage better the faith community, but will admit most of my fellow congregants are people without permanent legal status, so I will need help there.",
+        "voterInvolvement": "I don't buy the right wing lie that the people in DC don't support Statehood.  There is already amazing work being done by a wide variety of people and groups, many with great organizing skills and others with existing networks and communities.  I want to support their work and to make sure the Democratic Party supports them and works in concert with them.",
+        "additionalComments": "Don't get weary.  I have been active on this issue my whole adult life.  I believe we will see success.  Our movement is more powerful than it ever has been before."
+      }
     },
     {
       "name": "Michael Haresign",
