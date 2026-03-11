@@ -105,7 +105,7 @@ const BASE_CANDIDATES = [
   { name: "Jett James Jasper", party: "Republican", office: "Ward 1 Council Member" },
   { name: "Matthew Frumin", party: "Democratic", office: "Ward 3 Council Member" },
   { name: "Adam J. Prinzo", party: "Democratic", office: "Ward 3 Council Member" },
-  { name: "Elizabeth \"Liz\" Nagy", party: "Democratic", office: "Ward 3 Council Member" },
+  { name: "Elizabeth \"Liz\" Nagy", party: "Democratic", office: "Ward 3 Council Member",  withdrew: true },
   { name: "Bernita Carmichael", party: "Democratic", office: "Ward 5 Council Member" },
   { name: "Zachary Parker", party: "Democratic", office: "Ward 5 Council Member" },
   { name: "Jeffrey Kihien-Palza", party: "Republican", office: "Ward 5 Council Member" },

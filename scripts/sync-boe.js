@@ -39,6 +39,30 @@ const APPLY = process.argv.includes('--apply');
 // as the rest of the script), office must match the BOE-normalized form.
 // Use office: '*' to ignore a name in ALL offices.
 
+// ============================================================
+// Name overrides — map BOE-parsed name to canonical name
+// ============================================================
+// Use when the BOE PDF lists an incomplete name (e.g., first name only)
+// but you've added the full name to the CSV/site data manually.
+// Format: { boeName, office, canonicalName }
+
+const NAME_OVERRIDES = [
+  // BOE PDF lists first name only; last name added manually
+  { boeName: 'Jude', office: 'Ward 1 Council Member', canonicalName: 'Jude Crannitch' },
+];
+
+function applyNameOverrides(candidates) {
+  for (const c of candidates) {
+    const override = NAME_OVERRIDES.find(
+      o => normalizeName(o.boeName) === normalizeName(c.name) &&
+           o.office.toLowerCase().replace(/[^a-z0-9]/g, '') === c.office.toLowerCase().replace(/[^a-z0-9]/g, '')
+    );
+    if (override) {
+      c.name = override.canonicalName;
+    }
+  }
+}
+
 const KNOWN_IGNORES = [
   // Name normalization false positives (accents/periods cause mismatches)
   { name: 'David Sampé', office: 'At-Large Committeeman' },
@@ -48,6 +72,10 @@ const KNOWN_IGNORES = [
   { name: 'Trupti "Trip" J. Patel', office: 'Ward 2 Committeewoman' },
   { name: 'Hazel Bland Thomas', office: 'Ward 5 Committeewoman' },
   { name: 'Georgette Joy Johnson', office: 'Ward 8 Committeewoman' },
+
+  // Withdrew from Democratic but refiled under a different party — still on site correctly
+  { name: 'Robert L. Gross', office: 'Mayor' },
+  { name: 'Myrtle Patricia Alexander', office: 'Mayor' },
 
   // Republican Chairperson positions — not relevant to statehood tracker
   { name: 'John Fredericks', office: 'Republican Chairperson Ward 2' },
@@ -948,6 +976,8 @@ async function main() {
     const primaryCandidates = parsePrimaryCandidates(primaryText);
     const specialCandidates = parseSpecialElectionCandidates(specialText);
     const allBoeCandidates = [...primaryCandidates, ...specialCandidates];
+
+    applyNameOverrides(allBoeCandidates);
 
     console.log(`\nParsed ${primaryCandidates.length} primary candidates`);
     console.log(`Parsed ${specialCandidates.length} special election candidates`);
