@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import './App.css'
 import candidatesData from './data/candidates.json'
 
@@ -10,16 +10,43 @@ function App() {
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expandedGroups, setExpandedGroups] = useState(new Set());
+  const [copied, setCopied] = useState(false);
 
   const openModal = (candidate) => {
     setSelectedCandidate(candidate);
     setIsModalOpen(true);
+    if (candidate.id) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('candidate', candidate.id);
+      window.history.replaceState({}, '', url.toString());
+    }
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedCandidate(null);
+    setCopied(false);
+    const url = new URL(window.location.href);
+    url.searchParams.delete('candidate');
+    window.history.replaceState({}, '', url.toString());
   };
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  // On load, open modal if ?candidate= param is present
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const candidateId = params.get('candidate');
+    if (candidateId) {
+      const candidate = candidatesData.candidates.find(c => c.id === candidateId);
+      if (candidate?.responded) openModal(candidate);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleGroup = (office) => {
     setExpandedGroups(prev => {
@@ -357,6 +384,13 @@ function App() {
             <p className="modal-subtitle">
               {selectedCandidate.office} • {selectedCandidate.party}
             </p>
+            <button
+              className="copy-link-btn"
+              onClick={copyLink}
+              title="Copy link to this response"
+            >
+              {copied ? '✓ Copied!' : '🔗 Copy link'}
+            </button>
 
             <div className="modal-body">
               <div className="question-block">

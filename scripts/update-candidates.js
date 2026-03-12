@@ -16,6 +16,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { generateId } from './generate-candidate-ids.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -386,6 +387,7 @@ function updateCandidates(csvText) {
         name: candidate.name,
         party: candidate.party,
         office: candidate.office,
+        id: generateId(candidate.name, candidate.office),
         responded: true,
         respondedDate: response.respondedDate,
         declined: false,
@@ -398,6 +400,7 @@ function updateCandidates(csvText) {
       name: candidate.name,
       party: candidate.party,
       office: candidate.office,
+      id: generateId(candidate.name, candidate.office),
       responded: false,
       supportsStatehood: null
     };
