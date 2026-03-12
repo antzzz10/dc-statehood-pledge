@@ -6,7 +6,7 @@
     <script>
       // GitHub Pages SPA redirect hack
       // Store the path and redirect to root, which will load the React app
-      sessionStorage.setItem('redirectPath', window.location.pathname);
+      sessionStorage.setItem('redirectPath', window.location.pathname + window.location.search);
       window.location.replace('/');
     </script>
   </head>
