@@ -48,9 +48,19 @@
       "name": "Sam Bonar",
       "slate": "Free DC Slate",
       "office": "At-Large Committeeman",
-      "responded": false,
-      "supportsStatehood": null,
-      "id": "sam-bonar-at-large-committeeman"
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "id": "sam-bonar-at-large-committeeman",
+      "respondedDate": "2026-03-11",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "1) Fighting and winning Initiative 83 to make sure we can hold our politicians accountable and enfranchise the 80k independents in DC - if we believe in democracy, everyone should have the right to vote in taxpayer funded elections.\n2) Organizing this Free DC Slate to make sure we have a Democratic party that fights against the status quo, pushes other Dem parties to stop voting against us, and supports statehood beyond just talk\n3) Pushing Statehood organizers to make it relevant to people's everyday lives, including through gogo/culture, anti-collaboration with ICE, and people's taxes.\n\nThese aren't in the last two years, as I have moved more into believing that improving our local government is the best path to successful statehood.\n-Getting Eric Swallwell and 5 other Dem Congresspeople to cosponsor the Statehood bill in 2018 through playful lobbying \"Cleaning up Congress\" with vacuums and treats: https://www.youtube.com/watch?v=ClKOuit044k\n-Got 19 presidential candidates to support eliminating the filibuster for statehood in 2019 as Campaign Manager with with 51 for 51",
+        "intendedActions": "We're not quite elected officials as Party leadership, but I think the main actions will be 1) strengthening our organizing at Convention and otherwise so we are pushing other Dem parties to stop voting against us and selling us out and 2) pushing for more meaningful conversations of how we can change our Home Rule Charter now (through Council action and then the voters approving it) to strengthen our political systems in preparation for statehood.",
+        "congressResponse": "creative lobbying, as I did years before, to subvert the normal dynamics of either stuffiness or protest in Congress.Through theater, dance, playfulness, costumes, and strangeness, we can disorient the normal dynamics that let people ignore advocates.",
+        "partners": "LongLive GoGo (friend) for cultural organizing, Free DC (member and organizer) for grassroots advocacy and lobbying, and ReDelicious (co-founder and Finance Lead) for having a consistent space to build relationships and community, as well as hosting conversations.",
+        "voterInvolvement": "Deeper, facilitated conversations (not just speeches/panels of \"experts\") about the tensions around how will we shape our Constitution, our legislative body, our other elected officials, and our court system, as well as how do we begin to move in that direction and change things within our power now.",
+        "additionalComments": "No!"
+      }
     },
     {
       "name": "David Sampe",
