@@ -3,6 +3,15 @@ import { useState, useMemo, useEffect } from 'react'
 import './App.css'
 import candidatesData from './data/candidates.json'
 
+// ─── Announcement banner ───────────────────────────────────────────────────
+// Update these two constants to show a new banner. The old dismissal is
+// automatically cleared when the date changes, so every new message shows
+// fresh. Set ANNOUNCEMENT_TEXT to null to disable the banner entirely.
+const ANNOUNCEMENT_DATE = "2026-03-24";
+const ANNOUNCEMENT_TEXT = "March 24 update: candidates who did not submit valid petition signatures have been removed from this tracker. The challenge period is ongoing — more changes are expected over the next 1–2 weeks.";
+const ANNOUNCEMENT_TTL_DAYS = 7;
+// ───────────────────────────────────────────────────────────────────────────
+
 function App() {
   const PRIMARY_DATE = "June 16, 2026";
   const [selectedOffice, setSelectedOffice] = useState("all");
@@ -11,6 +20,22 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expandedGroups, setExpandedGroups] = useState(new Set());
   const [copied, setCopied] = useState(false);
+
+  const announcementKey = `announcement-dismissed-${ANNOUNCEMENT_DATE}`;
+  const announcementExpired = (() => {
+    if (!ANNOUNCEMENT_TEXT) return true;
+    const cutoff = new Date(ANNOUNCEMENT_DATE);
+    cutoff.setDate(cutoff.getDate() + ANNOUNCEMENT_TTL_DAYS);
+    return new Date() > cutoff;
+  })();
+  const [announcementDismissed, setAnnouncementDismissed] = useState(
+    () => announcementExpired || localStorage.getItem(announcementKey) === 'true'
+  );
+
+  const dismissAnnouncement = () => {
+    localStorage.setItem(announcementKey, 'true');
+    setAnnouncementDismissed(true);
+  };
 
   const openModal = (candidate) => {
     setSelectedCandidate(candidate);
@@ -115,17 +140,15 @@ function App() {
 
   return (
     <div className="app">
-      {/* Candidate Banner */}
-      <div className="candidate-banner">
-        <div className="container">
-          <span className="banner-text">
-            🎯 Are you a candidate?
-          </span>
-          <Link to="/respond" className="banner-link">
-            Complete the questionnaire →
-          </Link>
+      {/* Announcement Banner */}
+      {!announcementDismissed && (
+        <div className="announcement-banner">
+          <div className="container">
+            <span className="announcement-text">📢 {ANNOUNCEMENT_TEXT}</span>
+            <button className="announcement-dismiss" onClick={dismissAnnouncement} aria-label="Dismiss">✕</button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Party Positions Banner */}
       <div className="candidate-banner party-banner">

@@ -18,6 +18,42 @@ body {
   min-height: 100vh;
 }
 
+/* Announcement Banner */
+.announcement-banner {
+  background: #fff8e1;
+  border-bottom: 2px solid #f59e0b;
+  color: #78350f;
+  padding: 0.65rem 0;
+}
+
+.announcement-banner .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.announcement-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.announcement-dismiss {
+  background: none;
+  border: none;
+  color: #92400e;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.announcement-dismiss:hover {
+  opacity: 1;
+}
+
 /* Candidate Banner */
 .candidate-banner {
   background: #FFD700;
