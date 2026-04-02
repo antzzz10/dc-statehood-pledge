@@ -108,9 +108,10 @@ const BASE_CANDIDATES = [
   { name: "Adam J. Prinzo", party: "Democratic", office: "Ward 3 Council Member", didNotQualify: true },
   { name: "Elizabeth \"Liz\" Nagy", party: "Democratic", office: "Ward 3 Council Member",  withdrew: true },
   { name: "Bernita Carmichael", party: "Democratic", office: "Ward 5 Council Member" },
+  { name: "Bridget K. French", party: "Democratic", office: "Ward 5 Council Member" },
   { name: "Zachary Parker", party: "Democratic", office: "Ward 5 Council Member" },
   { name: "Jeffrey Kihien-Palza", party: "Republican", office: "Ward 5 Council Member" },
-  { name: "Joyce Robinson Paul", party: "Statehood Green", office: "Ward 5 Council Member", didNotQualify: true },
+  { name: "Joyce Robinson Paul", party: "Statehood Green", office: "Ward 5 Council Member" },
   { name: "Charles Allen", party: "Democratic", office: "Ward 6 Council Member" },
   { name: "Michael Murphy", party: "Democratic", office: "Ward 6 Council Member", undeliverable: true },
   { name: "Gloria Ann Nauden", party: "Democratic", office: "Ward 6 Council Member" },
@@ -371,17 +372,11 @@ function updateCandidates(csvText) {
 
   // === Update elected office candidates ===
   console.log('\n🔄 Updating elected office candidates...');
-  const activeCandidates = BASE_CANDIDATES.filter(c => {
-    if (c.withdrew) {
-      console.log(`   ↩ ${c.name} (${c.office}) — withdrew, excluding from site`);
-      return false;
-    }
-    if (c.didNotQualify) {
-      console.log(`   ✗ ${c.name} (${c.office}) — did not qualify for ballot, excluding from site`);
-      return false;
-    }
-    return true;
-  });
+  const withdrew = BASE_CANDIDATES.filter(c => c.withdrew);
+  const didNotQualify = BASE_CANDIDATES.filter(c => c.didNotQualify);
+  if (withdrew.length) console.log(`   ↩ ${withdrew.length} candidates excluded (withdrew)`);
+  if (didNotQualify.length) console.log(`   ✗ ${didNotQualify.length} candidates excluded (did not qualify for ballot)`);
+  const activeCandidates = BASE_CANDIDATES.filter(c => !c.withdrew && !c.didNotQualify);
   const updated = activeCandidates.map(candidate => {
     const response = findResponse(electedResponses, candidate.name, candidate.office);
 

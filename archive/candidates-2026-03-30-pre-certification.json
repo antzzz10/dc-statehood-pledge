@@ -624,14 +624,6 @@
       }
     },
     {
-      "name": "Bridget K. French",
-      "party": "Democratic",
-      "office": "Ward 5 Council Member",
-      "id": "bridget-k-french-ward-5",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
       "name": "Zachary Parker",
       "party": "Democratic",
       "office": "Ward 5 Council Member",
@@ -655,14 +647,6 @@
       "party": "Republican",
       "office": "Ward 5 Council Member",
       "id": "jeffrey-kihienpalza-ward-5",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
-      "name": "Joyce Robinson Paul",
-      "party": "Statehood Green",
-      "office": "Ward 5 Council Member",
-      "id": "joyce-robinson-paul-ward-5",
       "responded": false,
       "supportsStatehood": null
     },
