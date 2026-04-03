@@ -122,7 +122,7 @@ async function main() {
 
   // Only send the contact/identity columns — never overwrite outreach data
   const sendFields = ['Name', 'Party', 'Office', 'Election Type', 'Party Committee',
-                      'Slate', 'Email Address', 'Phone Number', 'Notes'];
+                      'Slate', 'Email Address', 'Phone Number', 'Notes', 'Ballot Status'];
 
   const candidates = rows.map(row => {
     const slim = {};
@@ -132,21 +132,28 @@ async function main() {
     return slim;
   });
 
+  // Ballot status updates for existing rows (lightweight — name, office, status only)
+  const updates = rows
+    .filter(row => row['Ballot Status'])
+    .map(row => ({ Name: row['Name'] || '', Office: row['Office'] || '', 'Ballot Status': row['Ballot Status'] }));
+
   if (DRY_RUN) {
     console.log(`\nDry run — would send ${candidates.length} candidates to Google Sheets`);
     console.log('(The sheet deduplicates, so only new ones would be added)\n');
     const sample = candidates.slice(0, 5);
     for (const c of sample) {
-      console.log(`  ${c.Name} | ${c.Party} | ${c.Office}`);
+      console.log(`  ${c.Name} | ${c.Party} | ${c.Office} | ${c['Ballot Status'] || '—'}`);
     }
     if (candidates.length > 5) {
       console.log(`  ... and ${candidates.length - 5} more`);
     }
+    const withStatus = updates.length;
+    console.log(`\n  ${withStatus} candidates have a Ballot Status to sync`);
     return;
   }
 
   console.log(`Pushing to Google Sheets...`);
-  const result = await post(WEBAPP_URL, { candidates });
+  const result = await post(WEBAPP_URL, { candidates, updates });
 
   if (result.raw) {
     // Got HTML or non-JSON response — show a snippet for debugging
@@ -162,7 +169,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`\n${result.added || 0} candidates added, ${result.skipped?.length || 0} already existed`);
+  console.log(`\n${result.added || 0} candidates added, ${result.statusUpdated || 0} ballot statuses updated, ${result.skipped?.length || 0} already existed`);
   if (result.skipped && result.skipped.length > 0 && result.skipped.length <= 10) {
     console.log(`Skipped: ${result.skipped.join(', ')}`);
   }

@@ -495,6 +495,44 @@ function updateCandidates(csvText) {
     console.log(`   ${partyMatched} responded`);
   }
 
+  // === Update Ballot Status in tracking CSV ===
+  const trackingPath = path.join(__dirname, '../candidate-outreach-tracking.csv');
+  if (fs.existsSync(trackingPath)) {
+    // Build status map from full BASE_CANDIDATES list (includes withdrew/didNotQualify)
+    const statusMap = new Map();
+    for (const c of BASE_CANDIDATES) {
+      const key = `${c.name.toLowerCase()}|${c.office.toLowerCase()}`;
+      statusMap.set(key, c.withdrew ? 'Withdrew' : c.didNotQualify ? 'Did Not Qualify' : 'Active');
+    }
+
+    const trackingText = fs.readFileSync(trackingPath, 'utf-8');
+    const trackingRows = parseCSV(trackingText);
+
+    // Extract headers from first raw line (none have special chars so simple split is safe)
+    const trackingHeaders = trackingText.split('\n')[0].replace(/\r$/, '').split(',').map(h => h.replace(/^"|"$/g, ''));
+    if (!trackingHeaders.includes('Ballot Status')) trackingHeaders.push('Ballot Status');
+
+    function escapeCSVField(value) {
+      if (value == null) return '';
+      const str = String(value);
+      if (str.includes(',') || str.includes('"') || str.includes('\n') || str.includes('\r')) {
+        return '"' + str.replace(/"/g, '""') + '"';
+      }
+      return str;
+    }
+
+    let ballotUpdated = 0;
+    const outputLines = [trackingHeaders.map(escapeCSVField).join(',')];
+    for (const row of trackingRows) {
+      const key = `${(row['Name'] || '').toLowerCase()}|${(row['Office'] || '').toLowerCase()}`;
+      const status = statusMap.get(key);
+      if (status) { row['Ballot Status'] = status; ballotUpdated++; }
+      outputLines.push(trackingHeaders.map(h => escapeCSVField(row[h] || '')).join(','));
+    }
+    fs.writeFileSync(trackingPath, outputLines.join('\n') + '\n', 'utf-8');
+    console.log(`\n📋 Tracking CSV: ${ballotUpdated} candidates updated with Ballot Status`);
+  }
+
   console.log('\n📝 Next steps:');
   console.log('   git diff src/data/  # Review changes');
   console.log('   npm run build       # Verify no errors');
