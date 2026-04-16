@@ -32,7 +32,7 @@ const NAME_ALIASES = {
 const BASE_CANDIDATES = [
   { name: "Gordon Chaffin", party: "Democratic", office: "Delegate to the House of Representatives", didNotQualify: true },
   { name: "Trent Holbrook", party: "Democratic", office: "Delegate to the House of Representatives" },
-  { name: "Robert L. Matthews", party: "Democratic", office: "Delegate to the House of Representatives" },
+  { name: "Robert L. Matthews", party: "Democratic", office: "Delegate to the House of Representatives", withdrew: true },
   { name: "Brooke Pinto", party: "Democratic", office: "Delegate to the House of Representatives" },
   { name: "Sandi Stevens", party: "Democratic", office: "Delegate to the House of Representatives", didNotQualify: true },
   { name: "Robert White", party: "Democratic", office: "Delegate to the House of Representatives" },

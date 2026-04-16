@@ -2,8 +2,10 @@ name: Monitor BOE Candidates
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 10 * * *'  # 10 AM UTC / 6 AM ET
+  # schedule disabled 2026-04-16 — candidate list locked after challenge period
+  # re-enable by uncommenting:
+  # schedule:
+  #   - cron: '0 10 * * *'  # 10 AM UTC / 6 AM ET
 
 permissions:
   contents: write
