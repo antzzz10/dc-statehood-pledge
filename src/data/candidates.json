@@ -66,14 +66,6 @@
       "supportsStatehood": null
     },
     {
-      "name": "Kelly Mikel Williams",
-      "party": "Democratic",
-      "office": "Delegate to the House of Representatives",
-      "id": "kelly-mikel-williams-delegate",
-      "responded": false,
-      "supportsStatehood": null
-    },
-    {
       "name": "Kinney Zalesne",
       "party": "Democratic",
       "office": "Delegate to the House of Representatives",
@@ -311,25 +303,6 @@
       "id": "manuel-rivera-attorney-general",
       "responded": false,
       "supportsStatehood": null
-    },
-    {
-      "name": "Jack Evans",
-      "party": "Democratic",
-      "office": "Council Chairman",
-      "id": "jack-evans-council-chair",
-      "responded": true,
-      "respondedDate": "2026-02-15",
-      "declined": false,
-      "supportsStatehood": "Yes",
-      "responses": {
-        "statehoodSupport": "Yes",
-        "topThreeActions": "I have consistently promoted Statehood in public forums and civic discussions, worked to maintain broad coalitions across civic and political organizations, and defended Home Rule against congressional interference. My support extends over 40 years, including service as National Committeeman and helping secure the District's first-in-the-nation presidential primary in 2000 to elevate DC's national voice and visibility.",
-        "intendedActions": "I will regularly engage members of Congress and national audiences, coordinate a unified District response with local leadership, and support legislation and resolutions asserting District authority. I will also build interstate and national alliances so Statehood is recognized as a civil rights issue affecting American democracy, not solely a local matter.",
-        "congressResponse": "I will proactively meet with Congress when legislation may draw scrutiny, coordinate District leadership to present a unified position, and formally oppose interference. I will personally advocate on Capitol Hill to defeat disapproval measures and keep residents informed and engaged so Congress understands the real impact of its actions.",
-        "partners": "I will work with District leadership, business and civic organizations such as the Federal City Council, DC Chamber of Commerce, and Board of Trade, and community organizations across all eight wards. My longstanding relationships with these groups help build a broad coalition demonstrating that Statehood benefits residents, institutions, and local economy.",
-        "voterInvolvement": "I will hold community forums and town halls, partner with civic associations and schools, and organize coordinated advocacy so Congress hears directly from District voters. Ongoing public education and participation will be central to advancing Statehood.",
-        "additionalComments": "Statehood is a fundamental civil rights issue affecting more than 700,000 residents. I have supported it for over four decades and will continue advocating for equal representation and protection of Home Rule until Statehood is achieved."
-      }
     },
     {
       "name": "Calvin Gurley",
