@@ -51,7 +51,7 @@ const BASE_CANDIDATES = [
   { name: "Yaida Ford", party: "Democratic", office: "Mayor", didNotQualify: true },
   { name: "Janeese Lewis George", party: "Democratic", office: "Mayor" },
   { name: "Gary Goodweather", party: "Democratic", office: "Mayor" },
-  { name: "Kathy Henderson", party: "Democratic", office: "Mayor" },
+  { name: "Kathy Henderson", party: "Democratic", office: "Mayor", didNotQualify: true },
   { name: "Ernest Johnson", party: "Democratic", office: "Mayor" },
   { name: "Regan Jones", party: "Democratic", office: "Mayor", didNotQualify: true },
   { name: "Stanley V Lawson Sr", party: "Democratic", office: "Mayor" },
@@ -79,7 +79,7 @@ const BASE_CANDIDATES = [
   { name: "Manuel Rivera", party: "Republican", office: "Attorney General" },
   { name: "Phil Mendelson", party: "Democratic", office: "Council Chairman" },
   { name: "Jack Evans", party: "Democratic", office: "Council Chairman", withdrew: true },
-  { name: "Calvin Gurley", party: "Democratic", office: "Council Chairman" },
+  { name: "Calvin Gurley", party: "Democratic", office: "Council Chairman", didNotQualify: true },
   { name: "Patricia Stamper", party: "Democratic", office: "Council Chairman", didNotQualify: true },
   { name: "Abi-Ananiah Prudent", party: "Republican", office: "Council Chairman" },
   { name: "Kevin B. Chavous", party: "Democratic", office: "At-Large Council Member" },
@@ -117,7 +117,7 @@ const BASE_CANDIDATES = [
   { name: "Gloria Ann Nauden", party: "Democratic", office: "Ward 6 Council Member" },
   { name: "Jorge Rice", party: "Republican", office: "Ward 6 Council Member" },
   { name: "Marquell Merlin Washington", party: "Democratic", office: "Ward 6 Council Member", didNotQualify: true },
-  { name: "Markus Batchelor", party: "Democratic", office: "United States Senator" },
+  { name: "Markus Batchelor", party: "Democratic", office: "United States Senator", didNotQualify: true },
   { name: "Robert Simmons", party: "Republican", office: "United States Senator", didNotQualify: true },
   { name: "Brandon L. Winfield-Dean", party: "Democratic", office: "United States Senator", undeliverable: true, didNotQualify: true },
   { name: "Milton Hardy", party: "Republican", office: "United States Representative", didNotQualify: true },
@@ -127,14 +127,14 @@ const BASE_CANDIDATES = [
   { name: "Ciprian Ivanof", party: "Republican", office: "United States Representative", didNotQualify: true },
   // Special Election - At-Large Council Member (same date as primary)
   { name: "Edward Daniels", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
-  { name: "Khalil Lee", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Khalil Lee", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
   { name: "Juan McCullum", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
   { name: "Jacque Patterson", party: "Independent", office: "At-Large Council Member (Special Election)" },
   { name: "Ryan Prince", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
   { name: "Elizabeth \"Liz\" Reddick", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
   { name: "Addison Sarter", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
   { name: "Elissa Silverman", party: "Independent", office: "At-Large Council Member (Special Election)" },
-  { name: "Doug Sloan", party: "Independent", office: "At-Large Council Member (Special Election)" },
+  { name: "Doug Sloan", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
   { name: "Nina Taylor", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
   { name: "De'Andre Anderson", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
   { name: "Senay Emmanuel", party: "Independent", office: "At-Large Council Member (Special Election)", didNotQualify: true },
@@ -280,6 +280,10 @@ const OFFICE_ALIASES = {
   'ag': 'Attorney General',
 };
 
+function normalizeAccents(str) {
+  return str.normalize('NFD').replace(/\p{Mn}/gu, '');
+}
+
 function normalizeOffice(office) {
   if (!office) return '';
   const trimmed = office.trim();
@@ -289,7 +293,7 @@ function normalizeOffice(office) {
 
 // Find a response matching a candidate, with fallback strategies
 function findResponse(responses, candidateName, candidateOffice) {
-  const nameLower = candidateName.toLowerCase();
+  const nameLower = normalizeAccents(candidateName.toLowerCase());
   const officeLower = candidateOffice.toLowerCase();
 
   // Build list of name variants to match against (canonical + any aliases that map to it)
@@ -300,7 +304,7 @@ function findResponse(responses, candidateName, candidateOffice) {
 
   // 1. Exact match on name (or alias) + office
   const exact = responses.find(r =>
-    nameVariants.includes(r.name?.toLowerCase()) &&
+    nameVariants.includes(normalizeAccents(r.name?.toLowerCase() ?? '')) &&
     r.office?.toLowerCase() === officeLower
   );
   if (exact) return exact;
@@ -419,8 +423,8 @@ function updateCandidates(csvText) {
 
   // Check for unmatched elected responses (account for aliases)
   const isNameMatch = (responseName, candidateName) => {
-    const rLower = responseName?.toLowerCase();
-    const cLower = candidateName.toLowerCase();
+    const rLower = normalizeAccents(responseName?.toLowerCase() ?? '');
+    const cLower = normalizeAccents(candidateName.toLowerCase());
     if (rLower === cLower) return true;
     return NAME_ALIASES[rLower] === cLower;
   };
@@ -468,7 +472,7 @@ function updateCandidates(csvText) {
     for (const response of partyResponses) {
       // Match by name only (office varies: "Ward 5 Committeeman", etc.)
       const candidate = partyData.candidates.find(c =>
-        c.name.toLowerCase() === response.name?.toLowerCase()
+        normalizeAccents(c.name.toLowerCase()) === normalizeAccents(response.name?.toLowerCase() ?? '')
       );
 
       if (candidate) {
