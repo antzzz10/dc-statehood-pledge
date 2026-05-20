@@ -530,9 +530,19 @@
       "name": "Tarek Maassarani",
       "slate": "Free DC Slate",
       "office": "Ward 3 Committeeman",
-      "responded": false,
-      "supportsStatehood": null,
-      "id": "tarek-maassarani-ward-3-committeeman"
+      "responded": true,
+      "supportsStatehood": "Yes",
+      "id": "tarek-maassarani-ward-3-committeeman",
+      "respondedDate": "2026-05-20",
+      "responses": {
+        "statehoodSupport": "Yes",
+        "topThreeActions": "I have educated friends and families in and beyond District borders about the importance of DC Statehood. I have attended events, expressing support for DC Statehood, such as the May Day march. I have decided to run for DC Democratic State Committee in order to mobilize more Democrats in and outside of DC in support of DC Statehood.",
+        "intendedActions": "I plan to co-lead the Democratic State Committee in developing and implementing a strategic campaign to raise public awareness about DC Statehood, Home Rule, and protection against federal overreach (what each is and why they are important) for Democratic Party members in and beyond the District. The campaign will leverage social and traditional media, interpersonal interactions, digital deliberative democracy platforms, public opinion shapers, civil society, and academia.",
+        "congressResponse": "I plan to build relationships and co-create strategies within the state and federal Democratic ecosystem before such congressional action, to be better prepared to mobilize public and back-channel influence over as many relevant stakeholders as possible. Among the powerful levers we have is the nearly half-million party members, and their friends and families across the US, who can write letters, make phone calls, visit representatives, post content, and engage in constructive action to counter congressional action.",
+        "partners": "I intend to work with 1) local government, including our elected mayors, council members, and delegate; 2) Democratic State and National Committee members across the US; and 3) local ANC and civic organizations. I have existing contacts with a number of elected officials and there staff, as well as meeting with many of the candidates during this election. I have little existing relationships in Democratic committees, so this will be a focus of my outreach and relationship building early on. Finally, after nearly a quarter-century living and working in the District, I have extensive personal relationships in a number of spaces, including higher education institutions, K12 schools, affordable housing advocates, legal services providers, youth workers, grassroots activists, faith communities, and other community-based organizations.",
+        "voterInvolvement": "Please see my response to question 3. And to elaborate on one promising avenue, I hope to leverage my experience working with the Civic Health Project's Forum (see https://www.civichealthproject.org/projects/the-forum) to bring scalable deliberative processes to mobilize Democratic and non-Democratic voters and find common ground around policy.",
+        "additionalComments": "I believe in DC Statehood as a matter of principle (fair representation) and political strategy (building Democratic power to advance federal policies in the public good). I also tend to think radically in the long-term and pragmatically in the short term. This means that while advocating for DC Statehood in the long-term, it is important to be active in advancing home rule and protecting from federal overreach in the immediate term. Finally, I find effective social change works through the strategic synergy of building power in coalitions and extending a hand of collaboration across divided lines."
+      }
     },
     {
       "name": "Zachary Tashman",
