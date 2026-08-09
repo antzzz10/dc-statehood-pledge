@@ -166,7 +166,7 @@ function Party() {
           <span className="banner-text">
             Also on the ballot: Elected offices
           </span>
-          <Link to="/" className="banner-link">
+          <Link to="/2026/primary" className="banner-link">
             View Mayor, Council & Delegate candidates →
           </Link>
         </div>
@@ -538,7 +538,7 @@ function Party() {
             <div className="footer-section">
               <h3>Also on the Ballot</h3>
               <ul>
-                <li><Link to="/">Elected Office Candidates</Link></li>
+                <li><Link to="/2026/primary">Elected Office Candidates</Link></li>
                 <li><Link to="/respond">Complete Questionnaire</Link></li>
               </ul>
             </div>

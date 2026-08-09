@@ -105,6 +105,16 @@ function App() {
     return candidate.responded && candidate.respondedDate && candidate.respondedDate >= recentCutoff;
   };
 
+  // Last updated = most recent respondedDate in the data, so this only changes
+  // when a response is added or edited (not on every page load)
+  const lastUpdated = useMemo(() => {
+    const dates = candidatesData.candidates.map(c => c.respondedDate).filter(Boolean).sort();
+    const mostRecent = dates[dates.length - 1];
+    return mostRecent
+      ? new Date(mostRecent + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+      : null;
+  }, []);
+
   // Get unique offices for filter
   const offices = useMemo(() => {
     const uniqueOffices = [...new Set(candidatesData.candidates.map(c => c.office))];
@@ -150,6 +160,18 @@ function App() {
         </div>
       )}
 
+      {/* Results Summary Banner */}
+      <div className="candidate-banner">
+        <div className="container">
+          <span className="banner-text">
+            You're viewing the full 2026 primary candidate archive.
+          </span>
+          <Link to="/" className="banner-link">
+            See the Results Summary →
+          </Link>
+        </div>
+      </div>
+
       {/* Party Positions Banner */}
       <div className="candidate-banner party-banner">
         <div className="container">
@@ -165,15 +187,17 @@ function App() {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <div className="hero-badge">DC Elections 2026</div>
+          <div className="hero-badge">2026 Primary Archive</div>
           <h1 className="hero-title">
             DC Candidate <span className="highlight">Statehood Tracker</span>
           </h1>
           <p className="hero-subtitle">
-            With Congress threatening Home Rule, DC needs leaders who will fight back.
+            Every candidate's position on statehood and home rule, on the record.
           </p>
           <p className="hero-description">
-            Compare June 2026 primary candidates' positions on statehood, their commitment to defending Home Rule, and their plans to resist Congressional interference.
+            The full archive of June 2026 primary candidates' positions on statehood, their
+            commitment to defending Home Rule, and their plans to resist Congressional
+            interference — including candidates who didn't win.
           </p>
         </div>
       </section>
@@ -188,7 +212,7 @@ function App() {
             74+ bills undermining DC autonomy.
           </p>
           <p>
-            <strong>Before you vote in the {PRIMARY_DATE} primary, see where candidates stand on defending home rule and fighting for statehood.</strong>
+            <strong>This is the complete record from the {PRIMARY_DATE} primary — where every candidate stood on defending home rule and fighting for statehood.</strong>
           </p>
         </div>
       </section>
@@ -225,7 +249,7 @@ function App() {
       {/* Results Preview */}
       <section className="results-preview">
         <div className="container">
-          <h2>Candidate Responses — Updated as They Come In</h2>
+          <h2>All 2026 Primary Candidate Responses</h2>
           <p className="section-intro">
             Showing {filteredCandidates.length} of {candidatesData.candidates.length} candidates. Filter by office or party to narrow down the list.
           </p>
@@ -393,7 +417,8 @@ function App() {
           </div>
 
           <p className="table-note">
-            <strong>Note:</strong> Responses will be published on a rolling basis as candidates complete the questionnaire. Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}.
+            <strong>Note:</strong> This is an archive of the 2026 primary campaign.
+            {lastUpdated && ` Last updated: ${lastUpdated}.`}
           </p>
         </div>
       </section>

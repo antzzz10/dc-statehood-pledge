@@ -1406,3 +1406,30 @@ body {
     padding: 0.2rem 0.5rem;
   }
 }
+
+/* Post-Primary Results Page — compact spacing so winners are visible with minimal scrolling */
+.hero.hero-compact {
+  padding: 1.5rem 0 2rem 0;
+}
+
+.hero.hero-compact .hero-badge {
+  margin-bottom: 0.5rem;
+}
+
+.hero.hero-compact .hero-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero.hero-compact .hero-description {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.results-preview.results-compact {
+  padding: 1.5rem 0 3.5rem 0;
+}
+
+.results-preview.results-compact .section-intro {
+  margin-bottom: 1rem;
+}

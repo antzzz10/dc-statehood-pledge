@@ -2,14 +2,12 @@ import { Link } from 'react-router-dom'
 import './App.css'
 
 function Respond() {
-  const PRIMARY_DATE = "June 16, 2026";
-
   return (
     <div className="app">
       {/* Hero Section - Candidate Focused */}
       <section className="hero">
         <div className="container">
-          <div className="hero-badge">For Candidates</div>
+          <div className="hero-badge">For Candidates & Officials</div>
           <h1 className="hero-title">
             Share Your Position with <span className="highlight">DC Voters</span>
           </h1>
@@ -17,7 +15,9 @@ function Respond() {
             Help voters make informed decisions by completing our brief questionnaire
           </p>
           <p className="hero-description">
-            Your responses will be published on candidates.representdc.org for all DC voters to see before the {PRIMARY_DATE} primary election.
+            This is an always-on questionnaire for DC public officials and candidates to share
+            their statehood stance with voters. Responses are published on
+            candidates.representdc.org on a rolling basis, any time.
           </p>
           <a
             href="mailto:info@representdc.org?subject=Statehood%20Questionnaire%20Request"
@@ -25,7 +25,7 @@ function Respond() {
           >
             Request the Questionnaire →
           </a>
-          <p className="deadline">Takes 10-15 minutes • Primary Election: {PRIMARY_DATE}</p>
+          <p className="deadline">Takes 10-15 minutes • Always open</p>
         </div>
       </section>
 
@@ -83,9 +83,9 @@ function Respond() {
             <div className="info-card">
               <h3>Your Information</h3>
               <ul>
-                <li>Name and office you're running for</li>
+                <li>Name and office you hold or are running for</li>
                 <li>Party affiliation</li>
-                <li>Campaign website (optional)</li>
+                <li>Campaign or office website (optional)</li>
               </ul>
             </div>
 
@@ -94,7 +94,7 @@ function Respond() {
               <ul>
                 <li><strong>Time:</strong> 10-15 minutes</li>
                 <li><strong>Published:</strong> Rolling basis</li>
-                <li><strong>Primary:</strong> {PRIMARY_DATE}</li>
+                <li><strong>Availability:</strong> Always open</li>
               </ul>
             </div>
           </div>
@@ -102,7 +102,7 @@ function Respond() {
           <div className="cta-box">
             <h3>Ready to Share Your Position?</h3>
             <p>
-              We're reaching out to all declared candidates directly. If you haven't been contacted yet,
+              We reach out to candidates and sitting officials directly. If you haven't been contacted yet,
               email us and we'll send you the questionnaire right away.
             </p>
             <a
@@ -151,7 +151,7 @@ function Respond() {
           </div>
 
           <p className="table-note">
-            <Link to="/" style={{ color: '#DC143C', fontWeight: 600 }}>View full results table →</Link>
+            <Link to="/2026/primary" style={{ color: '#DC143C', fontWeight: 600 }}>View full results table →</Link>
           </p>
         </div>
       </section>

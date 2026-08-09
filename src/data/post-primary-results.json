@@ -1,0 +1,135 @@
+{
+  "primaryDate": "June 16, 2026",
+  "boeResultsUrl": "https://electionresults.dcboe.org/election_results/2026-Primary-Election",
+  "bannerCopy": {
+    "heading": "Congratulations to DC's 2026 primary winners. The real work starts now.",
+    "paragraphs": [
+      "After the election, use these responses to be confident in your officials' commitment to DC statehood and work with them on their proposed actions."
+    ]
+  },
+  "races": [
+    {
+      "office": "Mayor",
+      "label": "Mayor",
+      "winnerId": "janeese-lewis-george-mayor",
+      "winnerName": "Janeese Lewis George",
+      "responded": true,
+      "note": null,
+      "quote": "Several times over the last two years, I've also walked the halls of Capitol Hill, meeting with members of Congress to build a coalition to defend DC and promote Statehood. Many Congress members have told me I am the first DC elected official who's ever met with them. That's a real shame. I worked with unions to help broker a meeting with a Democratic member of Congress who wasn't voting with DC. I was able to persuade him of the impact those votes have on the people of DC and I am pleased to share that the Congress member I met with now consistently votes to support DC and protect our autonomy."
+    },
+    {
+      "office": "Delegate to the House of Representatives",
+      "label": "Delegate to the U.S. House of Representatives",
+      "winnerId": "robert-white-delegate",
+      "winnerName": "Robert White",
+      "responded": true,
+      "note": null,
+      "quote": "Statehood is not a one-time vote — it is a sustained campaign."
+    },
+    {
+      "office": "Attorney General",
+      "label": "Attorney General",
+      "winnerId": "brian-l-schwalb-attorney-general",
+      "winnerName": "Brian L. Schwalb",
+      "responded": true,
+      "note": "Won with over 90% of the vote",
+      "quote": "Within hours [of Pam Bondi's order seizing MPD], I issued a DC Attorney General legal opinion… Early the next morning, less than 24 hours after Bondi's order was issued, I filed a lawsuit… By 5:00 pm on August 15th, the U.S. District Judge signaled that she agreed with DC's legal arguments, and the federal administration agreed to rescind its illegal order."
+    },
+    {
+      "office": "Council Chairman",
+      "label": "Council Chairman",
+      "winnerId": "phil-mendelson-council-chair",
+      "winnerName": "Phil Mendelson",
+      "responded": false,
+      "note": "unopposed",
+      "quote": null
+    },
+    {
+      "office": "At-Large Council Member",
+      "label": "At-Large Council Member",
+      "winnerId": "oye-owolewa-at-large",
+      "winnerName": "Oye Owolewa",
+      "responded": true,
+      "note": null,
+      "quote": "DC statehood is about survival, dignity, and self-determination. The ongoing denial of statehood creates real harm, from budget instability to federal overreach and family separation, and our response must match the urgency of those conditions."
+    },
+    {
+      "office": "Ward 1 Council Member",
+      "label": "Ward 1 Council Member",
+      "winnerId": "aparna-raj-ward-1",
+      "winnerName": "Aparna Raj",
+      "responded": true,
+      "note": "Won in ranked-choice round 4 with 52% of the vote",
+      "quote": "There are two choices in a time of rising authoritarianism: collaboration or resistance."
+    },
+    {
+      "office": "Ward 3 Council Member",
+      "label": "Ward 3 Council Member",
+      "winnerId": "matthew-frumin-ward-3",
+      "winnerName": "Matthew Frumin",
+      "responded": true,
+      "note": "unopposed",
+      "quote": "Democrats have had two opportunities, once under Clinton and again under Obama to pass Statehood. In both cases, our leaders declined to move because they believed Republicans would never work with them if they pushed it through. And then the Republicans declined to work with them anyways."
+    },
+    {
+      "office": "Ward 5 Council Member",
+      "label": "Ward 5 Council Member",
+      "winnerId": "zachary-parker-ward-5",
+      "winnerName": "Zachary Parker",
+      "responded": true,
+      "note": "Won with 76.4% of the vote",
+      "quote": "Most recently, I led a delegation of nearly 50 Ward 5 neighbors to Capitol Hill to meet directly with Members of Congress and their staff to lobby against harmful congressional action. That kind of direct civic engagement matters. It shows that DC residents are not passive observers. We are active participants in defending our democracy."
+    },
+    {
+      "office": "Ward 6 Council Member",
+      "label": "Ward 6 Council Member",
+      "winnerId": "charles-allen-ward-6",
+      "winnerName": "Charles Allen",
+      "responded": true,
+      "note": "Won with 74.4% of the vote",
+      "quote": "It was even my legislation the Council passed to change DC's license plates to read 'End Taxation Without Representation' — to remind everyone that statehood and autonomy will only be won through action, strategy, and organizing."
+    },
+    {
+      "office": "United States Senator",
+      "label": "Shadow U.S. Senator",
+      "winnerId": "paul-strauss-us-senator",
+      "winnerName": "Paul Strauss",
+      "responded": false,
+      "note": "unopposed",
+      "quote": null
+    },
+    {
+      "office": "United States Representative",
+      "label": "Shadow U.S. Representative",
+      "winnerId": "franklin-garcia-us-representative",
+      "winnerName": "Franklin Garcia",
+      "responded": true,
+      "note": "unopposed",
+      "quote": "The future looks bright for our movement, and we need to finalize the ground work to allow full democracy to shine in our nation's capital."
+    },
+    {
+      "office": "At-Large Council Member (Special Election)",
+      "label": "At-Large Council Member — Special Election",
+      "winnerId": "elissa-silverman-at-large-special",
+      "winnerName": "Elissa Silverman",
+      "responded": true,
+      "note": "Won the non-partisan special election with 55% of the vote",
+      "quote": "Get our Council including the Chairman, Mayor, DC AG, and Delegate all on the same page when it comes to statehood."
+    }
+  ],
+  "sources": [
+    { "label": "WTOP — McDuffie concedes, White wins delegate race", "url": "https://wtop.com/dc-election/2026/06/dc-primary-election-results-voters-pick-nominees-for-new-mayor-delegate-ag/" },
+    { "label": "NBC4 — White wins delegate primary", "url": "https://www.nbcwashington.com/decision-2026/pinto-white-primary-congress/4117978/" },
+    { "label": "WJLA — Lewis George wins mayoral primary", "url": "https://wjla.com/news/local/kenyan-mcduffie-concedes-janeese-lewis-george-dc-mayor-race-democratic-primary-winner-election-results-ranked-choice-voting-2026-voters" },
+    { "label": "WJLA — Schwalb wins AG primary", "url": "https://wjla.com/news/election/brian-schwalb-attorney-general-primary-washington-dc-democratic-election-voters-campaign-szymkowicz-june" },
+    { "label": "ArentFox Schiff — primary results overview incl. Mendelson unopposed", "url": "https://www.afslaw.com/perspectives/alerts/dc-primary-elections-results-signal-likely-shift-more-progressive-government" },
+    { "label": "WTOP — Ward 5/6 incumbents win (Parker, Allen)", "url": "https://wtop.com/dc-election/2026/06/dc-primary-election-results-new-faces-to-take-council-seats/" },
+    { "label": "Washington City Paper — Owolewa at-large RCV result", "url": "https://washingtoncitypaper.com/article/787554/d-c-primary-election-results-are-still-coming-in/" },
+    { "label": "51st.news — Silverman wins at-large special election", "url": "https://51st.news/elissa-silverman-wins-dc-at-large-special-election/" },
+    { "label": "FairVote — final Ward 1 RCV results (Raj wins round 4, 52%)", "url": "https://fairvote.org/results-from-the-first-ranked-choice-voting-election-in-washington-dc/" },
+    { "label": "51st.news — Aparna Raj wins Ward 1 race", "url": "https://51st.news/aparna-raj-wins-ward-1-race-dc-council/" },
+    { "label": "Ballotpedia — Paul Strauss / Shadow Senator unopposed", "url": "https://ballotpedia.org/Paul_Strauss" },
+    { "label": "Wikipedia — 2026 DC Democratic State Committee election, Free DC wins 36/48 seats", "url": "https://en.wikipedia.org/wiki/2026_District_of_Columbia_Democratic_State_Committee_election" },
+    { "label": "DCBOE — Official 2026 Primary Election Results", "url": "https://electionresults.dcboe.org/election_results/2026-Primary-Election" }
+  ]
+}
