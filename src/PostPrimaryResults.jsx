@@ -33,6 +33,17 @@ function PostPrimaryResults() {
       {/* Winners List */}
       <section className="results-preview results-compact">
         <div className="container">
+          <details className="faq-item" style={{ maxWidth: '800px', margin: '0 auto 1.5rem' }}>
+            <summary>About the Candidate Questionnaire</summary>
+            <div className="faq-answer">
+              <p>
+                This page exists so every candidate for DC public office makes a public commitment
+                to statehood before taking office. That record lets constituents follow up with
+                elected officials on the specific statehood actions they proposed while running.
+              </p>
+            </div>
+          </details>
+
           <p className="section-intro">
             <strong>{respondedCount} of {races.length}</strong> winners ({Math.round((respondedCount / races.length) * 100)}%) responded.
             See other responses in our{' '}
@@ -124,7 +135,6 @@ function PostPrimaryResults() {
               <h3>Contact</h3>
               <ul>
                 <li><a href="mailto:info@representdc.org">Contact RepresentDC</a></li>
-                <li><a href="mailto:statehood@dcdemocraticparty.org">Contact DC Dems Statehood Committee</a></li>
               </ul>
             </div>
             <div className="footer-section">

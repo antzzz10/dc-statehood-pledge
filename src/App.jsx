@@ -571,7 +571,6 @@ function App() {
               <h3>Contact</h3>
               <ul>
                 <li><a href="mailto:info@representdc.org">Contact RepresentDC</a></li>
-                <li><a href="mailto:statehood@dcdemocraticparty.org">Contact DC Dems Statehood Committee</a></li>
               </ul>
             </div>
             <div className="footer-section">
